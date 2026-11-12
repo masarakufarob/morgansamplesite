@@ -1,0 +1,158 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  badge?: string;
+  badgeIcon?: string;
+  stats?: Array<{ number: string; label: string }>;
+  primaryCTA?: { label: string; href: string; icon?: string };
+  secondaryCTA?: { label: string; href: string; icon?: string };
+  image?: string;
+  imageAlt?: string;
+  variant?: 'home' | 'page' | 'dark';
+  className?: string;
+}
+const {
+  title,
+  subtitle,
+  description,
+  badge,
+  badgeIcon,
+  stats = [],
+  primaryCTA,
+  secondaryCTA,
+  image,
+  imageAlt,
+  variant = 'page',
+  className = ''
+} = Astro.props;
+---
+
+<div class={`hero-section relative overflow-hidden ${className}`}>
+  {variant === 'home' && (
+    <>
+      <div class="absolute inset-0 bg-gradient-to-br from-mzc-navy/85 via-mzc-blue/50 to-mzc-navy/80 z-10" />
+      <div class="absolute inset-0" style="background-image: url('/images/admin_block.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;" />
+      
+      {/* Floating animated balls */}
+      <div class="shape-ball w-[600px] h-[600px] bg-mzc-blue/40 top-[-100px] right-[-100px] animate-float" />
+      <div class="shape-ball w-[300px] h-[300px] bg-mzc-teal/30 bottom-12 left-[-50px] animate-float-slow" />
+      <div class="shape-ball w-[200px] h-[200px] bg-mzc-gold/20 top-2/4 right-1/5 animate-float-reverse" />
+    </>
+  )}
+  
+  {variant === 'page' && (
+    <div class="absolute inset-0 bg-gradient-to-br from-mzc-navy via-mzc-blue to-mzc-navy z-10" />
+  )}
+  
+  {variant === 'dark' && (
+    <div class="absolute inset-0 bg-mzc-dark z-10" />
+  )}
+
+  <div class="hero-inner max-w-7xl mx-auto px-6 relative z-20 w-full">
+    {variant === 'home' ? (
+      <div class="grid lg:grid-cols-2 gap-12 items-center pt-20 pb-16 lg:pt-32 lg:pb-24">
+        <div class="hero-content">
+          {badge && (
+            <div class="hero-tag inline-flex items-center gap-2 bg-white/15 text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6 border border-white/20 backdrop-blur-sm">
+              {badgeIcon && <i class={`fas ${badgeIcon} text-mzc-teal`}></i>}
+              {badge}
+            </div>
+          )}
+          <h1 class="hero-title font-display font-black text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-5">
+            {title.split('\n').map((line, i) => (
+              <span key={i} class="block">{line} {i === 1 && subtitle && <span class="text-mzc-teal">{subtitle}</span>}</span>
+            ))}
+          </h1>
+          {description && <p class="hero-desc text-lg text-white/80 leading-relaxed mb-8 max-w-xl">{description}</p>}
+          
+          <div class="hero-btns flex flex-wrap gap-3 mb-10">
+            {primaryCTA && (
+              <a href={primaryCTA.href} class="btn btn-white btn-round btn-lg">
+                {primaryCTA.icon && <i class={`fas ${primaryCTA.icon} mr-2`}></i>}
+                {primaryCTA.label}
+              </a>
+            )}
+            {secondaryCTA && (
+              <a href={secondaryCTA.href} class="btn btn-outline-white btn-round btn-lg">
+                {secondaryCTA.icon && <i class={`fas ${secondaryCTA.icon} mr-2`}></i>}
+                {secondaryCTA.label}
+              </a>
+            )}
+          </div>
+          
+          {stats.length > 0 && (
+            <div class="hero-stats-row flex flex-wrap gap-8 md:gap-12 mt-10 pt-6 border-t border-white/15">
+              {stats.map((stat, i) => (
+                <div key={i} class="hero-stat-item">
+                  <div class="stat-number font-display font-black text-3xl text-white leading-none">{stat.number}</div>
+                  <div class="stat-label text-xs text-white/60 uppercase tracking-wider mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+        
+        {/* Floating cards */}
+        <div class="hero-cards relative h-[420px] hidden lg:block">
+          {image && (
+            <div class="hero-float-card card-main absolute top-5 left-5 w-[340px] animate-float" style="padding: 0; overflow: hidden; border-radius: 1.25rem;">
+              <div class="relative">
+                <img src={image} alt={imageAlt || title} class="w-full h-52 object-cover rounded-t-2xl" />
+                <div class="absolute top-3 left-3 bg-mzc-blue/85 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                  📍 Harare Campus
+                </div>
+              </div>
+              <div class="p-5">
+                <div class="hcard-label text-xs text-white/65 uppercase tracking-wider mb-1">Morgan Zintec College</div>
+                <div class="hcard-value font-display font-extrabold text-white text-base leading-tight">Administration Block</div>
+                <div class="hcard-list flex flex-col gap-2 mt-3">
+                  <div class="hcard-list-item flex items-center gap-2 text-sm text-white/80"><i class="fas fa-check-circle text-xs text-mzc-teal"></i> 1 Alamein Rd, Arcadia, Harare</div>
+                  <div class="hcard-list-item flex items-center gap-2 text-sm text-white/80"><i class="fas fa-check-circle text-xs text-mzc-teal"></i> Est. 1981 — Over 40 years</div>
+                  <div class="hcard-list-item flex items-center gap-2 text-sm text-white/80"><i class="fas fa-check-circle text-xs text-mzc-teal"></i> Accredited by ZIMCHE</div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    ) : (
+      <div class="py-16 lg:py-24 text-center">
+        {badge && (
+          <div class="hero-tag inline-flex items-center gap-2 bg-mzc-teal/15 text-mzc-teal border border-mzc-teal/30 text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded mb-4">
+            {badgeIcon && <i class={`fas ${badgeIcon}`}></i>}
+            {badge}
+          </div>
+        )}
+        <h1 class="hero-title font-display font-black text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-3">
+          {title}
+        </h1>
+        {description && <p class="hero-desc text-base md:text-lg text-white/70 leading-relaxed mb-8 max-w-2xl mx-auto">{description}</p>}
+        <div class="flex flex-wrap justify-center gap-3">
+          {primaryCTA && (
+            <a href={primaryCTA.href} class="btn btn-teal btn-round btn-lg">
+              {primaryCTA.icon && <i class={`fas ${primaryCTA.icon} mr-2`}></i>}
+              {primaryCTA.label}
+            </a>
+          )}
+          {secondaryCTA && (
+            <a href={secondaryCTA.href} class="btn btn-outline btn-round btn-lg border-white/25 text-white/75 hover:border-mzc-teal hover:text-mzc-teal">
+              {secondaryCTA.icon && <i class={`fas ${secondaryCTA.icon} mr-2`}></i>}
+              {secondaryCTA.label}
+            </a>
+          )}
+        </div>
+      </div>
+    )}
+  </div>
+
+  {/* Wave separator for home */}
+  {variant === 'home' && (
+    <div class="absolute bottom-0 left-0 right-0 z-30">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-16 block">
+        <path d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z" fill="white"/>
+      </svg>
+    </div>
+  )}
+</div>

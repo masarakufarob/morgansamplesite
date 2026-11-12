@@ -1,0 +1,70 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import Hero from '@/components/Hero.astro';
+---
+
+<BaseLayout 
+  title="ECD Department" 
+  description="Department of Early Childhood Development at Morgan Zintec College - Training early childhood educators through the Infant Course of the Diploma in Education and the ECD Short Course."
+  image="/images/og-ecd.jpg"
+>
+  <Navbar currentPage="departments" slot="header" />
+  
+  <Hero
+    title="Early Childhood Development (ECD)"
+    variant="page"
+    badge="Department"
+    badgeIcon="fa-child"
+    description="Dedicated to the training of early childhood educators through the Infant Course of the Diploma in Education and the ECD Short Course. Covers developmental psychology, ECD methodology and community-based programming."
+    primaryCTA={{ label: "View ECD Short Course", href: "/academics/#short", icon: "fa-certificate" }}
+    secondaryCTA={{ label: "View All Departments", href: "/departments/", icon: "fa-building" }}
+  />
+
+  <section class="py-12 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <div class="section-label">Department of Early Childhood Development</div>
+        <h2 class="section-title font-display">Department Overview</h2>
+        <div class="divider divider-center mb-6"></div>
+        <p class="text-lg text-[#8898aa] leading-relaxed">The ECD Department is at the forefront of early childhood teacher education in Zimbabwe. With 660+ ECD Short Course graduates and the Infant Course of the Diploma in Education, the department produces competent, caring educators for the foundational years of learning.</p>
+      </div>
+      
+      <div class="hod-header flex items-center gap-5 bg-[#F5F7FA] rounded-xl p-6 mb-12 border-l-5 border-[#E67E22] max-w-2xl mx-auto">
+        <div class="hod-avatar w-16 h-16 rounded-full bg-gradient-to-br from-[#3A2A1A] to-[#6A4A2A] flex items-center justify-center text-3xl text-white/30 flex-shrink-0 border-3 border-[#E67E22]">👤</div>
+        <div class="hod-info">
+          <h4 class="font-heading font-extrabold text-lg text-mzc-navy mb-1">[To be updated]</h4>
+          <p class="text-xs font-bold text-[#E67E22] uppercase tracking-wider">Head of Department — ECD</p>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        {[
+          { title: "ECD Methodology", desc: "Pedagogical approaches for early childhood education including play-based learning, inquiry methods, and developmentally appropriate practice.", icon: "fa-puzzle-piece", color: "icon-box-primary" },
+          { title: "Developmental Psychology", desc: "Child development theories, cognitive, social-emotional, and physical development milestones from birth to age 8.", icon: "fa-brain", color: "icon-box-teal" },
+          { title: "ECD Short Course", desc: "6-month certificate programme for ECD centre facilitators. 660+ graduates. Community-based, practical, and accessible.", icon: "fa-certificate", color: "icon-box-success" },
+          { title: "Infant Teaching Practice", desc: "Supervised practical experience in ECD centres and infant classrooms. Mentored by qualified ECD practitioners.", icon: "fa-school", color: "icon-box-warning" },
+          { title: "Creative Arts in ECD", desc: "Music, movement, visual arts, and drama for young children. Integrating creativity across the ECD curriculum.", icon: "fa-palette", color: "icon-box-gold" }
+        ].map((section, i) => (
+          <div key={i} class="bg-white rounded-xl p-6 shadow-[0_2px_14px_rgba(0,0,0,.07)] hover:shadow-[0_8px_28px_rgba(0,0,0,.1)] transition-all border-t-4 border-[#E67E22]">
+            <div class="icon-box-lg mb-4 {section.color}"><i class={`fas ${section.icon}`}></i></div>
+            <h4 class="font-heading font-extrabold text-base text-mzc-navy mb-2">{section.title}</h4>
+            <p class="text-sm text-[#666] leading-relaxed">{section.desc}</p>
+          </div>
+        ))}
+      </div>
+      
+      <div class="bg-gradient-to-br from-[#3A2A1A] to-[#6A4A2A] rounded-2xl p-8 text-white text-center">
+        <h3 class="font-display text-2xl font-bold mb-4">Nurturing Zimbabwe's Youngest Learners</h3>
+        <p class="text-white/80 leading-relaxed mb-6 max-w-2xl mx-auto">Quality early childhood education is the foundation for lifelong learning. Our graduates make a difference in communities across Zimbabwe.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/academics/#short" class="btn btn-white btn-round"><i class="fas fa-certificate mr-2"></i> ECD Short Course</a>
+          <a href="/contact/" class="btn btn-outline-white btn-round"><i class="fas fa-envelope mr-2"></i> Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer variant="dark" slot="footer" />
+</BaseLayout>

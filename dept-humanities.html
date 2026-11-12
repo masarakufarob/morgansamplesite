@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Department of Humanities | Morgan Zintec College</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#0C71C3;--teal:#7EBEC5;--navy:#1a2a4a;--light:#f5f7fa;--text:#333;--muted:#666;--border:#e0e0e0}
+body{font-family:'Manrope',sans-serif;color:var(--text);overflow-x:hidden;line-height:1.7}
+a{text-decoration:none;color:inherit}
+.top-bar{background:var(--blue);color:rgba(255,255,255,.85);font-size:12px;padding:7px 0}
+.tb-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.main-nav{background:var(--blue);position:sticky;top:0;z-index:1000;box-shadow:0 2px 14px rgba(0,0,0,.25)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;min-height:64px;position:relative}
+.logo{display:flex;align-items:center;gap:11px}
+.logo-badge{width:46px;height:46px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;color:var(--blue);font-family:'Playfair Display',serif;flex-shrink:0}
+.logo-text .n{font-weight:800;font-size:15px;color:#fff;line-height:1.15}
+.logo-text .s{font-size:10px;color:var(--teal);text-transform:uppercase;letter-spacing:1.5px}
+.nav-ul{display:flex;align-items:stretch;list-style:none}
+.nav-ul>li>a{display:flex;align-items:center;height:64px;padding:0 12px;font-size:12px;font-weight:700;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.5px;transition:all .2s;white-space:nowrap}
+.nav-ul>li>a:hover{color:#fff;background:rgba(255,255,255,.15)}
+
+.page-hero{background:linear-gradient(135deg,var(--navy),var(--blue));padding:52px 0;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=40') center/cover;opacity:.08}
+.page-hero-inner{position:relative;z-index:2}
+.dept-badge{display:inline-block;background:var(--teal);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:5px 14px;border-radius:2px;margin-bottom:12px}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);font-weight:900;color:#fff;margin-bottom:8px}
+.breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)}
+.breadcrumb a{color:var(--teal)}
+
+.dept-nav{background:#fff;border-bottom:2px solid var(--border);position:sticky;top:64px;z-index:50}
+.dept-nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:0}
+.dnav-item{padding:14px 20px;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;text-transform:uppercase;letter-spacing:.5px;margin-bottom:-2px;white-space:nowrap}
+.dnav-item:hover,.dnav-item.active{color:var(--blue);border-bottom-color:var(--blue)}
+
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.tab-section{display:none;padding:56px 0}.tab-section.active{display:block}
+.sec-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--teal);margin-bottom:10px}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,34px);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:10px}
+.divider{width:48px;height:4px;background:var(--teal);margin:12px 0 20px}
+.prose{font-size:14px;color:var(--muted);line-height:1.85}
+.prose p{margin-bottom:14px}
+
+/* HOD HEADER */
+.hod-header{display:flex;align-items:center;gap:20px;background:var(--light);border-radius:8px;padding:24px;margin-bottom:28px;border-left:5px solid var(--blue)}
+.hod-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;font-size:24px;color:rgba(255,255,255,.3);flex-shrink:0;border:3px solid var(--teal)}
+.hod-info h4{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:3px}
+.hod-info p{font-size:12px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTIONS GRID */
+.sections-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.section-card{background:#fff;border-radius:8px;padding:24px;box-shadow:0 2px 14px rgba(0,0,0,.07);border-top:4px solid var(--blue);transition:all .3s}
+.section-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.1);transform:translateY(-3px)}
+.section-card h4{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:4px}
+.lic-badge{font-size:11px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;display:block}
+.section-card p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:10px}
+.section-tag-pill{display:inline-block;background:var(--blue);color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 9px;border-radius:2px;margin-bottom:8px;margin-right:4px}
+.section-tag-pill.teal{background:var(--teal)}
+
+/* STAFF TABLE */
+.staff-table-wrap{overflow-x:auto;margin-top:20px}
+.staff-table{width:100%;border-collapse:collapse;font-size:13px}
+.staff-table th{background:var(--blue);color:#fff;padding:12px 16px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.staff-table td{padding:10px 16px;border-bottom:1px solid var(--border)}
+.staff-table tr:hover td{background:var(--light)}
+.staff-avatar-sm{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,255,255,.4);flex-shrink:0}
+.staff-td{display:flex;align-items:center;gap:10px}
+
+/* CLUBS */
+.clubs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.club-card{background:var(--light);border-radius:8px;padding:20px;text-align:center;border-bottom:3px solid var(--teal);transition:all .2s}
+.club-card:hover{background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.07)}
+.club-icon{font-size:28px;margin-bottom:8px}
+.club-card h4{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:4px}
+.club-card p{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* FOOTER */
+footer{background:#0a1628;color:rgba(255,255,255,.7);margin-top:0}
+.footer-bottom{max-width:1200px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:1px solid rgba(255,255,255,.07)}
+.footer-bottom p,.footer-bottom a{font-size:12px;color:rgba(255,255,255,.35)}
+.footer-bottom a:hover{color:var(--teal)}
+.footer-main-inner{max-width:1200px;margin:0 auto;padding:40px 20px 20px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px}
+.footer-col h4{color:var(--teal);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.footer-col ul a{font-size:13px;color:rgba(255,255,255,.5);transition:color .2s}
+.footer-col ul a::before{content:'› ';color:var(--teal)}
+.footer-col ul a:hover{color:var(--teal)}
+.footer-brand-p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-top:10px}
+
+@media(max-width:768px){.sections-grid,.clubs-grid{grid-template-columns:1fr}.footer-main-inner{grid-template-columns:1fr}.dept-nav-inner{overflow-x:auto}}
+.nav-toggle-btn{display:none;position:absolute;right:20px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:8px;line-height:1}
+@media(max-width:768px){
+  .nav-toggle-btn{display:block}
+  .nav-ul{display:none!important;position:absolute;top:100%;left:0;right:0;background:var(--blue);flex-direction:column;align-items:stretch;max-height:calc(100vh - 64px);overflow-y:auto;box-shadow:0 12px 24px rgba(0,0,0,.25);z-index:500}
+  .nav-ul.mobile-open{display:flex!important}
+  .nav-ul>li>a{height:auto;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .dd{display:block!important;position:static;min-width:0;box-shadow:none;border-top:none;background:rgba(0,0,0,.15)}
+  .dd a{padding-left:34px;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.06)}
+  .dd a:hover{color:#fff;padding-left:38px}
+  .nav-ul li:hover .dd{display:block}
+}
+</style>
+</head>
+<body>
+<div class="top-bar"><div class="tb-inner"><span>✉ <a href="mailto:info@morganzintec.ac.zw">info@morganzintec.ac.zw</a> &nbsp;|&nbsp; 📞 +263 242 771 190</span></div></div>
+<nav class="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Morgan Zintec College Crest" style="height:44px;width:44px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))">
+      <div class="logo-text"><span class="n">Morgan Zintec College</span><span class="s">Education · Progress · Self Reliance</span></div>
+    </a>
+    <ul class="nav-ul">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="departments.html" style="color:#fff;background:rgba(255,255,255,.15)">Departments</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  <button class="nav-toggle-btn" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="dept-badge">Department</div>
+    <h1>Department of Humanities</h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> <a href="departments.html">Departments</a> <span>›</span> <span>Humanities</span></div>
+  </div>
+</div>
+
+<!-- DEPT NAV TABS -->
+<div class="dept-nav">
+  <div class="dept-nav-inner">
+    <div class="dnav-item active" onclick="switchDeptTab('overview',event)">Overview</div>
+    <div class="dnav-item" onclick="switchDeptTab('sections',event)">Sections</div>
+    <div class="dnav-item" onclick="switchDeptTab('staff',event)">Staff</div>
+    <div class="dnav-item" onclick="switchDeptTab('clubs',event)">Clubs</div>
+  </div>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div id="overview" class="tab-section active">
+  <div class="container">
+    <div class="sec-tag">Department of Humanities</div>
+    <h2 class="sec-title">Department Overview</h2>
+    <div class="divider"></div>
+    <div class="hod-header">
+      <div class="hod-avatar">👤</div>
+      <div class="hod-info">
+        <h4>Mr B. Ziso</h4>
+        <p>Head of Department — Humanities</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>The Department of Humanities is one of the largest departments at the college. It comprises a range of subjects taught by competent lecturers through the blended approach where face-to-face teaching is combined with virtual learning. Among other teaching and learning approaches, team teaching, collaborative learning, tutorials, lectures and heritage tours are used by the sections in this department.</p>
+      <p>Each subject area is known as a section and is headed by a Lecturer-in-Charge. The sections can be grouped into three categories:</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0 24px">
+      <div style="background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:20px;border-radius:8px;text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">🗣️</div>
+        <h4 style="font-size:14px;font-weight:800;margin-bottom:4px">Languages</h4>
+        <p style="font-size:12px;color:rgba(255,255,255,.75)">ChiShona, IsiNdebele &amp; English</p>
+      </div>
+      <div style="background:linear-gradient(135deg,var(--teal),#5a9ea6);color:#fff;padding:20px;border-radius:8px;text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">🌍</div>
+        <h4 style="font-size:14px;font-weight:800;margin-bottom:4px">Social Sciences</h4>
+        <p style="font-size:12px;color:rgba(255,255,255,.85)">Family, Religion &amp; Moral Education</p>
+      </div>
+      <div style="background:linear-gradient(135deg,#2a3a5a,#4a5a7a);color:#fff;padding:20px;border-radius:8px;text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">🏫</div>
+        <h4 style="font-size:14px;font-weight:800;margin-bottom:4px">Contemporaries</h4>
+        <p style="font-size:12px;color:rgba(255,255,255,.75)">Health &amp; Life Skills, NASS</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>The department prepares pre-service teachers for critical citizenship, understanding of cultures and indigenous knowledge systems of the people of Zimbabwe and offers character education. It holds the greatest responsibility in developing students' soft skills such as communication abilities, language skills, emotional habits, empathy, time management, collaboration, teamwork and leadership traits.</p>
+      <p>Student teachers are empowered with requisite 21st century competencies for effective facilitation of learning at primary school level. The department has given birth to a number of clubs including Chinese, Debate and Public Speaking, Peer Education, Scripture Union, First Aid and the Environmental Education Club.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTIONS TAB -->
+<div id="sections" class="tab-section">
+  <div class="container">
+    <div class="sec-tag">Academic Sections</div>
+    <h2 class="sec-title">Department Sections</h2>
+    <div class="divider"></div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.7">Each section within the Department of Humanities is headed by a Lecturer-in-Charge and offers specific areas of study within the teacher education curriculum.</p>
+    <div class="sections-grid">
+
+      <div class="section-card">
+        <span class="section-tag-pill">Indigenous Languages</span>
+        <h4>Bazi ReChiShona</h4>
+        <span class="lic-badge">Lecturer-in-Charge: Mrs Sibanda</span>
+        <p>Bazi iri rinodzidzisa ChiShona — mutauro waamai. Vadzidzi vanodzidza tsika namagariro. Rinodzidzisa zvidzidzwa zviviri: ChiShona Chamadzidzisiro neChiShona Choudzamu.</p>
+        <p><strong style="color:var(--navy)">ChiShona Chamadzidzisiro</strong> — Chinodzidzisa mudzidzi kuti ave neruzivo rwekudzidzisa ChiShona muzvikoro.</p>
+        <p><strong style="color:var(--navy)">ChiShona Choudzamu</strong> — Chinobata zvidzidzwa zvetsika nemagariro, mutauro, nhetembo, nganonyorwa nemitambo.</p>
+      </div>
+
+      <div class="section-card" style="border-top-color:var(--teal)">
+        <span class="section-tag-pill teal">Indigenous Languages</span>
+        <h4>Ugatsha LweSiNdebele</h4>
+        <span class="lic-badge">Coordinator: Dr T. Ndlovu</span>
+        <p>Established in response to students from Ndebele-speaking regions, this section provides instruction in IsiNdebele for teaching and communication. Currently all students are offered the opportunity to learn IsiNdebele to widen their linguistic competence.</p>
+        <p>For students pursuing IsiNdebele as a teaching subject, the programme prepares them to effectively teach at the primary school level.</p>
+      </div>
+
+      <div class="section-card">
+        <span class="section-tag-pill">Languages</span>
+        <h4>English</h4>
+        <span class="lic-badge">Lecturer-in-Charge: Mrs J. Hungwe</span>
+        <p>Comprises three areas: English Professional Studies Syllabus B (PSB), English Main Subject and Communication Skills. PSB and Communication Skills are compulsory to all students; English Main Subject is for those who choose to specialise.</p>
+        <p>PSB exposes student teachers to methods of teaching listening, speaking, reading and writing. The Main Subject covers Literature in English, Language and Linguistics. Communication Skills develops effective communication habits for the global village.</p>
+      </div>
+
+      <div class="section-card" style="border-top-color:var(--teal)">
+        <span class="section-tag-pill teal">Social Sciences</span>
+        <h4>Family, Religion &amp; Moral Education (FAREME)</h4>
+        <span class="lic-badge">Lecturer-in-Charge: Dr Tatira</span>
+        <p>A Social Science section comprising PSB and Main Subject areas. PSB develops student teachers who can effectively teach family dynamics, religion and moral issues to primary school learners, fostering appreciation of diverse beliefs.</p>
+        <p>The Main Subject explores World Religions, beliefs, practices and contemporary religious issues, equipping teachers for multi-faith communities.</p>
+      </div>
+
+      <div class="section-card">
+        <span class="section-tag-pill">Social Sciences</span>
+        <h4>Heritage-Social Studies (H-SS)</h4>
+        <span class="lic-badge">Lecturer-in-Charge: Mr T. Dzumbunu</span>
+        <p>PSB area prepares all student teachers to effectively teach Heritage-Social Studies at primary level — moulding human character through identity, norms, values, patriotism and heritage resources. Empowers teachers to create spaces where learners engage with climate change, local cultures and children's rights.</p>
+        <p>The Main Subject provides a platform to explore civil, social, economic, political and developmental concerns at local and international levels.</p>
+      </div>
+
+      <div class="section-card" style="border-top-color:#e67e22">
+        <span class="section-tag-pill" style="background:#e67e22">Contemporaries</span>
+        <h4>Health and Life Skills (HLS)</h4>
+        <span class="lic-badge">Lecturer-in-Charge: Pastor Maviko</span>
+        <p>A compulsory subject focusing on development of knowledge, attitudes, values and skills to positively influence students' ability to adopt safer behaviours. Uses participatory methods: Focus Group Discussions, Workshops, Role Plays, Drama, Lectures.</p>
+        <p>Activities include life skills workshops for new intakes, peer educator workshops, TP deployment preparation, outreach programmes and guidance and counselling services.</p>
+      </div>
+
+      <div class="section-card" style="border-top-color:#27ae60">
+        <span class="section-tag-pill" style="background:#27ae60">Contemporaries</span>
+        <h4>National &amp; Strategic Studies (NASS)</h4>
+        <span class="lic-badge">Lecturer-in-Charge: Mr Masungo</span>
+        <p>A compulsory subject for all students. Develops awareness of the historical context informing national and international discourse on Zimbabwe. Instills loyalty, patriotism and positive national values.</p>
+        <p>Topics: History of Zimbabwe, National and International Relations, Civic Education, Contemporary Issues.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- STAFF TAB -->
+<div id="staff" class="tab-section">
+  <div class="container">
+    <div class="sec-tag">Our People</div>
+    <h2 class="sec-title">Department Staff</h2>
+    <div class="divider"></div>
+    <div class="hod-header">
+      <div class="hod-avatar">👤</div>
+      <div class="hod-info">
+        <h4>Mr B. Ziso</h4>
+        <p>Head of Department — Humanities</p>
+      </div>
+    </div>
+    <div class="staff-table-wrap">
+      <table class="staff-table">
+        <thead>
+          <tr><th>Staff Member</th><th>Section / Area</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><div class="staff-td"><div class="staff-avatar-sm">👤</div><span>Mr B. Ziso</span></div></td><td>Humanities</td><td>Head of Department</td></tr>
+          <tr><td><div class="staff-td"><div class="staff-avatar-sm">👤</div><span>Mrs Sibanda</span></div></td><td>Bazi ReChiShona</td><td>Lecturer-in-Charge</td></tr>
+          <tr><td><div class="staff-td"><div class="staff-avatar-sm">👤</div><span>Dr T. Ndlovu</span></div></td><td>Ugatsha LweSiNdebele</td><td>Coordinator</td></tr>
+          <tr><td><div class="staff-td"><div class="staff-avatar-sm">👤</div><span>Mrs J. Hungwe</span></div></td><td>English</td><td>Lecturer-in-Charge</td></tr>
+          <tr><td><div class="staff-td"><div class="staff-avatar-sm">👤</div><span>Dr Tatira</span></div></td><td>FAREME</td><td>Lecturer-in-Charge</td></tr>
+          <tr><td><div class="staff-td"><div class="staff-avatar-sm">👤</div><span>Mr T. Dzumbunu</span></div></td><td>Heritage-Social Studies</td><td>Lecturer-in-Charge</td></tr>
+          <tr><td><div class="staff-td"><div class="staff-avatar-sm">👤</div><span>Pastor Maviko</span></div></td><td>Health and Life Skills</td><td>Lecturer-in-Charge</td></tr>
+          <tr><td><div class="staff-td"><div class="staff-avatar-sm">👤</div><span>Mr Masungo</span></div></td><td>National &amp; Strategic Studies</td><td>Lecturer-in-Charge</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin-top:14px;font-style:italic">* Staff profile photos and additional details to be added by the department.</p>
+  </div>
+</div>
+
+<!-- CLUBS TAB -->
+<div id="clubs" class="tab-section">
+  <div class="container">
+    <div class="sec-tag">Student Activities</div>
+    <h2 class="sec-title">Department Clubs</h2>
+    <div class="divider"></div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.7">Student teachers have opportunities to explore further what they learn in formal spaces into independent areas of interest through clubs. The Department of Humanities has given birth to several vibrant clubs. Club content and student representatives are to be developed further by students in their respective clubs.</p>
+    <div class="clubs-grid">
+      <div class="club-card">
+        <div class="club-icon">🇨🇳</div>
+        <h4>Chinese Club</h4>
+        <p>Promotes Chinese language and cultural exchange. Connected to the college's Diploma in Chinese Language offering.</p>
+      </div>
+      <div class="club-card">
+        <div class="club-icon">🎤</div>
+        <h4>Debate &amp; Public Speaking</h4>
+        <p>Develops critical thinking, argumentation and public speaking skills essential for future educators.</p>
+      </div>
+      <div class="club-card">
+        <div class="club-icon">🤝</div>
+        <h4>Peer Educators' Club</h4>
+        <p>Student peer educators trained to support fellow students on health, life skills and wellness topics.</p>
+      </div>
+      <div class="club-card">
+        <div class="club-icon">✝️</div>
+        <h4>Scripture Union</h4>
+        <p>A faith-based club fostering spiritual growth and moral values aligned with the college's ethos.</p>
+      </div>
+      <div class="club-card">
+        <div class="club-icon">🩺</div>
+        <h4>First Aid Club</h4>
+        <p>Equips student teachers with first aid knowledge and practical emergency response skills.</p>
+      </div>
+      <div class="club-card">
+        <div class="club-icon">🌱</div>
+        <h4>Environmental Education Club</h4>
+        <p>Promotes environmental awareness, sustainability and heritage-based ecological responsibility.</p>
+      </div>
+    </div>
+    <div style="background:var(--light);border-radius:8px;padding:24px;margin-top:28px;border-left:4px solid var(--teal)">
+      <p style="font-size:14px;color:var(--muted);font-style:italic">📝 <strong style="color:var(--navy)">Note to students:</strong> Club pages are to be developed by students in their respective clubs. Please submit your club information, student representatives, activities and photos to the Department of Humanities.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main-inner">
+    <div class="footer-col">
+      <div style="display:flex;align-items:center;gap:11px;margin-bottom:4px">
+        <img src="logo.png" alt="Morgan Zintec College" style="height:44px;width:44px;object-fit:contain;flex-shrink:0">
+        <div class="logo-text"><span class="n" style="color:#fff">Morgan Zintec College</span><span class="s">Education · Progress · Self Reliance</span></div>
+      </div>
+      <p class="footer-brand-p">Leading teacher education in Zimbabwe since 1981.</p>
+    </div>
+    <div class="footer-col"><h4>Departments</h4><ul>
+      <li><a href="dept-humanities.html">Humanities</a></li>
+      <li><a href="dept-maths-science.html">Maths &amp; Sciences</a></li>
+      <li><a href="dept-research.html">Research &amp; Innovation</a></li>
+      <li><a href="dept-ecd.html">ECD</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Links</h4><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Morgan Zintec College. All Rights Reserved.</p>
+    <div style="display:flex;gap:14px"><a href="index.html">Home</a><a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+function switchDeptTab(id,evt){
+  document.querySelectorAll('.tab-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.dnav-item').forEach(d=>d.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if(evt && evt.target){evt.target.classList.add('active');}
+}
+</script>
+</body>
+</html>

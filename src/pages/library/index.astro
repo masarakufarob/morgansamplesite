@@ -1,0 +1,130 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import Hero from '@/components/Hero.astro';
+---
+
+<BaseLayout 
+  title="College Library" 
+  description="Morgan Zintec College Library - Access the Koha Integrated Library System catalogue, search holdings, reserve books, and access digital resources."
+  image="/images/og-library.jpg"
+>
+  <Navbar currentPage="library" slot="header" />
+  
+  <Hero
+    title="College Library"
+    variant="page"
+    description="The Morgan Zintec College Library catalogue runs on our Koha Integrated Library System, accessible from any computer connected to the campus network."
+    primaryCTA={{ label: "Open Koha Catalogue", href: "http://koha.morganzintec.ac.zw", icon: "fa-external-link-alt" }}
+    secondaryCTA={{ label: "Contact Library", href: "/contact/", icon: "fa-envelope" }}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Library Info -->
+        <div>
+          <h3 class="font-display text-2xl font-bold text-mzc-navy mb-6">Koha Library System</h3>
+          <p class="text-[#8898aa] leading-relaxed mb-6">Our library uses Koha, a world-class open-source Integrated Library System (ILS) used by libraries worldwide. The system provides a comprehensive platform for managing all library operations and providing seamless access to resources for students and staff.</p>
+          
+          <div class="space-y-4 mb-8">
+            {[
+              { icon: "fa-search", title: "Search & Discovery", desc: "Search by title, author, subject, ISBN, or keyword across all library holdings. Advanced search options for precise results." },
+              { icon: "fa-book", title: "Browse Collections", desc: "Explore curated collections by subject: Education, Humanities, Sciences, ICT, Professional Studies, and more." },
+              { icon: "fa-user", title: "My Account", desc: "View checked-out items, due dates, fines, and reading history. Place holds and renew items online." },
+              { icon: "fa-tablet-alt", title: "Digital Resources", desc: "Access e-books, academic journals, research databases, and theses/dissertations from the digital repository." },
+              { icon: "fa-clock", title: "Reservations & Renewals", desc: "Reserve books currently on loan. Renew eligible items online before due dates." },
+              { icon: "fa-qrcode", title: "Mobile Access", desc: "Responsive interface works on all devices. Scan QR codes in the library for quick catalogue access." }
+            ].map((feature, i) => (
+              <div key={i} class="flex gap-4 p-4 bg-[#F8F9FE] rounded-xl hover:bg-[#EEF0F8] transition-colors">
+                <div class="icon-box-lg flex-shrink-0 icon-box-primary"><i class={`fas ${feature.icon}`}></i></div>
+                <div>
+                  <h4 class="font-heading font-bold text-mzc-navy mb-1">{feature.title}</h4>
+                  <p class="text-sm text-[#8898aa] leading-relaxed">{feature.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div class="bg-gradient-to-br from-mzc-navy to-mzc-blue rounded-xl p-6 text-white">
+            <h4 class="font-heading font-bold text-lg mb-3 flex items-center gap-2"><i class="fas fa-info-circle"></i> Access Information</h4>
+            <p class="text-sm text-white/80 leading-relaxed mb-4">On campus: Open the Koha Catalogue from any campus workstation or the campus Wi-Fi network.</p>
+            <p class="text-sm text-white/80 leading-relaxed mb-4">Off campus: Contact the Library or ICT Department for remote access details and VPN setup.</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="http://koha.morganzintec.ac.zw" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-round"><i class="fas fa-external-link-alt mr-2"></i> Open Koha Catalogue</a>
+              <a href="/contact/" class="btn btn-outline-white btn-round"><i class="fas fa-envelope mr-2"></i> Request Remote Access</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Library Details & Contact -->
+        <div class="space-y-6">
+          <div class="bg-[#F8F9FE] rounded-xl p-6">
+            <h4 class="font-heading font-bold text-mzc-navy mb-4 flex items-center gap-2"><i class="fas fa-building text-mzc-blue"></i> Library Information</h4>
+            <dl class="space-y-3 text-sm">
+              <div class="flex justify-between"><dt class="text-[#8898aa]">Librarian</dt><dd class="font-semibold text-[#333]">Ms. Shuvisai</dd></div>
+              <div class="flex justify-between"><dt class="text-[#8898aa]">Location</dt><dd class="font-semibold text-[#333]">Main Campus Building, Ground Floor</dd></div>
+              <div class="flex justify-between"><dt class="text-[#8898aa]">System</dt><dd class="font-semibold text-[#333]">Koha ILS (Latest Stable Release)</dd></div>
+              <div class="flex justify-between"><dt class="text-[#8898aa]">Catalogue Access</dt><dd class="font-semibold text-[#333]">Campus Network / VPN</dd></div>
+              <div class="flex justify-between"><dt class="text-[#8898aa]">Collections</dt><dd class="font-semibold text-[#333]">Education, Humanities, Sciences, ICT, Professional Studies, Reference, Periodicals, Theses</dd></div>
+              <div class="flex justify-between"><dt class="text-[#8898aa]">Special Collections</dt><dd class="font-semibold text-[#333]">Zimbabwe Heritage Collection, Education 5.0 Resources, College Archives</dd></div>
+            </dl>
+          </div>
+          
+          <div class="bg-gradient-to-br from-mzc-teal to-[#5AB8C4] rounded-xl p-6 text-white">
+            <h4 class="font-heading font-bold text-lg mb-4 flex items-center gap-2"><i class="fas fa-headset"></i> Need Help?</h4>
+            <p class="text-sm text-white/80 leading-relaxed mb-4">Our library staff are here to assist you with research queries, catalogue navigation, and resource access.</p>
+            <div class="space-y-2 text-sm">
+              <p><strong>Email:</strong> <a href="mailto:library@morganzintec.ac.zw" class="underline hover:text-white">library@morganzintec.ac.zw</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+263242771190" class="underline hover:text-white">+263 242 771 190</a> (Ext. Library)</p>
+              <p><strong>Hours:</strong> Mon–Fri: 8:00–16:30 | Sat: 9:00–13:00 (Term time)</p>
+            </div>
+            <a href="/contact/" class="btn btn-white btn-round mt-4 inline-block"><i class="fas fa-envelope mr-2"></i> Contact Library</a>
+          </div>
+          
+          <!-- Quick Links -->
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h4 class="font-heading font-bold text-mzc-navy mb-4 flex items-center gap-2"><i class="fas fa-link text-mzc-teal"></i> Quick Links</h4>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="http://koha.morganzintec.ac.zw" target="_blank" rel="noopener noreferrer" class="p-3 bg-[#F8F9FE] rounded-lg text-sm text-[#8898aa] hover:bg-mzc-blue hover:text-white hover:text-mzc-blue transition-all text-center"><i class="fas fa-search mr-1"></i> Search Catalogue</a>
+              <a href="/research/" class="p-3 bg-[#F8F9FE] rounded-lg text-sm text-[#8898aa] hover:bg-mzc-teal hover:text-white hover:text-mzc-teal transition-all text-center"><i class="fas fa-flask mr-1"></i> Research Portal</a>
+              <a href="/academics/" class="p-3 bg-[#F8F9FE] rounded-lg text-sm text-[#8898aa] hover:bg-mzc-blue hover:text-white hover:text-mzc-blue transition-all text-center"><i class="fas fa-graduation-cap mr-1"></i> Academic Programmes</a>
+              <a href="/departments/" class="p-3 bg-[#F8F9FE] rounded-lg text-sm text-[#8898aa] hover:bg-mzc-teal hover:text-white hover:text-mzc-teal transition-all text-center"><i class="fas fa-building mr-1"></i> Departments</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Koha Features Deep Dive -->
+  <section class="py-16 bg-[#F8F9FE]">
+    <div class="container">
+      <div class="section-header mb-12">
+        <div class="section-label">System Capabilities</div>
+        <h2 class="section-title">Koha Features for Our Community</h2>
+        <div class="divider divider-center mb-4"></div>
+        <p class="section-sub mx-auto">Powerful tools for students, lecturers, and researchers</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          { icon: "fa-user-graduate", title: "For Students", features: ["Search course reserves", "View reading lists", "Request inter-library loans", "Citation export (APA, MLA, etc.)", "Mobile-friendly interface", "Reading history & recommendations"] },
+          { icon: "fa-chalkboard-teacher", title: "For Lecturers", features: ["Create course reading lists", "Track student resource usage", "Request new acquisitions", "Embed resources in eLearning", "Research impact metrics", "Reserve items for classes"] },
+          { icon: "fa-flask", title: "For Researchers", features: ["Advanced search & filters", "Saved searches & alerts", "Theses & dissertations access", "Journal article linking", "Data export for analysis", "ORCID integration ready"] }
+        ].map((item, i) => (
+          <div key={i} class="bg-white rounded-xl p-6 shadow-[0_2px_14px_rgba(0,0,0,.07)] hover:shadow-[0_8px_28px_rgba(0,0,0,.1)] transition-all">
+            <div class="icon-box-lg mb-4 icon-box-primary"><i class={`fas ${item.icon}`}></i></div>
+            <h4 class="font-heading font-bold text-xl text-mzc-navy mb-4">{item.title}</h4>
+            <ul class="space-y-2">
+              {item.features.map(f => <li key={f} class="flex items-center gap-2 text-sm text-[#8898aa]"><i class="fas fa-check text-xs text-mzc-teal"></i> {f}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

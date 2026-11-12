@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Departments | Morgan Zintec College</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#0C71C3;--teal:#7EBEC5;--navy:#1a2a4a;--light:#f5f7fa;--text:#333;--muted:#666;--border:#e0e0e0}
+body{font-family:'Manrope',sans-serif;color:var(--text);overflow-x:hidden;line-height:1.7;background:#fff}
+a{text-decoration:none;color:inherit}
+.top-bar{background:var(--blue);color:rgba(255,255,255,.85);font-size:12px;padding:7px 0}
+.tb-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.main-nav{background:var(--blue);position:sticky;top:0;z-index:1000;box-shadow:0 2px 14px rgba(0,0,0,.25)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;min-height:64px;position:relative}
+.logo{display:flex;align-items:center;gap:11px}
+.logo-badge{width:46px;height:46px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;color:var(--blue);font-family:'Playfair Display',serif;flex-shrink:0}
+.logo-text .n{font-weight:800;font-size:15px;color:#fff;line-height:1.15}
+.logo-text .s{font-size:10px;color:var(--teal);text-transform:uppercase;letter-spacing:1.5px}
+.nav-ul{display:flex;align-items:stretch;list-style:none}
+.nav-ul>li{position:relative}
+.nav-ul>li>a{display:flex;align-items:center;height:64px;padding:0 12px;font-size:12px;font-weight:700;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.5px;transition:all .2s;white-space:nowrap}
+.nav-ul>li>a:hover,.nav-ul>li.active>a{color:#fff;background:rgba(255,255,255,.15)}
+.dd{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:200px;box-shadow:0 8px 24px rgba(0,0,0,.12);border-top:3px solid var(--teal);list-style:none;z-index:200}
+.dd a{display:block;padding:10px 18px;font-size:13px;color:var(--text);border-bottom:1px solid #f0f0f0;transition:all .2s}
+.dd a:hover{background:var(--light);color:var(--blue);padding-left:24px}
+.nav-ul li:hover .dd{display:block}
+
+.page-hero{background:linear-gradient(135deg,var(--navy),var(--blue));padding:52px 0;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=40') center/cover;opacity:.08}
+.page-hero-inner{position:relative;z-index:2}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);font-weight:900;color:#fff;margin-bottom:8px}
+.breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65)}
+.breadcrumb a{color:var(--teal)}
+
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+.sec-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--teal);margin-bottom:10px}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:10px}
+.divider{width:48px;height:4px;background:var(--teal);margin:12px 0 20px}
+.sec-header{text-align:center;margin-bottom:48px}
+.sec-header .divider{margin:12px auto 20px}
+
+/* DEPT CARDS — ACADEMIC */
+.dept-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-bottom:48px}
+.dept-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:all .3s;border:1px solid var(--border)}
+.dept-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.12)}
+.dept-card-header{padding:28px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:flex-start;gap:18px}
+.dept-icon{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;border:2px solid var(--teal)}
+.dept-header-info h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:4px}
+.dept-header-info .hod-name{font-size:12px;color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.dept-card-body{padding:24px}
+.dept-card-body p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px}
+.section-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+.s-pill{background:var(--light);color:var(--navy);font-size:11px;font-weight:700;padding:4px 10px;border-radius:14px;border:1px solid var(--border)}
+.dept-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:9px 18px;border-radius:4px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.5px;transition:all .2s}
+.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:var(--navy)}
+.btn-teal{background:var(--teal);color:var(--navy)}.btn-teal:hover{background:var(--navy);color:#fff}
+.btn-outline{background:transparent;color:var(--blue);border:1px solid var(--blue)}.btn-outline:hover{background:var(--blue);color:#fff}
+
+/* NON-ACADEMIC CARD */
+.nonac-card{background:var(--light);border-radius:10px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.nonac-header{background:linear-gradient(135deg,#2a3a5a,#3a4a6a);padding:28px;display:flex;align-items:center;gap:18px}
+.nonac-icon{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;border:2px solid rgba(255,255,255,.3)}
+.nonac-header h3{font-family:'Playfair Display',serif;font-size:20px;color:#fff;margin-bottom:4px}
+.nonac-header p{font-size:12px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.5px}
+.nonac-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.nonac-item{padding:20px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;transition:background .2s}
+.nonac-item:hover{background:#fff}
+.nonac-item:nth-child(4n){border-right:none}
+.nonac-item:nth-last-child(-n+4){border-bottom:none}
+.nonac-item .ni-icon{font-size:24px;margin-bottom:8px}
+.nonac-item h5{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:4px}
+.nonac-item p{font-size:11px;color:var(--muted);line-height:1.5}
+.nonac-footer{padding:20px 24px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;border-top:2px solid var(--border)}
+
+/* STAFF MODAL SECTION */
+.quick-contacts{background:var(--navy);padding:48px 0}
+.qc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.qc-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:20px;text-align:center;transition:all .3s}
+.qc-card:hover{background:rgba(255,255,255,.13);transform:translateY(-3px)}
+.qc-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy));display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.2);margin:0 auto 10px;border:2px solid var(--teal)}
+.qc-card h5{font-size:13px;font-weight:800;color:#fff;margin-bottom:3px}
+.qc-card p{font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.qc-card .dept{font-size:11px;color:rgba(255,255,255,.45)}
+.btn-sm{display:inline-block;padding:5px 12px;font-size:10px;font-weight:700;text-transform:uppercase;border-radius:3px;transition:all .2s}
+.btn-teal-sm{background:var(--teal);color:var(--navy)}.btn-teal-sm:hover{background:#fff}
+
+/* FOOTER */
+footer{background:#0a1628;color:rgba(255,255,255,.7);margin-top:0}
+.footer-bottom{max-width:1200px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:1px solid rgba(255,255,255,.07)}
+.footer-bottom p,.footer-bottom a{font-size:12px;color:rgba(255,255,255,.35)}
+.footer-bottom a:hover{color:var(--teal)}
+.footer-main-content{max-width:1200px;margin:0 auto;padding:40px 20px 20px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.footer-col h4{color:var(--teal);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.footer-col ul a{font-size:13px;color:rgba(255,255,255,.5)}
+.footer-col ul a::before{content:'› ';color:var(--teal)}
+.footer-col ul a:hover{color:var(--teal)}
+.footer-brand-p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;margin-top:10px}
+
+@media(max-width:768px){.dept-grid{grid-template-columns:1fr}.nonac-grid{grid-template-columns:repeat(2,1fr)}.qc-grid{grid-template-columns:repeat(2,1fr)}.footer-main-content{grid-template-columns:1fr}}
+.nav-toggle-btn{display:none;position:absolute;right:20px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:8px;line-height:1}
+@media(max-width:768px){
+  .nav-toggle-btn{display:block}
+  .nav-ul{display:none!important;position:absolute;top:100%;left:0;right:0;background:var(--blue);flex-direction:column;align-items:stretch;max-height:calc(100vh - 64px);overflow-y:auto;box-shadow:0 12px 24px rgba(0,0,0,.25);z-index:500}
+  .nav-ul.mobile-open{display:flex!important}
+  .nav-ul>li>a{height:auto;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .dd{display:block!important;position:static;min-width:0;box-shadow:none;border-top:none;background:rgba(0,0,0,.15)}
+  .dd a{padding-left:34px;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.06)}
+  .dd a:hover{color:#fff;padding-left:38px}
+  .nav-ul li:hover .dd{display:block}
+}
+</style>
+</head>
+<body>
+<div class="top-bar"><div class="tb-inner"><span>✉ <a href="mailto:info@morganzintec.ac.zw">info@morganzintec.ac.zw</a> &nbsp;|&nbsp; 📞 +263 242 771 190 &nbsp;|&nbsp; 💬 WhatsApp: 0714 572 766</span></div></div>
+<nav class="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Morgan Zintec College Crest" style="height:44px;width:44px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))">
+      <div class="logo-text"><span class="n">Morgan Zintec College</span><span class="s">Education · Progress · Self Reliance</span></div>
+    </a>
+    <ul class="nav-ul">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li class="active"><a href="departments.html">Departments ▾</a>
+        <ul class="dd">
+          <li><a href="dept-humanities.html">Humanities</a></li>
+          <li><a href="dept-maths-science.html">Maths &amp; Sciences</a></li>
+          <li><a href="dept-research.html">Research &amp; Innovation</a></li>
+          <li><a href="dept-ecd.html">ECD</a></li>
+          <li><a href="dept-nonacademic.html">Non-Academic</a></li>
+        </ul>
+      </li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  <button class="nav-toggle-btn" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <h1>Academic Departments</h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> <span>Departments</span></div>
+  </div>
+</div>
+
+<!-- ACADEMIC DEPARTMENTS -->
+<section>
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-tag">Our Academic Structure</div>
+      <h2 class="sec-title">Academic Departments</h2>
+      <div class="divider"></div>
+      <p style="font-size:14px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.7">Morgan Zintec College is organised into four academic departments, each headed by a Head of Department and comprising multiple sections led by Lecturers-in-Charge.</p>
+    </div>
+
+    <div class="dept-grid">
+      <!-- HUMANITIES -->
+      <div class="dept-card">
+        <div class="dept-card-header">
+          <div class="dept-icon">📖</div>
+          <div class="dept-header-info">
+            <h3>Department of Humanities</h3>
+            <div class="hod-name">HOD: Mr B. Ziso</div>
+          </div>
+        </div>
+        <div class="dept-card-body">
+          <p>One of the largest departments at the college, comprising Languages, Social Sciences, and Contemporary subjects. Responsible for developing student teachers' soft skills, cultural competence and 21st century competencies.</p>
+          <p style="font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Sections:</p>
+          <div class="section-pills">
+            <span class="s-pill">ChiShona</span>
+            <span class="s-pill">IsiNdebele</span>
+            <span class="s-pill">English</span>
+            <span class="s-pill">FAREME</span>
+            <span class="s-pill">Heritage-Social Studies</span>
+            <span class="s-pill">Health &amp; Life Skills</span>
+            <span class="s-pill">NASS</span>
+          </div>
+          <div class="dept-btns">
+            <a href="dept-humanities.html" class="btn btn-blue">View Department</a>
+            <a href="dept-humanities.html#sections" class="btn btn-teal">Sections</a>
+            <a href="dept-humanities.html#staff" class="btn btn-outline">Staff Members</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATHS & SCIENCES -->
+      <div class="dept-card">
+        <div class="dept-card-header" style="background:linear-gradient(135deg,#1a3a2a,#2d6a4a)">
+          <div class="dept-icon" style="border-color:#7EBEC5">🔢</div>
+          <div class="dept-header-info">
+            <h3>Maths &amp; Sciences</h3>
+            <div class="hod-name">HOD: [To be updated]</div>
+          </div>
+        </div>
+        <div class="dept-card-body">
+          <p>Covers Mathematics, Science and related STEM areas preparing student teachers to effectively teach at the primary school level. Focuses on inquiry-based learning, practical skills and problem-solving pedagogy.</p>
+          <p style="font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Sections:</p>
+          <div class="section-pills">
+            <span class="s-pill">Mathematics PSB</span>
+            <span class="s-pill">Mathematics Main Subject</span>
+            <span class="s-pill">Science PSB</span>
+            <span class="s-pill">Science Main Subject</span>
+            <span class="s-pill">Environmental Science</span>
+          </div>
+          <div class="dept-btns">
+            <a href="dept-maths-science.html" class="btn btn-blue">View Department</a>
+            <a href="dept-maths-science.html" class="btn btn-teal">Sections</a>
+            <a href="dept-maths-science.html" class="btn btn-outline">Staff Members</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESEARCH & INNOVATION -->
+      <div class="dept-card">
+        <div class="dept-card-header" style="background:linear-gradient(135deg,#2a1a4a,#4a2d7a)">
+          <div class="dept-icon" style="border-color:#c9a84c">🔬</div>
+          <div class="dept-header-info">
+            <h3>Research &amp; Innovation</h3>
+            <div class="hod-name">HOD: [To be updated]</div>
+          </div>
+        </div>
+        <div class="dept-card-body">
+          <p>Drives the college's research agenda in alignment with Education 5.0. Oversees Theory of Education, Professional Foundations, Teaching Practice, Distance Education and the In-Service Programme.</p>
+          <p style="font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Sections:</p>
+          <div class="section-pills">
+            <span class="s-pill">Theory of Education</span>
+            <span class="s-pill">Professional Studies</span>
+            <span class="s-pill">Teaching Practice</span>
+            <span class="s-pill">Distance Education</span>
+            <span class="s-pill">In-Service Programme</span>
+          </div>
+          <div class="dept-btns">
+            <a href="dept-research.html" class="btn btn-blue">View Department</a>
+            <a href="dept-research.html" class="btn btn-teal">Sections</a>
+            <a href="dept-research.html" class="btn btn-outline">Staff Members</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ECD -->
+      <div class="dept-card">
+        <div class="dept-card-header" style="background:linear-gradient(135deg,#3a2a1a,#6a4a2a)">
+          <div class="dept-icon" style="border-color:#e67e22">🧒</div>
+          <div class="dept-header-info">
+            <h3>Early Childhood Development (ECD)</h3>
+            <div class="hod-name">HOD: [To be updated]</div>
+          </div>
+        </div>
+        <div class="dept-card-body">
+          <p>Dedicated to the training of early childhood educators through the Infant Course of the Diploma in Education and the ECD Short Course. Covers developmental psychology, ECD methodology and community-based programming.</p>
+          <p style="font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Sections:</p>
+          <div class="section-pills">
+            <span class="s-pill">ECD Methodology</span>
+            <span class="s-pill">Developmental Psychology</span>
+            <span class="s-pill">ECD Short Course</span>
+            <span class="s-pill">Infant Teaching Practice</span>
+            <span class="s-pill">Creative Arts in ECD</span>
+          </div>
+          <div class="dept-btns">
+            <a href="dept-ecd.html" class="btn btn-blue">View Department</a>
+            <a href="dept-ecd.html" class="btn btn-teal">Sections</a>
+            <a href="dept-ecd.html" class="btn btn-outline">Staff Members</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NON-ACADEMIC -->
+    <div class="sec-header" style="margin-top:12px">
+      <div class="sec-tag">Support Services</div>
+      <h2 class="sec-title">Non-Academic Departments</h2>
+      <div class="divider"></div>
+      <p style="font-size:14px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.7">The college's non-academic departments provide the institutional support, administrative infrastructure and student services that underpin academic excellence.</p>
+    </div>
+
+    <div class="nonac-card">
+      <div class="nonac-header">
+        <div class="nonac-icon">🏢</div>
+        <div>
+          <h3>Non-Academic Administration</h3>
+          <p>Support Services &amp; Administration</p>
+        </div>
+      </div>
+      <div class="nonac-grid">
+        <div class="nonac-item"><div class="ni-icon">👨‍💼</div><h5>Principal's Office</h5><p>Dr T.J. Zendah — College leadership and governance</p></div>
+        <div class="nonac-item"><div class="ni-icon">👤</div><h5>Vice Principal's Office</h5><p>Academic oversight and student affairs</p></div>
+        <div class="nonac-item"><div class="ni-icon">👥</div><h5>Human Resources</h5><p>Staff management, welfare and development</p></div>
+        <div class="nonac-item"><div class="ni-icon">💰</div><h5>Finance &amp; Accounts</h5><p>Bursar, accounts payable/receivable, fees</p></div>
+        <div class="nonac-item"><div class="ni-icon">📋</div><h5>Registry &amp; Records</h5><p>Student records, admissions, certifications</p></div>
+        <div class="nonac-item"><div class="ni-icon">📚</div><h5>Library</h5><p>Librarian Shuvisai — Resources and cataloguing</p></div>
+        <div class="nonac-item"><div class="ni-icon">💻</div><h5>ICT Department</h5><p>Systems, eLearning, networks and digital services</p></div>
+        <div class="nonac-item"><div class="ni-icon">🏠</div><h5>Estates &amp; Facilities</h5><p>Campus maintenance, accommodation, grounds</p></div>
+      </div>
+      <div class="nonac-footer">
+        <p style="font-size:13px;color:var(--muted)">For staff directory and contact details of non-academic departments:</p>
+        <div style="display:flex;gap:10px">
+          <a href="dept-nonacademic.html" class="btn btn-blue">View Section</a>
+          <a href="dept-nonacademic.html" class="btn btn-outline">Staff Members</a>
+          <a href="contact.html" class="btn btn-teal">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK HOD CONTACTS -->
+<div class="quick-contacts">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-tag" style="color:var(--teal)">Leadership</div>
+      <h2 class="sec-title" style="color:#fff">Heads of Department</h2>
+      <div class="divider" style="margin:12px auto 16px"></div>
+    </div>
+    <div class="qc-grid">
+      <div class="qc-card">
+        <div class="qc-avatar">👤</div>
+        <h5>Mr B. Ziso</h5>
+        <p>HOD</p>
+        <div class="dept">Humanities</div>
+        <div style="margin-top:10px"><a href="dept-humanities.html" class="btn-sm btn-teal-sm">View Dept</a></div>
+      </div>
+      <div class="qc-card">
+        <div class="qc-avatar" style="background:linear-gradient(135deg,#1a3a2a,#2d6a4a)">👤</div>
+        <h5>[To be updated]</h5>
+        <p>HOD</p>
+        <div class="dept">Maths &amp; Sciences</div>
+        <div style="margin-top:10px"><a href="dept-maths-science.html" class="btn-sm btn-teal-sm">View Dept</a></div>
+      </div>
+      <div class="qc-card">
+        <div class="qc-avatar" style="background:linear-gradient(135deg,#2a1a4a,#4a2d7a)">👤</div>
+        <h5>[To be updated]</h5>
+        <p>HOD</p>
+        <div class="dept">Research &amp; Innovation</div>
+        <div style="margin-top:10px"><a href="dept-research.html" class="btn-sm btn-teal-sm">View Dept</a></div>
+      </div>
+      <div class="qc-card">
+        <div class="qc-avatar" style="background:linear-gradient(135deg,#3a2a1a,#6a4a2a)">👤</div>
+        <h5>[To be updated]</h5>
+        <p>HOD</p>
+        <div class="dept">ECD</div>
+        <div style="margin-top:10px"><a href="dept-ecd.html" class="btn-sm btn-teal-sm">View Dept</a></div>
+      </div>
+      <div class="qc-card" style="border-color:rgba(255,255,255,.2)">
+        <div class="qc-avatar" style="background:rgba(255,255,255,.08)">🏢</div>
+        <h5>Administration</h5>
+        <p style="color:rgba(255,255,255,.45);font-size:10px">Support Services</p>
+        <div class="dept">Non-Academic</div>
+        <div style="margin-top:10px"><a href="dept-nonacademic.html" class="btn-sm btn-teal-sm">View Section</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main-content">
+    <div>
+      <div style="display:flex;align-items:center;gap:11px;margin-bottom:4px">
+        <img src="logo.png" alt="Morgan Zintec College" style="height:44px;width:44px;object-fit:contain;flex-shrink:0">
+        <div class="logo-text"><span class="n" style="color:#fff">Morgan Zintec College</span><span class="s">Education · Progress · Self Reliance</span></div>
+      </div>
+      <p class="footer-brand-p">Leading teacher education in Zimbabwe since 1981.</p>
+    </div>
+    <div class="footer-col"><h4>Departments</h4><ul>
+      <li><a href="dept-humanities.html">Humanities</a></li>
+      <li><a href="dept-maths-science.html">Maths &amp; Sciences</a></li>
+      <li><a href="dept-research.html">Research &amp; Innovation</a></li>
+      <li><a href="dept-ecd.html">ECD</a></li>
+      <li><a href="dept-nonacademic.html">Non-Academic</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>College</h4><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Morgan Zintec College. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('.nav-toggle-btn').addEventListener('click',()=>{
+  document.querySelector('.nav-ul').classList.toggle('mobile-open');
+});
+document.querySelectorAll('.nav-ul a').forEach(a=>{
+  a.addEventListener('click',()=>document.querySelector('.nav-ul').classList.remove('mobile-open'));
+});
+</script>
+</body>
+</html>

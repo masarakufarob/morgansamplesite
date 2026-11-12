@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const publications = (await getCollection('research')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout 
+  title="Research Publications" 
+  description="Browse research publications and academic outputs from Morgan Zintec College staff and students."
+  image="/images/og-research-publications.jpg"
+>
+  <Navbar currentPage="research" slot="header" />
+  
+  <div class="res-hero relative overflow-hidden" style="background: linear-gradient(135deg, #0A1224, #0C71C3); min-height: 400px;">
+    <div class="res-hero-inner max-w-7xl mx-auto px-6 relative z-10 pt-20 pb-16 text-center">
+      <div class="res-hero-tag inline-block mb-4 px-3.5 py-1 rounded text-xs font-bold uppercase tracking-wider" style="background: rgba(126,190,197,.15); color: #7EBEC5; border: 1px solid rgba(126,190,197,.3);">Knowledge Output</div>
+      <h1 class="font-display font-black text-4xl md:text-5xl text-white leading-tight mb-4">Research Publications</h1>
+      <p class="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">Explore academic publications, conference papers, and research outputs from Morgan Zintec College.</p>
+    </div>
+  </div>
+
+  <section class="py-16" style="background: #0A1224;">
+    <div class="container">
+      {publications.length > 0 ? (
+        <div class="pub-list flex flex-col gap-5">
+          {publications.map((pub, i) => (
+            <article class="pub-card p-6 rounded-xl transition-all duration-200 hover:border-white/15" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: start;">
+              <div class="pub-num w-12 h-12 rounded-lg flex items-center justify-center text-lg font-extrabold flex-shrink-0" style="background: rgba(12,113,195,.3); color: #7EBEC5;">{String(i + 1).padStart(2, '0')}</div>
+              <div class="pub-meta">
+                <div class="pub-type text-xs font-bold uppercase tracking-wider mb-1" style="color: #7EBEC5;">{pub.data.type}</div>
+                <h3 class="font-heading font-bold text-lg text-white mb-2 leading-snug">{pub.data.title}</h3>
+                <p class="text-sm text-white/50 leading-relaxed mb-3">{pub.data.authors.join(', ')} · {pub.data.department} · {pub.data.date.toLocaleDateString('en-GB', { year: 'numeric' })}</p>
+                <div class="pub-tags flex flex-wrap gap-2 mb-3">
+                  {pub.data.keywords.map(kw => <span key={kw} class="pub-tag px-2 py-1 rounded text-[10px] font-semibold" style="background: rgba(126,190,197,.15); color: #7EBEC5;">{kw}</span>)}
+                </div>
+                {pub.data.url && (
+                  <a href={pub.data.url} class="inline-flex items-center gap-1 text-sm text-mzc-teal hover:text-mzc-teal/70 transition-colors">
+                    <i class="fas fa-external-link-alt text-xs"></i> View Publication
+                  </a>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16">
+          <div class="text-6xl mb-4">🔬</div>
+          <h3 class="font-display text-2xl font-bold text-white mb-2">No Publications Yet</h3>
+          <p class="text-white/55 mb-6">Research publications will appear here once added through the CMS.</p>
+          <a href="/admin/" class="btn btn-teal btn-round"><i class="fas fa-edit mr-2"></i> Open CMS to Add Publications</a>
+        </div>
+      )}
+      
+      <p class="text-xs text-white/35 mt-8 italic text-center">* Full publication records are available via the <a href="/library/" class="text-mzc-teal hover:underline">Koha Library Catalogue</a></p>
+    </div>
+  </section>
+
+  <Footer variant="research" slot="footer" />
+</BaseLayout>

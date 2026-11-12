@@ -1,0 +1,386 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import Hero from '@/components/Hero.astro';
+import FeatureCard from '@/components/FeatureCard.astro';
+import PortalCard from '@/components/PortalCard.astro';
+---
+
+<BaseLayout 
+  title="Home" 
+  description="Morgan Zintec College - Leading teacher education in Zimbabwe since 1981. Producing innovative and transformative educators for sustainable industrialization through the 3-3-3 model."
+>
+  <Navbar currentPage="" slot="header" />
+  
+  <!-- HERO -->
+  <Hero
+    title="Educating Zimbabwe's\nFuture Teachers"
+    badge="Morgan Zintec College — Est. 1981"
+    badgeIcon="fa-star"
+    description="A reputable college of education producing innovative and transformative educators for sustainable industrialization through the 3-3-3 model."
+    primaryCTA={{ label: "Discover More", href: "/about/", icon: "fa-info-circle" }}
+    secondaryCTA={{ label: "Our Programmes", href: "/academics/", icon: "fa-graduation-cap" }}
+    stats={[
+      { number: "1981", label: "Established" },
+      { number: "840+", label: "In-Service Grads" },
+      { number: "660+", label: "ECD Grads" }
+    ]}
+    image="/images/campus.jpg"
+    imageAlt="Morgan Zintec College Aerial View"
+    variant="home"
+  />
+
+  <!-- PORTALS -->
+  <section class="bg-white py-16">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Quick Access</div>
+        <h2 class="section-title">College Portals & Systems</h2>
+        <p class="section-sub">Everything you need, one click away.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <PortalCard
+          title="Student Portal"
+          description="Access your academic records, timetables, results and registration through the Student Management System."
+          icon="fa-user-graduate"
+          href="https://morgan.easylearn.co.zw"
+          buttonText="Login to Portal"
+          buttonIcon="fa-external-link-alt"
+          gradient="blue"
+        />
+        <PortalCard
+          title="eLearning Portal"
+          description="Join virtual classrooms, access course materials, submit assignments and interact with lecturers online."
+          icon="fa-chalkboard-teacher"
+          href="https://online.morganzintec.ac.zw"
+          buttonText="Access eLearning"
+          buttonIcon="fa-play"
+          gradient="teal"
+        />
+        <PortalCard
+          title="Library — Koha"
+          description="Browse the college library catalogue, search holdings, reserve books and access digital resources via Koha."
+          icon="fa-book"
+          href="/library/"
+          buttonText="Open Catalogue"
+          buttonIcon="fa-search"
+          gradient="navy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT STRIP -->
+  <section class="bg-[#F8F9FE] py-20">
+    <div class="container">
+      <div class="grid lg:grid-cols-[1fr_1.6fr] gap-12 items-center">
+        <div class="relative">
+          <div class="aspect-[3/4] bg-gradient-to-br from-mzc-navy to-mzc-blue rounded-2xl overflow-hidden flex items-center justify-center text-9xl text-white/15">
+            🏛️
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-mzc-blue/95 to-transparent p-6 text-center rounded-b-2xl">
+            <h5 class="font-heading font-extrabold text-white mb-1">Dr. T.J. Zendah</h5>
+            <p class="text-mzc-teal text-xs uppercase tracking-wider">Principal, Morgan Zintec College</p>
+          </div>
+        </div>
+        <div>
+          <div class="section-label">Who We Are</div>
+          <h2 class="section-title">About Morgan Zintec College</h2>
+          <p class="text-sm text-[#8898aa] leading-relaxed mb-4 max-w-2xl">
+            Established in 1981 as a rapid response to Zimbabwe's teacher shortage, Morgan Zintec College has evolved through several training models — 1:10:1, 2-8-2, 2-5-2 — and now operates the current <strong class="text-mzc-blue">3-3-3 Model</strong> adopted in September 2019.
+          </p>
+          <p class="text-sm text-[#8898aa] leading-relaxed mb-6 max-w-2xl">
+            Aligned with Zimbabwe's Vision 2030 and Education 5.0, the college integrates heritage, innovation and industrialization to produce 21st century educators equipped with both hard and soft skills.
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="p-5 rounded-xl bg-gradient-to-br from-mzc-navy to-mzc-blue text-white">
+              <h5 class="text-xs font-bold uppercase tracking-wider text-mzc-teal/75 mb-2">Vision</h5>
+              <p class="text-sm leading-relaxed opacity-90">A reputable college of education in the production of innovative and transformative educators for sustainable industrialization.</p>
+            </div>
+            <div class="p-5 rounded-xl bg-gradient-to-br from-mzc-teal to-[#5AB8C4] text-white">
+              <h5 class="text-xs font-bold uppercase tracking-wider text-white/80 mb-2">Mission</h5>
+              <p class="text-sm leading-relaxed opacity-90">To produce skilled 21st century educators using heritage-based philosophy for inclusive and equitable quality education.</p>
+            </div>
+          </div>
+          
+          <div class="grid md:grid-cols-3 gap-2 mb-6">
+            {[
+              { title: "Collaboration", desc: "Team action for goods & services" },
+              { title: "Innovation", desc: "Ideas into competitive outputs" },
+              { title: "Ubuntu/Unhu", desc: "Honest, just & trustworthy" },
+              { title: "Teamwork", desc: "Cooperation & solidarity" },
+              { title: "Equity", desc: "Just, fair and impartial" },
+              { title: "Patriotism", desc: "Belonging & responsibility" }
+            ].map((val, i) => (
+              <div key={i} class="val-pill bg-white rounded-lg p-4 border-l-3 border-mzc-teal shadow-[0_0_2rem_0_rgba(136,152,170,.1)]">
+                <h6 class="text-xs font-extrabold text-mzc-blue uppercase tracking-wider mb-1">{val.title}</h6>
+                <p class="text-[11px] text-[#8898aa] leading-relaxed">{val.desc}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div class="flex flex-wrap gap-3">
+            <a href="/about/" class="btn btn-primary btn-round"><i class="fas fa-info-circle mr-2"></i> Read More</a>
+            <a href="/about/#principal" class="btn btn-neutral btn-round"><i class="fas fa-user-tie mr-2"></i> Principal's Desk</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMICS -->
+  <section class="bg-gradient-to-br from-[#F8F9FE] to-[#EEF0F8] py-20">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Academic Offering</div>
+        <h2 class="section-title">Programmes & Courses</h2>
+        <p class="section-sub">Nationally accredited qualifications and specialist short courses preparing the next generation of Zimbabwean educators.</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="prog-tab-nav flex bg-white rounded-lg p-1 gap-1 shadow-[0_0_2rem_0_rgba(136,152,170,.15)] mb-10" id="progTabs">
+          <button class="prog-tab-btn flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold uppercase tracking-wider text-[#8898aa] bg-transparent rounded-md transition-all font-heading" data-tab="educ">
+            <i class="fas fa-graduation-cap"></i> Diploma in Education
+          </button>
+          <button class="prog-tab-btn flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold uppercase tracking-wider text-[#8898aa] bg-transparent rounded-md transition-all font-heading" data-tab="ict">
+            <i class="fas fa-laptop-code"></i> Diploma in Applied ICT
+          </button>
+          <button class="prog-tab-btn flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold uppercase tracking-wider text-[#8898aa] bg-transparent rounded-md transition-all font-heading" data-tab="short">
+            <i class="fas fa-certificate"></i> Short Courses
+          </button>
+        </div>
+        
+        <!-- Education Tab -->
+        <div id="educ" class="prog-tab-content">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="prog-argon-card bg-white rounded-xl p-6 border-l-4 border-mzc-blue shadow-[0_0_2rem_0_rgba(136,152,170,.12)] relative overflow-hidden transition-all hover:translate-x-1 hover:shadow-[0_15px_35px_rgba(50,50,93,.1)]">
+              <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-mzc-blue/8 to-transparent rounded-tr-xl rounded-bl-[80px]" />
+              <span class="prog-tag inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 bg-mzc-blue/10 text-mzc-blue">Junior Course</span>
+              <h4 class="font-heading font-bold text-[#32325d] mb-2">Diploma in Education (Primary) — Junior</h4>
+              <p class="text-sm text-[#8898aa] leading-relaxed mb-3">Prepares student teachers for Junior level primary education (Grades 4–7) covering core subject areas, methodology and extended teaching practice.</p>
+              <ul class="text-sm text-[#8898aa] leading-loose list-disc list-inside space-y-1 mb-4">
+                <li>Theory of Education & Professional Foundations</li>
+                <li>Subject Specialisation (one main subject)</li>
+                <li>Professional Studies A, B, C & D</li>
+                <li>3 Terms Teaching Practice in primary schools</li>
+              </ul>
+              <a href="/academics/" class="btn btn-primary btn-sm btn-round">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+            <div class="prog-argon-card bg-white rounded-xl p-6 border-l-4 border-mzc-teal shadow-[0_0_2rem_0_rgba(136,152,170,.12)] relative overflow-hidden transition-all hover:translate-x-1 hover:shadow-[0_15px_35px_rgba(50,50,93,.1)]">
+              <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-mzc-teal/10 to-transparent rounded-tr-xl rounded-bl-[80px]" />
+              <span class="prog-tag inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 bg-mzc-teal/15 text-mzc-teal">Infant Course</span>
+              <h4 class="font-heading font-bold text-[#32325d] mb-2">Diploma in Education (Primary) — Infant</h4>
+              <p class="text-sm text-[#8898aa] leading-relaxed mb-3">Prepares student teachers for Infant level (ECD–Grade 3) focusing on early literacy, numeracy and developmentally appropriate pedagogy.</p>
+              <ul class="text-sm text-[#8898aa] leading-loose list-disc list-inside space-y-1 mb-4">
+                <li>Early Childhood Development Foundations</li>
+                <li>Infant Methodology & Subject Specialisation</li>
+                <li>Professional Studies A, B, C & D</li>
+                <li>3 Terms Teaching Practice in infant schools</li>
+              </ul>
+              <a href="/academics/" class="btn btn-secondary btn-sm btn-round">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ICT Tab -->
+        <div id="ict" class="prog-tab-content hidden">
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "Cyber Security", desc: "Network security, ethical hacking, data protection and cybersecurity frameworks relevant to Zimbabwe's digital landscape.", color: "border-mzc-blue", tag: "Specialisation", tagColor: "bg-mzc-blue/10 text-mzc-blue", btn: "btn-primary" },
+              { title: "Telecommunications", desc: "Telecommunications systems, networking infrastructure, signal processing and modern communication technologies.", color: "border-mzc-teal", tag: "Specialisation", tagColor: "bg-mzc-teal/15 text-mzc-teal", btn: "btn-secondary" },
+              { title: "Software Engineering", desc: "Software development lifecycle, programming languages, application design, systems analysis and project management.", color: "border-[#2DCE89]", tag: "Specialisation", tagColor: "bg-[#2DCE89]/10 text-[#2DCE89]", btn: "btn btn-success" },
+              { title: "Hardware Engineering", desc: "Computer hardware assembly, maintenance, diagnostics, embedded systems and digital electronics.", color: "border-[#FB6340]", tag: "Specialisation", tagColor: "bg-[#FB6340]/10 text-[#FB6340]", btn: "btn btn-warning" }
+            ].map((item, i) => (
+              <div key={i} class={`prog-argon-card bg-white rounded-xl p-6 border-l-4 ${item.color} shadow-[0_0_2rem_0_rgba(136,152,170,.12)] relative overflow-hidden transition-all hover:translate-x-1 hover:shadow-[0_15px_35px_rgba(50,50,93,.1)]`}>
+                <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-mzc-blue/8 to-transparent rounded-tr-xl rounded-bl-[80px]" />
+                <span class={`prog-tag inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 ${item.tagColor}`}>{item.tag}</span>
+                <h4 class="font-heading font-bold text-[#32325d] mb-2">{item.title}</h4>
+                <p class="text-sm text-[#8898aa] leading-relaxed mb-4">{item.desc}</p>
+                <a href="/academics/" class={`btn ${item.btn} btn-sm btn-round`}>Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Short Courses Tab -->
+        <div id="short" class="prog-tab-content hidden">
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "ECD Short Course", desc: "Certificate programme equipping ECD centre facilitators with knowledge and skills in early childhood development. <strong>660+ graduates</strong> to date.", tag: "6 Months", tagColor: "bg-mzc-blue/10 text-mzc-blue", btn: "btn-primary" },
+              { title: "Diploma in Supervision & ICT", desc: "In-service programme for school mentors. Covers supervision, ICT, counselling and mentoring. <strong>840+ graduates</strong> since 2014.", tag: "4 Terms", tagColor: "bg-mzc-teal/15 text-mzc-teal", btn: "btn-secondary" },
+              { title: "Diploma in Chinese Language", desc: "Introductory to intermediate Chinese language programme, part of the college's international education and cultural exchange offering.", tag: "Certificate", tagColor: "bg-[#2DCE89]/10 text-[#2DCE89]", btn: "btn btn-success" },
+              { title: "Professional Development", desc: "Tailor-made short courses for educators, administrators and community members. Contact the college for the current schedule.", tag: "Flexible", tagColor: "bg-[#FB6340]/10 text-[#FB6340]", btn: "btn btn-warning" }
+            ].map((item, i) => (
+              <div key={i} class={`prog-argon-card bg-white rounded-xl p-6 border-l-4 ${item.tagColor.replace('bg-', 'border-').replace('/10', '').replace('text-', '')} shadow-[0_0_2rem_0_rgba(136,152,170,.12)] relative overflow-hidden transition-all hover:translate-x-1 hover:shadow-[0_15px_35px_rgba(50,50,93,.1)]`}>
+                <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-mzc-blue/8 to-transparent rounded-tr-xl rounded-bl-[80px]" />
+                <span class={`prog-tag inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 ${item.tagColor}`}>{item.tag}</span>
+                <h4 class="font-heading font-bold text-[#32325d] mb-2">{item.title}</h4>
+                <p class="text-sm text-[#8898aa] leading-relaxed mb-4">{item.desc}</p>
+                <a href="/academics/" class={`btn ${item.btn} btn-sm btn-round`}>Learn More</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="/academics/" class="btn btn-primary btn-round btn-lg">
+          <i class="fas fa-th-list mr-2"></i> View All Academic Programmes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <div class="stats-band bg-gradient-to-br from-mzc-navy via-mzc-blue to-mzc-navy py-16 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"20\" cy=\"20\" r=\"2\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"80\" cy=\"80\" r=\"3\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"50\" cy=\"10\" r=\"1.5\" fill=\"rgba(255,255,255,0.05)\"/></svg>');" />
+    <div class="container relative z-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-0">
+        <div class="stat-argon text-center p-6 border-r border-white/10 last:border-0">
+          <div class="stat-argon-icon text-3xl text-white/20 mb-3"><i class="fas fa-calendar-alt"></i></div>
+          <div class="stat-argon-number font-display font-black text-4xl text-white leading-none mb-1">1981</div>
+          <div class="stat-argon-label text-xs text-white/55 uppercase tracking-wider">Year Established</div>
+        </div>
+        <div class="stat-argon text-center p-6 border-r border-white/10">
+          <div class="stat-argon-icon text-3xl text-white/20 mb-3"><i class="fas fa-user-check"></i></div>
+          <div class="stat-argon-number font-display font-black text-4xl text-white leading-none mb-1">840+</div>
+          <div class="stat-argon-label text-xs text-white/55 uppercase tracking-wider">In-Service Graduates</div>
+        </div>
+        <div class="stat-argon text-center p-6 border-r border-white/10">
+          <div class="stat-argon-icon text-3xl text-white/20 mb-3"><i class="fas fa-child"></i></div>
+          <div class="stat-argon-number font-display font-black text-4xl text-white leading-none mb-1">660+</div>
+          <div class="stat-argon-label text-xs text-white/55 uppercase tracking-wider">ECD Graduates</div>
+        </div>
+        <div class="stat-argon text-center p-6">
+          <div class="stat-argon-icon text-3xl text-white/20 mb-3"><i class="fas fa-sync-alt"></i></div>
+          <div class="stat-argon-number font-display font-black text-4xl text-white leading-none mb-1">3-3-3</div>
+          <div class="stat-argon-label text-xs text-white/55 uppercase tracking-wider">Current Training Model</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HODs -->
+  <section class="hod-section relative overflow-hidden py-20 bg-gradient-to-br from-mzc-navy to-mzc-blue">
+    <div class="absolute w-[500px] h-[500px] rounded-full bg-white/4 top-[-150px] right-[-100px]" />
+    <div class="absolute w-[300px] h-[300px] rounded-full bg-white/4 bottom-[-100px] left-[-50px]" />
+    <div class="container relative z-10">
+      <div class="section-header">
+        <div class="section-label text-mzc-teal">Academic Structure</div>
+        <h2 class="section-title text-white">Heads of Department</h2>
+        <p class="section-sub text-white/60 max-w-2xl mx-auto">Each department is led by a Head of Department. Click a department to explore its sections and staff members.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+        {[
+          { name: "Humanities", hod: "Mr B. Ziso", icon: "fa-book-open", gradient: "from-mzc-blue to-[#1C90D8]", href: "/departments/humanities/", color: "border-white/20" },
+          { name: "Maths & Sciences", hod: "[To be updated]", icon: "fa-calculator", gradient: "from-[#2DCE89] to-[#2DCECC]", href: "/departments/maths-science/", color: "border-white/20" },
+          { name: "Research & Innovation", hod: "[To be updated]", icon: "fa-flask", gradient: "from-[#11CDEF] to-[#1171EF]", href: "/departments/research-innovation/", color: "border-white/20" },
+          { name: "ECD", hod: "[To be updated]", icon: "fa-child", gradient: "from-[#FB6340] to-[#FBB140]", href: "/departments/ecd/", color: "border-white/20" },
+          { name: "Non-Academic", hod: "Support Services", icon: "fa-building", gradient: "from-white/12 to-white/8", href: "/departments/non-academic/", color: "border-white/25" }
+        ].map((dept, i) => (
+          <div key={i} class={`hod-argon-card backdrop-blur-md border transition-all duration-300 cursor-pointer p-6 text-center hover:bg-white/16 hover:-translate-y-1.5 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(0,0,0,.2)] ${dept.color}`}>
+            <div class={`hod-avatar w-18 h-18 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl border-2 border-white/30 relative overflow-hidden font-black ${dept.gradient}`}>
+              <i class={`fas ${dept.icon}`}></i>
+            </div>
+            <h4 class="font-heading font-extrabold text-white mb-1">{dept.name}</h4>
+            <div class="text-xs text-mzc-teal uppercase tracking-wider font-semibold mb-2">Department</div>
+            <div class="text-xs text-white/50 mb-4">HOD: {dept.hod}</div>
+            <div class="flex flex-col gap-2">
+              <a href={dept.href} class="hod-btn px-3 py-2 text-xs font-bold uppercase tracking-wider rounded-md text-center font-heading bg-mzc-teal text-mzc-navy hover:bg-white hover:text-mzc-navy transition-all">View Department</a>
+              {dept.name !== 'Non-Academic' && (
+                <>
+                  <a href={dept.href + '#sections'} class="hod-btn px-3 py-2 text-xs font-bold uppercase tracking-wider rounded-md text-center font-heading bg-white/10 text-white/80 border border-white/20 hover:bg-white/20 hover:text-white transition-all">Sections</a>
+                  <a href={dept.href + '#staff'} class="hod-btn px-3 py-2 text-xs font-bold uppercase tracking-wider rounded-md text-center font-heading bg-white/10 text-white/80 border border-white/20 hover:bg-white/20 hover:text-white transition-all">Staff Members</a>
+                </>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- VP DESK -->
+  <section class="bg-white py-20">
+    <div class="container">
+      <div class="grid lg:grid-cols-[1fr_1.8fr] gap-12 items-center">
+        <div class="text-center">
+          <div class="w-40 h-40 rounded-full mx-auto mb-5 bg-gradient-to-br from-mzc-teal to-[#5AB8C4] flex items-center justify-center text-8xl text-white/25 shadow-[0_15px_35px_rgba(50,50,93,.1),0_5px_15px_rgba(0,0,0,.07)] border-4 border-white/80">
+            <i class="fas fa-user"></i>
+          </div>
+          <h5 class="font-heading text-lg font-extrabold text-[#32325d] mb-1">Vice Principal</h5>
+          <p class="text-sm text-[#8898aa]">Morgan Zintec College</p>
+          <a href="/about/#vp" class="btn btn-secondary btn-round btn-sm mt-4 inline-block">Read Full Message</a>
+        </div>
+        <div>
+          <div class="section-label">From the Vice Principal</div>
+          <h2 class="section-title">A College of Excellence</h2>
+          <div class="text-sm font-italic text-[#32325d] leading-relaxed border-l-4 border-mzc-teal pl-5 bg-[#F8F9FE] rounded-r-lg py-4 mb-5">
+            "Morgan Zintec College strives to be a leading college of education in producing innovative and transformative educators for sustainable industrialization. Our core values of patriotism — a strong sense of belonging, identity, responsibility and accountability — guide everything we do."
+          </div>
+          <p class="text-sm text-[#8898aa] leading-relaxed mb-5">
+            The College welcomes, nurtures and trains all qualifying people into effective primary school teachers regardless of gender, physical, intellectual, social, emotional or linguistic background. As the Morgan family we encourage cooperation, joint effort, solidarity and fellowship — guided by equity.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/about/#vp" class="btn btn-secondary btn-round"><i class="fas fa-arrow-right mr-2"></i> Full Message</a>
+            <a href="/about/" class="btn btn-neutral btn-round"><i class="fas fa-university mr-2"></i> About the College</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH CTA -->
+  <div class="research-cta relative overflow-hidden py-20 bg-gradient-to-br from-[#0D1F3C] to-mzc-blue text-center">
+    <div class="absolute w-[600px] h-[600px] rounded-full bg-white/4 top-[-200px] right-[-100px] pointer-events-none" />
+    <div class="absolute w-[400px] h-[400px] rounded-full bg-white/4 bottom-[-150px] left-[-100px] pointer-events-none" />
+    <div class="container relative z-10">
+      <div class="section-label text-mzc-teal mb-3">Knowledge & Innovation</div>
+      <h2 class="font-display font-black text-3xl md:text-4xl lg:text-5xl text-white mb-3">Research & Innovation Portal</h2>
+      <p class="text-base text-white/75 max-w-2xl mx-auto leading-relaxed mb-8">Explore Morgan Zintec College's research publications, innovation projects and academic resources. Access the Library Catalogue through our Koha Integrated Library System.</p>
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <a href="/research/" class="btn btn-white btn-round btn-lg"><i class="fas fa-flask mr-2"></i> Visit Research Portal</a>
+        <a href="/library/" class="btn btn-outline-white btn-round btn-lg"><i class="fas fa-book mr-2"></i> Library Catalogue (Koha)</a>
+      </div>
+      <div class="koha-url-badge inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-lg px-5 py-3 text-white/75 text-sm backdrop-blur-sm mx-auto">
+        <i class="fas fa-network-wired text-mzc-teal"></i>
+        Koha Library Catalogue is available on the campus network.
+        <span class="text-xs text-white/40">Off-campus? See the Library page for access details.</span>
+      </div>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  // Programme tabs
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.prog-tab-btn');
+    const contents = document.querySelectorAll('.prog-tab-content');
+    
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        tabs.forEach(b => b.classList.remove('active'));
+        contents.forEach(c => c.classList.add('hidden'));
+        btn.classList.add('active');
+        document.getElementById(tab)?.classList.remove('hidden');
+      });
+    });
+  });
+</script>
+
+<style>
+  .prog-tab-btn.active {
+    @apply bg-gradient-to-r from-mzc-blue to-[#1C90D8] text-white shadow-[0_4px_6px_rgba(50,50,93,.11),0_1px_3px_rgba(0,0,0,.08)];
+  }
+  .prog-tab-content {
+    @apply hidden;
+  }
+  .prog-tab-content:not(.hidden) {
+    @apply block;
+  }
+</style>

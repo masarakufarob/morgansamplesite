@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.data.date.valueOf());
+---
+
+<BaseLayout 
+  title="News & Blog" 
+  description="Latest news, announcements, and updates from Morgan Zintec College."
+  image="/images/og-blog.jpg"
+>
+  <Navbar currentPage="blog" slot="header" />
+  
+  <div class="res-hero relative overflow-hidden" style="background: linear-gradient(135deg, #1A2A4A, #0C71C3); min-height: 400px;">
+    <div class="res-hero-inner max-w-7xl mx-auto px-6 relative z-10 pt-20 pb-16 text-center">
+      <div class="res-hero-tag inline-block mb-4 px-3.5 py-1 rounded text-xs font-bold uppercase tracking-wider" style="background: rgba(126,190,197,.15); color: #7EBEC5; border: 1px solid rgba(126,190,197,.3);">News & Updates</div>
+      <h1 class="font-display font-black text-4xl md:text-5xl text-white leading-tight mb-4">College News & Blog</h1>
+      <p class="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">Stay updated with the latest announcements, events, and insights from Morgan Zintec College.</p>
+    </div>
+  </div>
+
+  <section class="py-16 bg-white">
+    <div class="container">
+      {posts.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map(post => (
+            <article class="bg-white rounded-xl overflow-hidden shadow-[0_2px_14px_rgba(0,0,0,.07)] hover:shadow-[0_12px_36px_rgba(0,0,0,.12)] transition-all border border-gray-100">
+              {post.data.image && (
+                <img src={post.data.image} alt={post.data.title} class="w-full h-48 object-cover" />
+              )}
+              <div class="p-6">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  {post.data.tags.map(tag => (
+                    <span key={tag} class="px-2 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-mzc-blue/10 text-mzc-blue">{tag}</span>
+                  ))}
+                </div>
+                <h2 class="font-display text-xl font-bold text-mzc-navy mb-2 leading-snug"><a href={`/blog/${post.slug}/`} class="hover:text-mzc-blue transition-colors">{post.data.title}</a></h2>
+                <p class="text-sm text-[#8898aa] leading-relaxed mb-4 line-clamp-3">{post.data.description}</p>
+                <div class="flex items-center justify-between text-xs text-[#8898aa]">
+                  <span>{post.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                  <a href={`/blog/${post.slug}/`} class="text-mzc-blue hover:underline font-semibold">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16">
+          <div class="text-6xl mb-4">📰</div>
+          <h3 class="font-display text-2xl font-bold text-mzc-navy mb-2">No Posts Yet</h3>
+          <p class="text-[#8898aa] mb-6">Blog posts will appear here once published through the CMS.</p>
+          <a href="/admin/" class="btn btn-primary btn-round"><i class="fas fa-edit mr-2"></i> Open CMS to Create Posts</a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

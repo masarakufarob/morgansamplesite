@@ -1,0 +1,248 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import Hero from '@/components/Hero.astro';
+---
+
+<BaseLayout 
+  title="About Us" 
+  description="Learn about Morgan Zintec College - our history, leadership, vision, mission, core values, and advisory council. Established in 1981, producing innovative educators for Zimbabwe."
+  image="/images/og-about.jpg"
+>
+  <Navbar currentPage="about" slot="header" />
+  
+  <Hero
+    title="About Morgan Zintec College"
+    variant="page"
+    primaryCTA={{ label: "Principal's Desk", href: "#principal", icon: "fa-user-tie" }}
+    secondaryCTA={{ label: "Our History", href: "#history", icon: "fa-history" }}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container">
+      <div class="grid lg:grid-cols-[240px_1fr] gap-10">
+        <!-- Sidebar -->
+        <aside class="sidebar bg-white rounded-lg overflow-hidden shadow-[0_2px_14px_rgba(0,0,0,.07)] sticky top-24 lg:sticky lg:top-24">
+          <div class="bg-mzc-blue text-white px-5 py-3.5 text-xs font-extrabold uppercase tracking-widest">About Us</div>
+          <ul class="list-none">
+            <li><a href="#principal" class="flex items-center gap-2 px-5 py-3 text-sm text-[#333] border-b border-gray-100 hover:bg-[#F5F7FA] hover:text-mzc-blue hover:pl-6 font-semibold transition-all"><i class="fas fa-angle-right text-mzc-teal"></i> Principal's Desk</a></li>
+            <li><a href="#vp" class="flex items-center gap-2 px-5 py-3 text-sm text-[#333] border-b border-gray-100 hover:bg-[#F5F7FA] hover:text-mzc-blue hover:pl-6 font-semibold transition-all"><i class="fas fa-angle-right text-mzc-teal"></i> Vice Principal's Desk</a></li>
+            <li><a href="#history" class="flex items-center gap-2 px-5 py-3 text-sm text-[#333] border-b border-gray-100 hover:bg-[#F5F7FA] hover:text-mzc-blue hover:pl-6 font-semibold transition-all"><i class="fas fa-angle-right text-mzc-teal"></i> History</a></li>
+            <li><a href="#vision" class="flex items-center gap-2 px-5 py-3 text-sm text-[#333] border-b border-gray-100 hover:bg-[#F5F7FA] hover:text-mzc-blue hover:pl-6 font-semibold transition-all"><i class="fas fa-angle-right text-mzc-teal"></i> Vision & Mission</a></li>
+            <li><a href="#values" class="flex items-center gap-2 px-5 py-3 text-sm text-[#333] border-b border-gray-100 hover:bg-[#F5F7FA] hover:text-mzc-blue hover:pl-6 font-semibold transition-all"><i class="fas fa-angle-right text-mzc-teal"></i> Core Values</a></li>
+            <li><a href="#advisory" class="flex items-center gap-2 px-5 py-3 text-sm text-[#333] hover:bg-[#F5F7FA] hover:text-mzc-blue hover:pl-6 font-semibold transition-all"><i class="fas fa-angle-right text-mzc-teal"></i> Advisory Council</a></li>
+          </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+          <!-- PRINCIPAL'S DESK -->
+          <section id="principal" class="content-section mb-16 scroll-mt-24">
+            <div class="section-label">Leadership</div>
+            <h2 class="section-title font-display">Principal's Desk</h2>
+            <div class="divider divider-center mb-8"></div>
+            
+            <div class="grid md:grid-cols-[200px_1fr] gap-8 items-start mb-8">
+              <div class="aspect-square bg-gradient-to-br from-mzc-navy to-mzc-blue rounded-lg flex items-center justify-center text-7xl text-white/15">
+                👤
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-bold text-mzc-navy mb-1">Dr. T.J. Zendah</h3>
+                <p class="text-xs font-bold text-mzc-blue uppercase tracking-wider mb-4">Principal</p>
+                <div class="prose text-sm text-[#666] leading-relaxed border-l-4 border-mzc-teal pl-4 bg-[#F5F7FA] rounded-r-lg py-3 mb-4 italic">
+                  "The Morgan ZINTEC branded teacher should harness artificial intelligence as a pedagogic tool rather than be replaced by such. Education remains a socially interactive process, hence the perpetual significance of the teacher in the 21st century classroom."
+                </div>
+                <div class="prose text-sm text-[#666] leading-relaxed space-y-3">
+                  <p>Morgan Zintec College was brought into effect in 1981 as a rapid response to the acute shortage of teachers created by the democratization of education. The institution has been developing quality human capital in its General Course and Early Childhood Development (ECD) programmes, having adopted a conventional approach guided by the mission to produce primary school teachers with requisite skills for the community.</p>
+                  <p>Morgan Zintec College draws from Zimbabwe's Vision 2030 — "towards a prosperous and empowered upper middle-income society by 2030." The College is informed by the value of responsiveness of Public Institutions, which expects that public servants deliver mandated services according to public demand. The public currently demands teachers with competencies, skills and attitudes to impart hard and soft skills that will transform life.</p>
+                  <p>The institution in its bid to deliver lifelong education is informed by the Ministry of Higher and Tertiary Education's doctrine on Education 5.0 premised on heritage, innovation and industrialization. A disruptive approach to training is taking root within the College, with more emphasis on integration of educational technology. It is no longer training as usual — the College is adopting adaptive, transformative and blended pedagogical strategies to produce innovative pre-service teachers for the 21st century and beyond.</p>
+                  <p>The focus is on developing unique human intelligence making our product responsive to technological, social and economic fluidity in dispensing quality and appropriate education. Our core values — collaboration, innovation, patriotism, unhu/ubuntu, and equity — remain central to this vision.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <hr class="border-t-2 border-gray-200 my-12" />
+
+          <!-- VICE PRINCIPAL'S DESK -->
+          <section id="vp" class="content-section mb-16 scroll-mt-24">
+            <div class="section-label">Leadership</div>
+            <h2 class="section-title font-display">Vice Principal's Desk</h2>
+            <div class="divider divider-center mb-8"></div>
+            
+            <div class="grid md:grid-cols-[200px_1fr] gap-8 items-start mb-8">
+              <div class="aspect-square bg-gradient-to-br from-mzc-teal to-[#5AB8C4] rounded-lg flex items-center justify-center text-7xl text-white/15">
+                👤
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-bold text-mzc-navy mb-1">Vice Principal</h3>
+                <p class="text-xs font-bold text-mzc-blue uppercase tracking-wider mb-4">Morgan Zintec College</p>
+                <div class="prose text-sm text-[#666] leading-relaxed border-l-4 border-mzc-teal pl-4 bg-[#F5F7FA] rounded-r-lg py-3 mb-4 italic">
+                  "As the Morgan family we encourage cooperation, joint effort, solidarity, and fellowship as we are guided by equity — hence we are a college of excellence."
+                </div>
+                <div class="prose text-sm text-[#666] leading-relaxed space-y-3">
+                  <p>Morgan Zintec College strives to be a leading college of education in producing innovative and transformative educators for sustainable industrialization. Our core values of patriotism — a strong sense of belonging, identity, responsibility and accountability — guide all members of staff.</p>
+                  <p>All members of staff are encouraged to have a sense of belonging and uphold the virtue of unhu/ubuntu where we expect everyone to be responsible, honest, just, trustworthy, considerate and cultured.</p>
+                  <p>Morgan Zintec College welcomes, nurtures and trains all qualifying people into effective primary school teachers regardless of their gender, physical, intellectual, social, emotional, linguistic background or any other characteristics. The college understands the value of this diversity, and greater steps have been taken to ensure that all students' needs are catered for.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <hr class="border-t-2 border-gray-200 my-12" />
+
+          <!-- HISTORY -->
+          <section id="history" class="content-section mb-16 scroll-mt-24">
+            <div class="section-label">Our Story</div>
+            <h2 class="section-title font-display">College History</h2>
+            <div class="divider divider-center mb-8"></div>
+            
+            <div class="timeline relative pl-8">
+              <div class="absolute left-3 top-0 bottom-0 w-0.5 bg-gray-200" />
+              
+              {[
+                { year: "1981", title: "College Established", desc: "Morgan Zintec College was established as a rapid response to the acute shortage of teachers following the democratization of education after independence. It initially shared premises with David Livingstone Primary School." },
+                { year: "Early Years", title: "Move to Current Campus — 1:10:1 Model", desc: "The college moved to its current location, taking over the boarding facilities of Morgan High School. The Zintec programme was offered as a four-year 1:10:1 model — one term at college, ten terms on teaching practice, one final term at college." },
+                { year: "1995", title: "Modified to 2-8-2 Model", desc: "The programme was revised to a 2-8-2 model: two terms at college, eight terms on teaching practice, and a final two terms at college." },
+                { year: "2000", title: "Modified to 2-5-2 Model (3-year programme)", desc: "In January 2000, the 2-8-2 programme was modified to a 2-5-2 model, reducing the course to three years. This programme was concluded in 2020." },
+                { year: "2014", title: "In-Service Programme Launched", desc: "The college launched the Diploma in Supervision and ICT for school-based mentors, initially in partnership with UNESCO. To date, 840+ mentors have graduated." },
+                { year: "2019", title: "Current 3-3-3 Model Adopted", desc: "In September 2019, the College adopted the 3-3-3 model — three terms at college, three terms on teaching practice, and three final terms at college — which all subsequent intakes follow." }
+              ].map((item, i) => (
+                <div key={i} class="tl-item relative mb-7">
+                  <div class="tl-dot absolute left-[-27px] top-1 w-3.5 h-3.5 rounded-full bg-mzc-blue border-3 border-white shadow-[0_0_0_2px_#7EBEC5]" />
+                  <div class="text-xs font-extrabold text-mzc-blue uppercase tracking-wider mb-1">{item.year}</div>
+                  <h4 class="font-heading font-bold text-lg text-mzc-navy mb-1.5">{item.title}</h4>
+                  <p class="text-sm text-[#666] leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <hr class="border-t-2 border-gray-200 my-12" />
+
+          <!-- VISION & MISSION -->
+          <section id="vision" class="content-section mb-16 scroll-mt-24">
+            <div class="section-label">Direction</div>
+            <h2 class="section-title font-display">Vision & Mission</h2>
+            <div class="divider divider-center mb-8"></div>
+            
+            <div class="grid md:grid-cols-2 gap-5 mb-6">
+              <div class="p-7 rounded-xl bg-gradient-to-br from-mzc-navy to-mzc-blue text-white">
+                <h4 class="text-xs font-extrabold uppercase tracking-widest text-mzc-teal mb-2">Vision</h4>
+                <p class="text-base leading-relaxed">A reputable college of education in the production of innovative and transformative educators for sustainable industrialization.</p>
+              </div>
+              <div class="p-7 rounded-xl bg-gradient-to-br from-mzc-teal to-[#5AB8C4] text-white">
+                <h4 class="text-xs font-extrabold uppercase tracking-widest text-white/80 mb-2">Mission</h4>
+                <p class="text-base leading-relaxed">To produce skilled and enterprising 21st century educators using heritage-based philosophy for the attainment of inclusive and equitable quality education.</p>
+              </div>
+            </div>
+            <p class="text-sm text-[#666] leading-relaxed text-center">The College's motto is: <strong class="text-mzc-navy">"Education, Progress & Self Reliance"</strong></p>
+          </section>
+
+          <hr class="border-t-2 border-gray-200 my-12" />
+
+          <!-- CORE VALUES -->
+          <section id="values" class="content-section mb-16 scroll-mt-24">
+            <div class="section-label">What We Stand For</div>
+            <h2 class="section-title font-display">Core Values</h2>
+            <div class="divider divider-center mb-8"></div>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              {[
+                { title: "Collaboration", desc: "Team action for the production of goods and services — working together toward shared goals." },
+                { title: "Innovation", desc: "Translating ideas or inventions into goods and services for competitiveness, efficiency and effectiveness." },
+                { title: "Ubuntu/Unhu", desc: "Responsible, honest, just, trustworthy, considerate and cultured in all our interactions." },
+                { title: "Teamwork", desc: "Cooperation, joint effort, solidarity and fellowship among all members of the college community." },
+                { title: "Equity", desc: "Just, fair and impartial — welcoming all qualifying persons regardless of background." },
+                { title: "Patriotism", desc: "A strong sense of belonging, identity, responsibility and accountability to Zimbabwe." }
+              ].map((val, i) => (
+                <div key={i} class="val-item bg-[#F5F7FA] rounded-lg p-5 border-l-4 border-mzc-teal">
+                  <h5 class="text-xs font-extrabold text-mzc-blue uppercase tracking-wider mb-1">{val.title}</h5>
+                  <p class="text-sm text-[#666] leading-relaxed">{val.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <hr class="border-t-2 border-gray-200 my-12" />
+
+          <!-- ADVISORY COUNCIL -->
+          <section id="advisory" class="content-section scroll-mt-24">
+            <div class="section-label">Governance</div>
+            <h2 class="section-title font-display">Advisory Council</h2>
+            <div class="divider divider-center mb-8"></div>
+            
+            <p class="text-sm text-[#666] leading-relaxed mb-8 max-w-3xl">
+              The Principal, Dr Tonderayi J. Zenda, is pleased to announce the appointment of the Morgan Zintec College Advisory Council by the Minister of Higher and Tertiary Education, Innovation, Science and Technology Development, Hon. Prof. Dr. Amon Murwira, in terms of Section 12 of the Manpower Planning and Development Regulations, 1999 (Statutory Instrument 81 of 1999).
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+              {[
+                { name: "Dr O. Nyaude", role: "Advisory Council Chairman", org: "Former Student", color: "from-[#0A3D6B] to-mzc-blue", border: "border-t-4 border-mzc-blue" },
+                { name: "Ms V.Y. Mlambo", role: "Vice Chairperson", org: "SAYWHAT Deputy Director", color: "from-[#1A4A3A] to-[#2D7A5A]", border: "" },
+                { name: "Ms Madanire", role: "Secretary of the Board", org: "Morgan Zintec College Secretary", color: "from-[#2A1A4A] to-[#4A2D7A]", border: "" },
+                { name: "Ms M.R. Zvimba", role: "Council Member", org: "Lawyer", color: "from-[#3A1A1A] to-[#7A2D2D]", border: "" },
+                { name: "Dr Musesengwe", role: "Council Member", org: "Lecturer", color: "from-[#1A3A1A] to-[#2D6A2D]", border: "" },
+                { name: "Ms T. Mwandira", role: "Council Member", org: "Student Representative Council", color: "from-[#3A3A1A] to-[#6A6A2D]", border: "" },
+                { name: "Mr M. Moyo", role: "Council Member", org: "PSC — Provincial HR Manager", color: "from-[#1A2A3A] to-[#2D4A6A]", border: "" },
+                { name: "Dr P. Ngandini", role: "Council Member", org: "MoPSE — Education Research Officer", color: "from-[#2A1A2A] to-[#5A2D5A]", border: "" },
+                { name: "Dr T.J. Zendah", role: "Council Member", org: "Principal, Morgan Zintec College", color: "from-mzc-blue to-mzc-navy", border: "border-t-4 border-mzc-blue" }
+              ].map((member, i) => (
+                <div key={i} class={`council-card bg-white rounded-lg overflow-hidden shadow-[0_4px_14px_rgba(0,0,0,.07)] hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,.1)] transition-all ${member.border}`}>
+                  <div class={`cc-photo aspect-square flex items-center justify-center text-6xl text-white/15 ${member.color}`}>👤</div>
+                  <div class="p-4">
+                    <h4 class="font-heading font-extrabold text-sm text-mzc-navy mb-1">{member.name}</h4>
+                    <div class="text-xs font-extrabold text-mzc-blue uppercase tracking-wider mb-0.5">{member.role}</div>
+                    <div class="text-xs text-[#666]">{member.org}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <p class="text-center text-sm text-[#666] italic pt-5 border-t border-gray-200">
+              Morgan Zintec College welcomes the Advisory Council to the Morgan Zintec family and wishes them every success in their appointments.<br><br>
+              <strong class="text-mzc-navy">Dr Tonderayi J. Zenda — Principal, Morgan Zintec College</strong>
+            </p>
+          </section>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <Footer variant="main" slot="footer" />
+</BaseLayout>
+
+<script>
+  // Highlight active sidebar link on scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.content-section');
+    const sidebarLinks = document.querySelectorAll('.sidebar ul li a');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          sidebarLinks.forEach(link => {
+            link.classList.toggle('bg-[#F5F7FA]', link.getAttribute('href') === '#' + id);
+            link.classList.toggle('text-mzc-blue', link.getAttribute('href') === '#' + id);
+            link.classList.toggle('pl-6', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-100px 0px -80% 0px' });
+    
+    sections.forEach(sec => observer.observe(sec));
+  });
+</script>
+
+<style>
+  .sidebar {
+    @apply hidden lg:block;
+  }
+  @media (max-width: 1023px) {
+    .sidebar {
+      @apply block sticky top-20;
+    }
+  }
+</style>

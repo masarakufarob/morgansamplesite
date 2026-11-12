@@ -1,0 +1,346 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+---
+
+<BaseLayout 
+  title="Research & Innovation" 
+  description="Morgan Zintec College Research & Innovation Portal - Advancing knowledge in teacher education, heritage-based pedagogy, and education governance through rigorous research aligned with Education 5.0."
+  image="/images/og-research.jpg"
+  type="article"
+  tags={["Research", "Innovation", "Education 5.0", "Teacher Education", "Zimbabwe"]}
+>
+  <!-- Custom Research Navbar -->
+  <nav class="res-nav fixed top-0 w-full z-50" style="background: #0A1224; border-bottom: 1px solid rgba(255,255,255,.08);">
+    <div class="res-nav-inner max-w-7xl mx-auto px-6">
+      <a href="/" class="res-logo flex items-center gap-3">
+        <img src="/images/logo.png" alt="MZC" class="w-10 h-10 object-contain flex-shrink-0 drop-shadow-lg" />
+        <div class="res-logo-text">
+          <span class="n block font-heading font-extrabold text-base text-white leading-tight">Research & Innovation</span>
+          <span class="s text-xs text-white/45 uppercase tracking-widest">Morgan Zintec College</span>
+        </div>
+      </a>
+      <ul class="res-nav-links flex items-center gap-1 list-none hidden md:flex">
+        <li><a href="#about" class="active px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-white/65 rounded-md hover:text-white hover:bg-white/8 transition-all">About</a></li>
+        <li><a href="#areas" class="px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-white/65 rounded-md hover:text-white hover:bg-white/8 transition-all">Research Areas</a></li>
+        <li><a href="#publications" class="px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-white/65 rounded-md hover:text-white hover:bg-white/8 transition-all">Publications</a></li>
+        <li><a href="#symposium" class="px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-white/65 rounded-md hover:text-white hover:bg-white/8 transition-all">Symposium</a></li>
+        <li><a href="#submit" class="px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-white/65 rounded-md hover:text-white hover:bg-white/8 transition-all">Submit Work</a></li>
+        <li><a href="#library" class="px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-white/65 rounded-md hover:text-white hover:bg-white/8 transition-all">Library</a></li>
+      </ul>
+      <div class="res-nav-right flex items-center gap-3">
+        <a href="/library/" class="btn-koha px-4 py-2 rounded-md text-xs font-extrabold uppercase tracking-wider transition-all" style="background: #7EBEC5; color: #0A1224;">📚 Koha Library</a>
+        <a href="/" class="back-link flex items-center gap-1.5 text-xs text-white/45 hover:text-mzc-teal transition-colors"><i class="fas fa-arrow-left"></i> Main Site</a>
+      </div>
+      <button class="res-nav-toggle md:hidden p-2 text-white text-xl" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+    </div>
+    <div class="res-nav-links fixed top-14 left-0 right-0 bg-[#0A1224] flex-col items-stretch shadow-2xl z-40 md:hidden" style="display: none;">
+      <a href="#about" class="px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-white/65 border-b border-white/6 hover:text-white hover:bg-white/8">About</a>
+      <a href="#areas" class="px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-white/65 border-b border-white/6 hover:text-white hover:bg-white/8">Research Areas</a>
+      <a href="#publications" class="px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-white/65 border-b border-white/6 hover:text-white hover:bg-white/8">Publications</a>
+      <a href="#symposium" class="px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-white/65 border-b border-white/6 hover:text-white hover:bg-white/8">Symposium</a>
+      <a href="#submit" class="px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-white/65 border-b border-white/6 hover:text-white hover:bg-white/8">Submit Work</a>
+      <a href="#library" class="px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-white/65 border-b border-white/6 hover:text-white hover:bg-white/8">Library</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="res-hero relative overflow-hidden" style="background: #0A1224; min-height: 480px;">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 70% 50%, rgba(12,113,195,.25) 0%, transparent 70%);" />
+    <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); background-size: 48px 48px;" />
+    <div class="res-hero-inner max-w-7xl mx-auto px-6 relative z-10" style="padding: 80px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+      <div>
+        <div class="res-hero-tag inline-block mb-4 px-3.5 py-1 rounded text-xs font-bold uppercase tracking-wider" style="background: rgba(126,190,197,.15); color: #7EBEC5; border: 1px solid rgba(126,190,197,.3);">Morgan Zintec College</div>
+        <h1 class="font-display font-black text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4">Research & <span class="block text-mzc-teal">Innovation Portal</span></h1>
+        <p class="text-lg text-white/70 leading-relaxed mb-8">Advancing knowledge in teacher education, heritage-based pedagogy, and education governance through rigorous research and collaborative inquiry aligned with Education 5.0.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#publications" class="btn btn-teal btn-round"><i class="fas fa-file-alt mr-2"></i> Browse Publications</a>
+          <a href="/library/" class="btn btn-round px-5 py-3" style="background: transparent; color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.25);">Library Catalogue</a>
+        </div>
+      </div>
+      <div class="res-hero-stats grid grid-cols-3 gap-4" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="res-stat text-center p-5 rounded-lg" style="background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);">
+          <div class="res-stat-n font-display font-bold text-4xl text-mzc-teal leading-none">840+</div>
+          <div class="res-stat-l text-xs text-white/50 uppercase tracking-wider mt-1">Mentor Graduates</div>
+        </div>
+        <div class="res-stat text-center p-5 rounded-lg" style="background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);">
+          <div class="res-stat-n font-display font-bold text-4xl text-mzc-teal leading-none">660+</div>
+          <div class="res-stat-l text-xs text-white/50 uppercase tracking-wider mt-1">ECD Graduates</div>
+        </div>
+        <div class="res-stat text-center p-5 rounded-lg" style="background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);">
+          <div class="res-stat-n font-display font-bold text-4xl text-mzc-teal leading-none">43</div>
+          <div class="res-stat-l text-xs text-white/50 uppercase tracking-wider mt-1">Years Experience</div>
+        </div>
+        <div class="res-stat text-center p-5 rounded-lg" style="background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); grid-column: span 2;">
+          <div class="res-stat-n font-display font-bold text-3xl text-mzc-teal leading-none">Education 5.0</div>
+          <div class="res-stat-l text-xs text-white/50 uppercase tracking-wider mt-1">Heritage · Innovation · Industrialization</div>
+        </div>
+        <div class="res-stat text-center p-5 rounded-lg" style="background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);">
+          <a href="/library/" style="display: block; text-decoration: none;">
+            <div class="res-stat-n font-display font-bold text-3xl text-mzc-gold leading-none">Koha</div>
+            <div class="res-stat-l text-xs text-white/50 uppercase tracking-wider mt-1">Library System</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KOHA FEATURE BAND -->
+  <div class="koha-band" id="library" style="background: linear-gradient(135deg, #0A1628, #0D1F3C); padding: 48px 0; border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06);">
+    <div class="koha-inner max-w-7xl mx-auto px-6" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+      <div>
+        <div class="koha-badge inline-block mb-3 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider" style="background: rgba(201,168,76,.15); color: #C9A84C; border: 1px solid rgba(201,168,76,.3);">Library Management System</div>
+        <h2 class="font-display text-3xl text-white mb-3">Koha Library Catalogue</h2>
+        <p class="text-base text-white/65 leading-relaxed mb-4">Access the Morgan Zintec College Library catalogue through our Koha Integrated Library System (ILS). Search for books, journals, theses, dissertations and digital resources available in the college library.</p>
+        <p class="text-sm text-white/55 mb-4">Available on the college internal network. For external access, contact the Library Department.</p>
+        <div class="flex flex-wrap gap-3 mt-2">
+          <a href="/library/" class="btn-gold px-4 py-2 rounded-md text-xs font-extrabold uppercase tracking-wider whitespace-nowrap transition-all" style="background: #C9A84C; color: #0A1224;">Open Koha Catalogue</a>
+          <a href="/library/" class="btn btn-round px-4 py-2 text-xs" style="background: transparent; color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.25);">Library Information</a>
+        </div>
+      </div>
+      <div class="koha-card" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+        {[
+          { icon: "fa-search", title: "Search Catalogue", desc: "Search by title, author, subject, ISBN or keyword across all library holdings." },
+          { icon: "fa-book", title: "Browse by Subject", desc: "Explore education, humanities, sciences, ICT and professional studies collections." },
+          { icon: "fa-file-alt", title: "Reserve & Renew", desc: "Place reservations and manage your library account online." },
+          { icon: "fa-book-open", title: "Digital Resources", desc: "Access e-books, journals and research articles from the digital collection." }
+        ].map((feature, i) => (
+          <div key={i} class="koha-feature flex items-start gap-3">
+            <div class="koha-feature-icon w-9 h-9 rounded-lg flex items-center justify-center text-lg flex-shrink-0" style="background: rgba(126,190,197,.15);"><i class={`fas ${feature.icon}`}></i></div>
+            <div class="koha-feature-text">
+              <h5 class="font-heading font-extrabold text-sm text-white mb-1">{feature.title}</h5>
+              <p class="text-xs text-white/55 leading-relaxed">{feature.desc}</p>
+            </div>
+          </div>
+        ))}
+        <div class="koha-url flex items-center justify-between gap-3 p-4 rounded-md mt-2" style="background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);">
+          <span class="text-sm text-white/50 font-mono">Campus Network</span>
+          <a href="/library/" class="btn-gold px-4 py-2 rounded-md text-xs font-extrabold uppercase tracking-wider whitespace-nowrap transition-all" style="background: #C9A84C; color: #0A1224;">Open →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="res-main max-w-7xl mx-auto px-6 py-16">
+    <!-- ABOUT RESEARCH -->
+    <section id="about" class="section-block mb-16">
+      <div class="sec-tag" style="color: #7EBEC5; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px;">Research Direction</div>
+      <h2 class="sec-title font-display text-3xl font-bold text-white mb-3">About Our Research</h2>
+      <div class="divider mb-7" style="width: 48px; height: 4px; background: #7EBEC5;"></div>
+      <p class="text-base text-white/65 leading-relaxed max-w-3xl mb-5">Morgan Zintec College's research agenda is anchored in <strong class="text-white">Education 5.0</strong> — the Ministry of Higher and Tertiary Education's doctrine on heritage, innovation and industrialization. The college is committed to evidence-based teacher education, generating knowledge that is responsive to Zimbabwe's national development goals and the 21st century global landscape.</p>
+      <p class="text-base text-white/65 leading-relaxed max-w-3xl">The college encourages student teachers to put theories and perspectives into practice and to generate new, relevant theories grounded in heritage and indigenous knowledge systems.</p>
+    </section>
+
+    <!-- RESEARCH AREAS -->
+    <section id="areas" class="section-block mb-16">
+      <div class="sec-tag" style="color: #7EBEC5; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px;">Focus Areas</div>
+      <h2 class="sec-title font-display text-3xl font-bold text-white mb-3">Research Areas</h2>
+      <div class="divider mb-7" style="width: 48px; height: 4px; background: #7EBEC5;"></div>
+      <div class="research-areas grid md:grid-cols-2 lg:grid-cols-3 gap-5" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        {[
+          { icon: "fa-graduation-cap", title: "Teacher Education & Pedagogy", desc: "Innovative pedagogical approaches, blended learning, adaptive teaching strategies and 21st century competencies for pre-service teachers." },
+          { icon: "fa-globe-africa", title: "Heritage-Based Education", desc: "Integration of indigenous knowledge systems, cultural identity, Ubuntu/Unhu philosophy and heritage-based curriculum design." },
+          { icon: "fa-laptop", title: "Educational Technology", desc: "ICT integration in teacher education, eLearning platforms, AI as a pedagogic tool, and digital literacy for educators." },
+          { icon: "fa-landmark", title: "Education Governance", desc: "Corporate governance in educational institutions, accountability frameworks, stakeholder engagement and policy analysis." },
+          { icon: "fa-child", title: "Early Childhood Development", desc: "ECD policy, quality assurance in ECD centres, inclusive early childhood education and community-based ECD models." },
+          { icon: "fa-flask", title: "Curriculum & Assessment", desc: "Curriculum development and reform, harmonised curriculum alignment, authentic assessment and learner-centred approaches." }
+        ].map((area, i) => (
+          <div key={i} class="ra-card p-6 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:border-mzc-teal" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);">
+            <div class="text-4xl mb-3">{area.icon}</div>
+            <h4 class="font-heading font-extrabold text-base text-white mb-2">{area.title}</h4>
+            <p class="text-sm text-white/55 leading-relaxed">{area.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- DEPARTMENTAL RESEARCH -->
+    <section class="section-block mb-16">
+      <div class="sec-tag" style="color: #7EBEC5; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px;">By Department</div>
+      <h2 class="sec-title font-display text-3xl font-bold text-white mb-3">Departmental Research Focus</h2>
+      <div class="divider mb-7" style="width: 48px; height: 4px; background: #7EBEC5;"></div>
+      <div class="dept-research-grid grid md:grid-cols-2 gap-5" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+        {[
+          { icon: "fa-book", title: "Humanities", desc: "Language education, indigenous knowledge systems, moral and values education, heritage-social studies and citizenship formation.", items: ["ChiShona and IsiNdebele pedagogy", "Multilingual education in Zimbabwe", "Values and character education", "Health and life skills research"], color: "border-mzc-blue" },
+          { icon: "fa-calculator", title: "Maths & Sciences", desc: "Mathematics pedagogy, science methodology, STEM integration in primary education and inquiry-based learning approaches.", items: ["Mathematics anxiety and remediation", "Science practical skills in primary schools", "STEM curriculum integration"], color: "border-mzc-teal" },
+          { icon: "fa-flask", title: "Research & Innovation", desc: "Educational innovation, action research, school-based research mentorship, and research methodology in teacher education.", items: ["Action research in teacher training", "Mentor supervision studies", "Innovation and industrialization"], color: "border-mzc-gold" },
+          { icon: "fa-child", title: "ECD Department", desc: "Early childhood policy, inclusive ECD, community-based programmes and developmental psychology in Zimbabwean contexts.", items: ["ECD centre quality standards", "Play-based learning research", "Inclusive early childhood education"], color: "border-[#27AE60]" }
+        ].map((dept, i) => (
+          <div key={i} class={`drc p-6 rounded-xl ${dept.color} border-l-4`} style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);">
+            <h4 class="font-heading font-extrabold text-lg text-white mb-2 flex items-center gap-2"><i class={`fas ${dept.icon}`}></i> {dept.title}</h4>
+            <p class="text-sm text-white/55 leading-relaxed mb-3">{dept.desc}</p>
+            <ul class="list-disc list-inside text-xs text-white/50 leading-loose space-y-1">
+              {dept.items.map(item => <li key={item}>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section-block mb-16">
+      <div class="sec-tag" style="color: #7EBEC5; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px;">Knowledge Output</div>
+      <h2 class="sec-title font-display text-3xl font-bold text-white mb-3">Publications & Research Outputs</h2>
+      <div class="divider mb-7" style="width: 48px; height: 4px; background: #7EBEC5;"></div>
+      <p class="text-base text-white/55 leading-relaxed mb-6 max-w-3xl">Research outputs from Morgan Zintec College staff and students. Submit new publications using the form below. For full texts of available publications, access the <a href="/library/" class="text-mzc-teal hover:underline">Koha Library Catalogue</a>.</p>
+      <div class="pub-list flex flex-col gap-4">
+        {[
+          { num: "01", type: "Conference Paper", title: "Education and Corporate Governance in Zimbabwe: Emerging Themes", source: "Morgan Zintec College Academic Symposium — 2024/2025", tags: ["Governance", "Education Policy", "Zimbabwe"] },
+          { num: "02", type: "Programme Report", title: "Impact of the Diploma in Supervision & ICT on Teaching Practice Quality", source: "In-Service Programme Research Report — Morgan Zintec College Research Department", tags: ["In-Service", "Mentoring", "Teaching Practice"] },
+          { num: "03", type: "Curriculum Review", title: "Transitioning from Theory of Education to Professional Foundations: A Blended Learning Approach", source: "Theory & Practice Department — Morgan Zintec College", tags: ["Curriculum", "Blended Learning", "Professional Foundations"] },
+          { num: "04", type: "Programme Evaluation", title: "ECD Short Course Graduate Outcomes: Community Impact Assessment", source: "ECD Department & Research Office — Morgan Zintec College", tags: ["ECD", "Community Impact", "Programme Evaluation"] }
+        ].map((pub, i) => (
+          <div key={i} class="pub-card p-5 rounded-lg transition-all duration-200 hover:border-white/15" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start;">
+            <div class="pub-num w-10 h-10 rounded-lg flex items-center justify-center text-sm font-extrabold flex-shrink-0" style="background: rgba(12,113,195,.3); color: #7EBEC5;">{pub.num}</div>
+            <div class="pub-meta">
+              <div class="pub-type text-xs font-bold uppercase tracking-wider mb-1" style="color: #7EBEC5;">{pub.type}</div>
+              <h4 class="font-heading font-bold text-base text-white mb-2 leading-snug">{pub.title}</h4>
+              <p class="text-sm text-white/50 leading-relaxed mb-3">{pub.source}</p>
+              <div class="pub-tags flex flex-wrap gap-2">
+                {pub.tags.map(tag => <span key={tag} class="pub-tag px-2 py-1 rounded text-[10px] font-semibold" style="background: rgba(126,190,197,.15); color: #7EBEC5;">{tag}</span>)}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="text-xs text-white/35 mt-4 italic text-center">* Full publication records are available via the <a href="/library/" class="text-mzc-teal hover:underline">Koha Library Catalogue</a></p>
+    </section>
+
+    <!-- SYMPOSIUM -->
+    <section id="symposium" class="section-block mb-16">
+      <div class="sec-tag" style="color: #7EBEC5; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px;">Academic Events</div>
+      <h2 class="sec-title font-display text-3xl font-bold text-white mb-3">Academic Symposium</h2>
+      <div class="divider mb-7" style="width: 48px; height: 4px; background: #7EBEC5;"></div>
+      <div class="symposium-notice p-8 rounded-xl" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);">
+        <div class="symp-closed inline-block mb-3 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider" style="background: rgba(192,57,43,.2); color: #E74C3C; border: 1px solid rgba(231,76,60,.3);">Submissions Closed</div>
+        <h3 class="font-display text-2xl font-bold text-white mb-3">Education & Corporate Governance in Zimbabwe</h3>
+        <p class="text-base text-white/65 leading-relaxed mb-3">The 2024/2025 Academic Symposium explored the critical intersection of education and corporate governance in Zimbabwe. Submissions for abstracts and full papers are now closed. Thank you to all participants.</p>
+        <p class="text-sm text-white/45 mb-4">Abstract submission closed: 20 December 2024 &nbsp;·&nbsp; Full paper deadline: 1 February 2025 &nbsp;·&nbsp; Presentations: 5 February 2025 &nbsp;·&nbsp; Registration: USD 200</p>
+        <p class="text-sm leading-relaxed mb-5" style="color: rgba(126,190,197,.7);">For enquiries about symposium proceedings or next symposium dates, contact: <a href="mailto:info@morganzintec.ac.zw" class="text-mzc-teal hover:underline">info@morganzintec.ac.zw</a></p>
+        <div class="mt-4">
+          <p class="text-xs font-bold text-white/50 uppercase tracking-wider mb-3">Symposium Themes Covered</p>
+          <div class="symp-themes grid md:grid-cols-2 gap-2" style="grid-template-columns: 1fr 1fr; gap: 8px;">
+            {[
+              "Human Rights Issues in Educational Settings",
+              "Policy and Legal Frameworks",
+              "Corruption, Accountability & Mismanagement",
+              "Risk Management in Educational Institutions",
+              "Sustainability of Educational Institutions",
+              "Ethical Standards in Education",
+              "Religious & Cultural Dimensions in Governance",
+              "Innovation and Industrialization"
+            ].map((theme, i) => (
+              <div key={i} class="symp-theme px-4 py-2.5 rounded-r-lg text-xs leading-relaxed" style="background: rgba(255,255,255,.05); border-left: 3px solid #7EBEC5; color: rgba(255,255,255,.7);">{theme}</div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBMIT RESEARCH -->
+    <section id="submit" class="section-block">
+      <div class="sec-tag" style="color: #7EBEC5; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px;">Share Your Work</div>
+      <h2 class="sec-title font-display text-3xl font-bold text-white mb-3">Submit Research</h2>
+      <div class="divider mb-7" style="width: 48px; height: 4px; background: #7EBEC5;"></div>
+      <div class="submit-form p-8 rounded-xl" style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);">
+        <h3 class="font-display text-2xl font-bold text-white mb-2">Research Submission Form</h3>
+        <p class="text-base text-white/55 mb-6">Submit your research paper, article, conference paper or report for inclusion in the college research repository. All submissions are reviewed by the Research & Innovation Department.</p>
+        <form id="researchForm" class="space-y-4" action="https://formspree.io/f/your-research-form-id" method="POST">
+          <div class="form-row grid md:grid-cols-2 gap-4" style="grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="fg"><label class="block text-xs font-bold uppercase tracking-wider mb-1.5" style="color: rgba(255,255,255,.5);">Author Name(s)</label><input type="text" name="authorName" placeholder="Full name(s) of author(s)" required class="w-full px-4 py-3 rounded-md text-sm text-white placeholder:text-white/30 transition-colors" style="background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);" /></div>
+            <div class="fg"><label class="block text-xs font-bold uppercase tracking-wider mb-1.5" style="color: rgba(255,255,255,.5);">Staff / Student ID</label><input type="text" name="authorId" placeholder="Your ID number" class="w-full px-4 py-3 rounded-md text-sm text-white placeholder:text-white/30 transition-colors" style="background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);" /></div>
+          </div>
+          <div class="form-row full">
+            <div class="fg"><label class="block text-xs font-bold uppercase tracking-wider mb-1.5" style="color: rgba(255,255,255,.5);">Title of Work</label><input type="text" name="title" placeholder="Full title of your research" required class="w-full px-4 py-3 rounded-md text-sm text-white placeholder:text-white/30 transition-colors" style="background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);" /></div>
+          </div>
+          <div class="form-row grid md:grid-cols-2 gap-4" style="grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="fg"><label class="block text-xs font-bold uppercase tracking-wider mb-1.5" style="color: rgba(255,255,255,.5);">Type</label><select name="type" required class="w-full px-4 py-3 rounded-md text-sm text-white transition-colors" style="background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);"><option value="">Select type</option><option>Journal Article</option><option>Conference Paper</option><option>Dissertation / Thesis</option><option>Research Report</option><option>Book Chapter</option><option>Other</option></select></div>
+            <div class="fg"><label class="block text-xs font-bold uppercase tracking-wider mb-1.5" style="color: rgba(255,255,255,.5);">Department / Section</label><select name="department" required class="w-full px-4 py-3 rounded-md text-sm text-white transition-colors" style="background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);"><option value="">Select department</option><option>Humanities</option><option>Maths & Sciences</option><option>Research & Innovation</option><option>ECD</option><option>Theory & Practice</option><option>ICT</option><option>Other</option></select></div>
+          </div>
+          <div class="form-row full">
+            <div class="fg"><label class="block text-xs font-bold uppercase tracking-wider mb-1.5" style="color: rgba(255,255,255,.5);">Abstract / Description</label><textarea name="abstract" rows="4" placeholder="Brief abstract or description of the research (max 300 words)" required class="w-full px-4 py-3 rounded-md text-sm text-white placeholder:text-white/30 transition-colors resize-y" style="background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);"></textarea></div>
+          </div>
+          <div class="form-row full">
+            <div class="fg"><label class="block text-xs font-bold uppercase tracking-wider mb-1.5" style="color: rgba(255,255,255,.5);">Keywords</label><input type="text" name="keywords" placeholder="e.g. teacher education, heritage, pedagogy, Zimbabwe" class="w-full px-4 py-3 rounded-md text-sm text-white placeholder:text-white/30 transition-colors" style="background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);" /></div>
+          </div>
+          <button type="submit" class="btn-submit-res w-full py-3 px-7 rounded-md font-extrabold text-sm uppercase tracking-wider transition-all font-sans mt-2" style="background: #7EBEC5; color: #0A1224; border: none; cursor: pointer;">Submit Research</button>
+          <p class="text-xs text-center mt-3" style="color: rgba(255,255,255,.3);">Or email directly: <a href="mailto:info@morganzintec.ac.zw" class="text-mzc-teal hover:underline">info@morganzintec.ac.zw</a></p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <Footer variant="research" slot="footer" />
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Mobile nav toggle
+    const toggle = document.querySelector('.res-nav-toggle');
+    const navLinks = document.querySelector('.res-nav-links');
+    if (toggle && navLinks) {
+      toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+      });
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => navLinks.classList.remove('mobile-open'));
+      });
+    }
+    
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const id = this.getAttribute('href');
+        if (id.length > 1) {
+          const target = document.querySelector(id);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+    
+    // Highlight active nav on scroll
+    const sections = document.querySelectorAll('.section-block');
+    const allNavLinks = document.querySelectorAll('.res-nav-links a');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          allNavLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+            link.classList.toggle('text-mzc-teal', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-100px 0px -80% 0px' });
+    sections.forEach(sec => observer.observe(sec));
+    
+    // Form submission
+    const form = document.getElementById('researchForm');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = 'Submitting...';
+        btn.disabled = true;
+        try {
+          const formData = new FormData(form);
+          const response = await fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+          if (response.ok) {
+            btn.textContent = 'Submitted Successfully!';
+            btn.style.background = '#fff';
+            form.reset();
+          } else throw new Error('Failed');
+        } catch {
+          btn.textContent = 'Error - Try Again';
+          btn.style.background = '#FB6340';
+        }
+        setTimeout(() => { btn.textContent = originalText; btn.disabled = false; btn.style.background = '#7EBEC5'; }, 3000);
+      });
+    }
+  });
+</script>

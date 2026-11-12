@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Morgan Zintec College | Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Nunito+Sans:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+/* ── ARGON DESIGN SYSTEM INSPIRED ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  /* Argon palette */
+  --primary:#5e72e4;
+  --primary-dark:#4353c8;
+  --info:#11cdef;
+  --success:#2dce89;
+  --warning:#fb6340;
+  --danger:#f5365c;
+  --default:#172b4d;
+  --secondary:#f4f5f7;
+  --white:#ffffff;
+  --light:#ced4da;
+  --muted:#8898aa;
+  --dark:#212529;
+  /* MZC Brand overrides */
+  --mzc-blue:#0C71C3;
+  --mzc-teal:#7EBEC5;
+  --mzc-navy:#1a2a4a;
+  --mzc-gold:#c9a84c;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;color:#525f7f;overflow-x:hidden;line-height:1.7;background:#fff}
+a{text-decoration:none;color:inherit;transition:all .15s ease}
+img{max-width:100%;height:auto}
+
+/* ── TYPOGRAPHY ── */
+h1,h2,h3,h4,h5,h6{font-family:'Nunito Sans',sans-serif;color:#32325d;font-weight:700;line-height:1.2}
+.text-primary{color:var(--mzc-blue)!important}
+.text-muted{color:var(--muted)!important}
+.text-white{color:#fff!important}
+
+/* ── ARGON BUTTONS ── */
+.btn{display:inline-block;font-family:'Nunito Sans',sans-serif;font-weight:600;font-size:.875rem;line-height:1.5;text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;border:1px solid transparent;padding:.625rem 1.25rem;border-radius:.375rem;transition:all .15s ease;letter-spacing:.025em;box-shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08)}
+.btn-primary{background:linear-gradient(87deg,var(--mzc-blue),#1c75bc);color:#fff;border-color:transparent}
+.btn-primary:hover{background:linear-gradient(87deg,#0a5fa3,#0c71c3);color:#fff}
+.btn-info{background:linear-gradient(87deg,#11cdef,#1171ef);color:#fff;border-color:transparent}
+.btn-success{background:linear-gradient(87deg,#2dce89,#2dcecc);color:#fff;border-color:transparent}
+.btn-warning{background:linear-gradient(87deg,#fb6340,#fbb140);color:#fff;border-color:transparent}
+.btn-default{background:linear-gradient(87deg,var(--mzc-navy),#243557);color:#fff;border-color:transparent}
+.btn-white{background:#fff;color:var(--mzc-blue);border-color:transparent;box-shadow:0 4px 6px rgba(50,50,93,.11)}
+.btn-white:hover{background:#f6f9fc;color:var(--mzc-blue)}
+.btn-outline-white{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+.btn-outline-white:hover{background:rgba(255,255,255,.1);color:#fff;border-color:#fff}
+.btn-icon .btn-inner--icon{margin-right:.3rem}
+.btn-lg{padding:.875rem 1.5rem;font-size:1rem;border-radius:.5rem}
+.btn-sm{padding:.25rem .75rem;font-size:.75rem;border-radius:.25rem}
+.btn-round{border-radius:30px}
+.btn-neutral{background:#fff;color:var(--mzc-blue);border:1px solid #dee2e6}
+
+/* ── ARGON SHAPES / GRADIENTS ── */
+.section-shaped{position:relative;overflow:hidden}
+.shape{position:absolute;top:0;left:0;right:0;height:100%;pointer-events:none}
+.shape.shape-primary{background:linear-gradient(150deg,#4153be 15%,#af4261 70%,#f74f75 94%)}
+.shape.shape-default{background:transparent}
+.shape.shape-info{background:linear-gradient(150deg,#0a1628 15%,#0c6b9a 70%,var(--mzc-teal) 94%)}
+.shape > .svg-fill{position:absolute;overflow:hidden}
+.shape > .svg-fill svg{position:absolute;height:100%;width:200%}
+.shape > .svg-fill.svg-fill-top svg{top:0;left:0}
+.shape > .svg-fill.svg-fill-bottom svg{bottom:0;left:0}
+.shape-skew-separator{position:absolute;bottom:0;left:0;right:0;height:80px;overflow:hidden}
+.shape-skew-separator svg{position:absolute;bottom:0;left:0;width:100%}
+
+/* Floating balls (Argon style) */
+.shape-ball{position:absolute;border-radius:50%;opacity:.6;filter:blur(60px)}
+
+/* ── NAVBAR ── */
+.navbar{padding:1rem 0;transition:all .4s ease;position:fixed;top:0;width:100%;z-index:1000;background:transparent}
+.navbar.scrolled{background:var(--mzc-navy);box-shadow:0 4px 20px rgba(0,0,0,.3);padding:.5rem 0}
+.navbar-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;min-height:60px;position:relative}
+.navbar-brand{display:flex;align-items:center;gap:12px}
+.navbar-brand-icon{width:44px;height:44px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Nunito Sans',sans-serif;font-weight:900;font-size:13px;color:#fff;border:2px solid rgba(255,255,255,.4);flex-shrink:0;backdrop-filter:blur(8px)}
+.navbar-brand-text .name{font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:15px;color:#fff;line-height:1.1}
+.navbar-brand-text .sub{font-size:10px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1.5px}
+.nav-links-list{display:flex;align-items:center;list-style:none;gap:0}
+.nav-links-list>li{position:relative}
+.nav-links-list>li>a{display:flex;align-items:center;height:60px;padding:0 14px;font-size:.8125rem;font-weight:600;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.05em;transition:color .2s;white-space:nowrap}
+.nav-links-list>li>a:hover{color:#fff}
+.nav-links-list>li>a i{font-size:.625rem;margin-left:4px}
+.nav-dd{display:none;position:absolute;top:100%;left:0;min-width:220px;background:#fff;border-radius:.5rem;box-shadow:0 50px 100px rgba(50,50,93,.1),0 15px 35px rgba(50,50,93,.15),0 5px 15px rgba(0,0,0,.1);list-style:none;z-index:200;padding:.5rem 0;margin-top:4px;overflow:hidden}
+.nav-dd li a{display:flex;align-items:center;gap:10px;padding:.625rem 1rem;font-size:.875rem;color:#525f7f;transition:all .2s}
+.nav-dd li a .dd-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.875rem}
+.nav-dd li a:hover{color:var(--mzc-blue);background:#f6f9fc}
+.nav-dd li a:hover .dd-icon{transform:scale(1.1)}
+.nav-links-list li:hover .nav-dd{display:block}
+.nav-btn-area{display:flex;align-items:center;gap:8px}
+
+/* ── HERO / HEADER ── */
+.hero-section{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:url("admin_block.jpg") center center/cover no-repeat}
+.hero-section .shape.shape-default{background:transparent}
+/* animated particles */
+.hero-section .shape-ball:nth-child(1){width:600px;height:600px;background:rgba(12,113,195,.4);top:-100px;right:-100px;animation:float1 8s ease-in-out infinite}
+.hero-section .shape-ball:nth-child(2){width:300px;height:300px;background:rgba(126,190,197,.3);bottom:50px;left:-50px;animation:float2 10s ease-in-out infinite}
+.hero-section .shape-ball:nth-child(3){width:200px;height:200px;background:rgba(201,168,76,.2);top:40%;right:20%;animation:float3 6s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(20px)}}
+@keyframes float3{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-15px) rotate(10deg)}}
+
+.hero-inner{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding-top:120px;padding-bottom:80px}
+.hero-content{ /* content wrapper for hero; intentionally left for future styles */ }
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.375rem 1rem;border-radius:30px;margin-bottom:1.5rem;border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px)}
+.hero-title{font-family:'Nunito Sans',sans-serif;font-size:clamp(2rem,4.5vw,3.5rem);font-weight:900;color:#fff;line-height:1.05;margin-bottom:1.25rem}
+.hero-title span{color:var(--mzc-teal);display:block}
+.hero-desc{font-size:1.125rem;color:rgba(255,255,255,.8);line-height:1.8;margin-bottom:2rem;max-width:480px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero-stats-row{display:flex;gap:32px;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.15)}
+.hero-stat-item{}
+.hero-stat-item .stat-number{font-family:'Nunito Sans',sans-serif;font-size:2rem;font-weight:900;color:#fff;line-height:1}
+.hero-stat-item .stat-label{font-size:.75rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.08em;margin-top:.25rem}
+/* hero right: floating card stack */
+.hero-cards{position:relative;height:420px}
+.hero-float-card{position:absolute;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:1rem;padding:1.5rem;color:#fff;box-shadow:0 25px 50px rgba(0,0,0,.2)}
+.hero-float-card.card-main{width:320px;top:20px;left:20px;animation:cardFloat 6s ease-in-out infinite}
+.hero-float-card.card-sm1{width:200px;bottom:40px;right:0;animation:cardFloat 8s ease-in-out infinite reverse}
+.hero-float-card.card-sm2{width:180px;top:10px;right:20px;animation:cardFloat 7s ease-in-out infinite 1s}
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hcard-icon{width:48px;height:48px;border-radius:.75rem;display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:.75rem}
+.hcard-label{font-size:.75rem;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem}
+.hcard-value{font-family:'Nunito Sans',sans-serif;font-size:1.5rem;font-weight:800;color:#fff}
+.hcard-value.lg{font-size:2rem}
+.hcard-progress{height:6px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden;margin-top:.75rem}
+.hcard-progress-bar{height:100%;border-radius:3px}
+.hcard-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem}
+.hcard-list-item{display:flex;align-items:center;gap:.5rem;font-size:.8125rem;color:rgba(255,255,255,.8)}
+.hcard-list-item i{font-size:.625rem;color:var(--mzc-teal)}
+
+/* ── WAVE SEPARATOR ── */
+.wave-sep{position:relative;height:80px;overflow:hidden}
+.wave-sep svg{position:absolute;bottom:0;width:100%}
+
+/* ── CONTAINER ── */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+.section-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mzc-blue);margin-bottom:.75rem}
+.section-title{font-family:'Nunito Sans',sans-serif;font-size:clamp(1.5rem,3vw,2.25rem);font-weight:800;color:#32325d;margin-bottom:.75rem;line-height:1.2}
+.section-sub{font-size:1rem;color:var(--muted);max-width:560px;line-height:1.75}
+.section-header{text-align:center;margin-bottom:56px}
+.section-header .section-sub{margin:0 auto}
+
+/* ── ARGON CARDS ── */
+.card{background:#fff;border-radius:.75rem;border:0;box-shadow:0 0 2rem 0 rgba(136,152,170,.15)}
+.card-body{padding:1.5rem}
+.card-header{padding:1.25rem 1.5rem;border-bottom:1px solid rgba(0,0,0,.05);background:transparent;border-radius:.75rem .75rem 0 0!important}
+
+/* ICON BOX */
+.icon-box{width:48px;height:48px;border-radius:.75rem;display:flex;align-items:center;justify-content:center;font-size:1.125rem}
+.icon-box-lg{width:64px;height:64px;border-radius:1rem;font-size:1.5rem}
+.icon-box-xl{width:80px;height:80px;border-radius:1rem;font-size:2rem;margin:0 auto}
+.icon-box.bg-primary{background:linear-gradient(87deg,var(--mzc-blue),#1c90d8);color:#fff}
+.icon-box.bg-info{background:linear-gradient(87deg,#11cdef,#1171ef);color:#fff}
+.icon-box.bg-success{background:linear-gradient(87deg,#2dce89,#2dcecc);color:#fff}
+.icon-box.bg-warning{background:linear-gradient(87deg,#fb6340,#fbb140);color:#fff}
+.icon-box.bg-danger{background:linear-gradient(87deg,#f5365c,#f56036);color:#fff}
+.icon-box.bg-default{background:linear-gradient(87deg,var(--mzc-navy),#2a3f6a);color:#fff}
+.icon-box.bg-teal{background:linear-gradient(87deg,var(--mzc-teal),#5ab8c4);color:#fff}
+.icon-box.bg-gold{background:linear-gradient(87deg,var(--mzc-gold),#d4a82c);color:#fff}
+
+/* ── FEATURE CARDS ── */
+.feature-card{text-align:center;padding:2rem;transition:all .3s ease}
+.feature-card:hover{transform:translateY(-8px)}
+.feature-card h4{font-family:'Nunito Sans',sans-serif;font-size:1.125rem;font-weight:700;color:#32325d;margin:1rem 0 .5rem}
+.feature-card p{font-size:.875rem;color:var(--muted);line-height:1.7}
+.feature-card .icon-box-xl{margin-bottom:1.25rem;box-shadow:0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)}
+
+/* ── PORTAL CARDS ── */
+.portal-cards-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.portal-argon-card{border-radius:1rem;overflow:hidden;transition:all .3s ease;cursor:pointer;box-shadow:0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)}
+.portal-argon-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(50,50,93,.15),0 10px 20px rgba(0,0,0,.1)}
+.pac-header{padding:2rem;position:relative;overflow:hidden;min-height:140px;display:flex;align-items:flex-end}
+.pac-header-grad-1{background:linear-gradient(135deg,var(--mzc-blue),#1c90d8)}
+.pac-header-grad-2{background:linear-gradient(135deg,var(--mzc-teal),#2dce89)}
+.pac-header-grad-3{background:linear-gradient(135deg,var(--mzc-navy),#3a5a8a)}
+.pac-header-blob{position:absolute;top:-30px;right:-30px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.1)}
+.pac-header-title{font-family:'Nunito Sans',sans-serif;font-size:1.25rem;font-weight:800;color:#fff;position:relative;z-index:1}
+.pac-header-icon{font-size:2rem;color:rgba(255,255,255,.7);position:absolute;top:1.25rem;right:1.25rem;z-index:1}
+.pac-body{padding:1.5rem;background:#fff}
+.pac-body p{font-size:.875rem;color:var(--muted);line-height:1.7;margin-bottom:1.25rem}
+
+/* ── ACADEMICS SECTION ── */
+.academics-section{background:linear-gradient(150deg,#f8f9fe 0%,#eef0f8 100%)}
+.prog-tab-nav{display:flex;background:#fff;border-radius:.5rem;padding:.375rem;gap:.25rem;box-shadow:0 0 2rem 0 rgba(136,152,170,.15);margin-bottom:2.5rem}
+.prog-tab-btn{flex:1;padding:.625rem 1rem;font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border:none;background:transparent;border-radius:.375rem;cursor:pointer;transition:all .2s;font-family:'Nunito Sans',sans-serif}
+.prog-tab-btn.active{background:linear-gradient(87deg,var(--mzc-blue),#1c90d8);color:#fff;box-shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+.prog-tab-content{display:none}.prog-tab-content.active{display:block}
+.prog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.prog-argon-card{background:#fff;border-radius:.75rem;padding:1.5rem;border-left:4px solid transparent;box-shadow:0 0 2rem 0 rgba(136,152,170,.12);transition:all .3s ease;position:relative;overflow:hidden}
+.prog-argon-card::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;background:linear-gradient(135deg,rgba(12,113,195,.08),transparent);border-radius:0 .75rem 0 80px}
+.prog-argon-card.border-primary{border-left-color:var(--mzc-blue)}
+.prog-argon-card.border-info{border-left-color:var(--mzc-teal)}
+.prog-argon-card.border-success{border-left-color:#2dce89}
+.prog-argon-card.border-warning{border-left-color:#fb6340}
+.prog-argon-card:hover{transform:translateX(4px);box-shadow:0 15px 35px rgba(50,50,93,.1)}
+.prog-tag{display:inline-block;font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.25rem .75rem;border-radius:30px;margin-bottom:.75rem}
+.prog-tag.tag-primary{background:rgba(12,113,195,.1);color:var(--mzc-blue)}
+.prog-tag.tag-info{background:rgba(126,190,197,.15);color:var(--mzc-teal)}
+.prog-tag.tag-success{background:rgba(45,206,137,.1);color:#2dce89}
+.prog-tag.tag-warning{background:rgba(251,99,64,.1);color:#fb6340}
+.prog-argon-card h4{font-family:'Nunito Sans',sans-serif;font-size:1rem;font-weight:700;color:#32325d;margin-bottom:.5rem}
+.prog-argon-card p{font-size:.8125rem;color:var(--muted);line-height:1.7;margin-bottom:.75rem}
+.prog-argon-card ul{padding-left:1rem;font-size:.8125rem;color:var(--muted);line-height:1.9;list-style:disc}
+
+/* ── HOD SECTION ── */
+.hod-section{background:linear-gradient(150deg,var(--mzc-navy) 0%,var(--mzc-blue) 100%);position:relative;overflow:hidden}
+.hod-section-blob1{position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(255,255,255,.04);top:-150px;right:-100px}
+.hod-section-blob2{position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.04);bottom:-100px;left:-50px}
+.hod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;position:relative;z-index:1}
+.hod-argon-card{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);border-radius:1rem;padding:1.5rem;text-align:center;transition:all .3s ease;cursor:pointer}
+.hod-argon-card:hover{background:rgba(255,255,255,.16);transform:translateY(-6px);border-color:rgba(255,255,255,.3);box-shadow:0 20px 40px rgba(0,0,0,.2)}
+.hod-avatar{width:72px;height:72px;border-radius:50%;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-size:1.75rem;border:3px solid rgba(255,255,255,.3);position:relative;overflow:hidden;font-weight:900}
+.hod-avatar-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:rgba(255,255,255,.5)}
+.hod-argon-card h4{font-family:'Nunito Sans',sans-serif;font-size:.9375rem;font-weight:800;color:#fff;margin-bottom:.25rem}
+.hod-argon-card .hod-title{font-size:.75rem;color:var(--mzc-teal);text-transform:uppercase;letter-spacing:.05em;font-weight:600;margin-bottom:.875rem}
+.hod-argon-card .hod-dept{font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:1rem}
+.hod-btn-group{display:flex;flex-direction:column;gap:.5rem}
+.hod-btn{display:block;padding:.375rem .75rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-radius:.375rem;text-align:center;transition:all .2s;font-family:'Nunito Sans',sans-serif}
+.hod-btn-solid{background:var(--mzc-teal);color:var(--mzc-navy)}.hod-btn-solid:hover{background:#fff;color:var(--mzc-navy)}
+.hod-btn-ghost{background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.2)}.hod-btn-ghost:hover{background:rgba(255,255,255,.2);color:#fff}
+
+/* ── STATS BAND ── */
+.stats-band{background:linear-gradient(150deg,var(--mzc-navy) 15%,var(--mzc-blue) 94%);padding:60px 0;position:relative;overflow:hidden}
+.stats-band::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="80" r="3" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="10" r="1.5" fill="rgba(255,255,255,0.05)"/></svg>')}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:1}
+.stat-argon{text-align:center;padding:1.5rem;border-right:1px solid rgba(255,255,255,.1)}
+.stat-argon:last-child{border-right:none}
+.stat-argon-number{font-family:'Nunito Sans',sans-serif;font-size:3rem;font-weight:900;color:#fff;line-height:1;margin-bottom:.25rem}
+.stat-argon-number sup{font-size:1.5rem;vertical-align:super}
+.stat-argon-label{font-size:.75rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em}
+.stat-argon-icon{font-size:2rem;color:rgba(255,255,255,.2);margin-bottom:.75rem}
+
+/* ── ABOUT / VP SECTION ── */
+.about-section{background:#f8f9fe}
+.about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:center}
+.about-img-card{border-radius:1rem;overflow:hidden;position:relative;box-shadow:0 50px 100px rgba(50,50,93,.1),0 15px 35px rgba(50,50,93,.15),0 5px 15px rgba(0,0,0,.1)}
+.about-img-placeholder{aspect-ratio:3/4;background:linear-gradient(150deg,var(--mzc-navy),var(--mzc-blue));display:flex;align-items:center;justify-content:center;font-size:5rem;color:rgba(255,255,255,.15)}
+.about-badge{position:absolute;bottom:-1px;left:0;right:0;background:linear-gradient(to top,rgba(12,113,195,.95),transparent);padding:2rem 1.5rem 1.5rem;text-align:center}
+.about-badge h5{font-family:'Nunito Sans',sans-serif;font-size:1rem;font-weight:800;color:#fff;margin-bottom:.125rem}
+.about-badge p{font-size:.75rem;color:var(--mzc-teal);text-transform:uppercase;letter-spacing:.08em}
+.vm-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.5rem 0}
+.vm-argon-card{border-radius:.75rem;padding:1.25rem;color:#fff}
+.vm-argon-card h5{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem;opacity:.75}
+.vm-argon-card p{font-size:.8125rem;line-height:1.65;opacity:.9}
+.values-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:1rem}
+.val-pill{background:#fff;border-radius:.5rem;padding:.75rem;border-left:3px solid var(--mzc-teal);box-shadow:0 0 2rem 0 rgba(136,152,170,.1)}
+.val-pill h6{font-size:.75rem;font-weight:800;color:var(--mzc-blue);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.125rem}
+.val-pill p{font-size:.6875rem;color:var(--muted);line-height:1.4}
+
+/* ── RESEARCH CTA ── */
+.research-cta{background:linear-gradient(150deg,#0d1f3c 15%,var(--mzc-blue) 94%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.research-cta-inner{position:relative;z-index:2}
+.research-cta-blob1{position:absolute;width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,.04);top:-200px;right:-100px;pointer-events:none}
+.research-cta-blob2{position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.04);bottom:-150px;left:-100px;pointer-events:none}
+.research-cta h2{font-family:'Nunito Sans',sans-serif;font-size:clamp(1.5rem,3vw,2.5rem);font-weight:900;color:#fff;margin-bottom:.75rem}
+.research-cta p{font-size:1rem;color:rgba(255,255,255,.75);max-width:560px;margin:0 auto 2rem;line-height:1.75}
+.koha-url-badge{display:inline-flex;align-items:center;gap:.75rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:.5rem;padding:.75rem 1.25rem;color:rgba(255,255,255,.75);font-size:.875rem;backdrop-filter:blur(8px);margin-top:1.5rem}
+.koha-url-badge code{font-family:'Courier New',monospace;color:var(--mzc-teal)}
+
+/* ── FOOTER ── */
+.footer{background:#172b4d;position:relative;overflow:hidden}
+.footer-top{padding:60px 0 32px}
+.footer-brand-desc{font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.75;margin-top:1rem;max-width:280px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.footer-col-title{font-family:'Nunito Sans',sans-serif;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-col-links{list-style:none;display:flex;flex-direction:column;gap:.625rem}
+.footer-col-links a{font-size:.875rem;color:rgba(255,255,255,.4);transition:color .2s;display:flex;align-items:center;gap:.375rem}
+.footer-col-links a::before{content:'›';color:var(--mzc-teal);font-size:1rem}
+.footer-col-links a:hover{color:rgba(255,255,255,.9)}
+.footer-contact-item{display:flex;gap:.625rem;font-size:.8125rem;color:rgba(255,255,255,.4);margin-bottom:.625rem;align-items:flex-start;line-height:1.5}
+.footer-contact-item i{color:var(--mzc-teal);flex-shrink:0;margin-top:.125rem;width:16px}
+.footer-socials{display:flex;gap:.625rem;margin-top:1.25rem}
+.soc-btn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);color:rgba(255,255,255,.55);display:flex;align-items:center;justify-content:center;font-size:.875rem;transition:all .2s;border:1px solid rgba(255,255,255,.1)}
+.soc-btn:hover{background:var(--mzc-blue);color:#fff;border-color:var(--mzc-blue);transform:translateY(-2px)}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.08);margin:0}
+.footer-bottom{padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-bottom p,.footer-bottom a{font-size:.8125rem;color:rgba(255,255,255,.3)}
+.footer-bottom a:hover{color:rgba(255,255,255,.7)}
+.footer-bottom-links{display:flex;gap:1.25rem}
+
+/* ── MOBILE TOGGLE ── */
+.mobile-toggle{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:.5rem}
+
+/* ── UTILS ── */
+.bg-gradient-primary{background:linear-gradient(87deg,var(--mzc-blue),#1c90d8)!important}
+.bg-gradient-info{background:linear-gradient(87deg,var(--mzc-teal),#2dce89)!important}
+.bg-gradient-success{background:linear-gradient(87deg,#2dce89,#2dcecc)!important}
+.bg-gradient-warning{background:linear-gradient(87deg,#fb6340,#fbb140)!important}
+.bg-gradient-default{background:linear-gradient(87deg,var(--mzc-navy),#2a3f6a)!important}
+.badge{display:inline-block;font-size:.7em;font-weight:700;padding:.25em .75em;border-radius:30px}
+.badge-primary{background:rgba(12,113,195,.1);color:var(--mzc-blue)}
+.badge-success{background:rgba(45,206,137,.1);color:#2dce89}
+.shadow{box-shadow:0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hod-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-btn-area .btn-white{display:none}
+  .mobile-toggle{display:block}
+  .nav-links-list{
+    display:none;position:absolute;top:100%;left:0;right:0;background:var(--mzc-navy);
+    flex-direction:column;align-items:stretch;max-height:calc(100vh - 60px);overflow-y:auto;
+    box-shadow:0 12px 24px rgba(0,0,0,.3);
+  }
+  .nav-links-list.mobile-open{display:flex}
+  .nav-links-list>li>a{height:auto;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-dd{display:block!important;position:static;min-width:0;box-shadow:none;border-radius:0;background:rgba(0,0,0,.18);margin-top:0}
+  .nav-dd li a{padding:.625rem 1rem .625rem 2.25rem;color:rgba(255,255,255,.75)}
+  .nav-dd li a:hover{background:rgba(255,255,255,.08);color:#fff}
+  .nav-links-list li:hover .nav-dd{display:block}
+  .hero-inner{grid-template-columns:1fr;padding-top:100px;padding-bottom:60px}
+  .hero-cards{display:none}
+  .portal-cards-row,.prog-grid,.vm-cards,.values-row,.about-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .hod-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .prog-tab-nav{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ NAVBAR ═══════════════════════════════════ -->
+<nav class="navbar" id="mainNav">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-brand">
+      <img src="logo.png" alt="Morgan Zintec College Logo" style="height:48px;width:48px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))">
+      <div class="navbar-brand-text">
+        <span class="name">Morgan Zintec College</span>
+        <span class="sub">Education · Progress · Self Reliance</span>
+      </div>
+    </a>
+
+    <ul class="nav-links-list">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="about.html">About <i class="fas fa-angle-down"></i></a>
+        <ul class="nav-dd">
+          <li><a href="about.html#principal">
+            <div class="icon-box bg-primary dd-icon"><i class="fas fa-user-tie"></i></div>
+            <span>Principal's Desk</span>
+          </a></li>
+          <li><a href="about.html#vp">
+            <div class="icon-box bg-info dd-icon"><i class="fas fa-user"></i></div>
+            <span>Vice Principal's Desk</span>
+          </a></li>
+          <li><a href="about.html#history">
+            <div class="icon-box bg-success dd-icon"><i class="fas fa-history"></i></div>
+            <span>History</span>
+          </a></li>
+          <li><a href="about.html#advisory">
+            <div class="icon-box bg-warning dd-icon"><i class="fas fa-users"></i></div>
+            <span>Advisory Council</span>
+          </a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="academics.html">Academics <i class="fas fa-angle-down"></i></a>
+        <ul class="nav-dd">
+          <li><a href="academics.html">
+            <div class="icon-box bg-primary dd-icon"><i class="fas fa-graduation-cap"></i></div>
+            <span>Diploma in Education</span>
+          </a></li>
+          <li><a href="academics.html">
+            <div class="icon-box bg-info dd-icon"><i class="fas fa-laptop-code"></i></div>
+            <span>Diploma in Applied ICT</span>
+          </a></li>
+          <li><a href="academics.html">
+            <div class="icon-box bg-success dd-icon"><i class="fas fa-certificate"></i></div>
+            <span>Short Courses</span>
+          </a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="departments.html">Departments <i class="fas fa-angle-down"></i></a>
+        <ul class="nav-dd">
+          <li><a href="dept-humanities.html">
+            <div class="icon-box bg-primary dd-icon"><i class="fas fa-book-open"></i></div>
+            <span>Humanities</span>
+          </a></li>
+          <li><a href="dept-maths-science.html">
+            <div class="icon-box bg-success dd-icon"><i class="fas fa-calculator"></i></div>
+            <span>Maths &amp; Sciences</span>
+          </a></li>
+          <li><a href="dept-research.html">
+            <div class="icon-box bg-info dd-icon"><i class="fas fa-flask"></i></div>
+            <span>Research &amp; Innovation</span>
+          </a></li>
+          <li><a href="dept-ecd.html">
+            <div class="icon-box bg-warning dd-icon"><i class="fas fa-child"></i></div>
+            <span>ECD</span>
+          </a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Portals <i class="fas fa-angle-down"></i></a>
+        <ul class="nav-dd">
+          <li><a href="https://morgan.easylearn.co.zw" target="_blank">
+            <div class="icon-box bg-primary dd-icon"><i class="fas fa-sign-in-alt"></i></div>
+            <span>Student Portal</span>
+          </a></li>
+          <li><a href="https://online.morganzintec.ac.zw" target="_blank">
+            <div class="icon-box bg-info dd-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+            <span>eLearning Portal</span>
+          </a></li>
+          <li><a href="library.html">
+            <div class="icon-box bg-success dd-icon"><i class="fas fa-book"></i></div>
+            <span>Library (Koha)</span>
+          </a></li>
+        </ul>
+      </li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-btn-area">
+      <a href="https://morgan.easylearn.co.zw" target="_blank" class="btn btn-white btn-sm btn-round" style="font-size:.75rem">
+        <i class="fas fa-sign-in-alt btn-inner--icon"></i> Student Login
+      </a>
+      <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
+<div class="hero-section section-shaped">
+  <!-- dark overlay over campus photo so text stays readable -->
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,0.85) 0%,rgba(12,113,195,0.50) 55%,rgba(10,22,40,0.80) 100%);z-index:1"></div>
+
+  <div class="hero-inner">
+    <!-- LEFT -->
+    <div class="hero-content">
+      <div class="hero-tag">
+        <i class="fas fa-star" style="margin-right:.375rem;color:var(--mzc-teal)"></i>
+        Morgan Zintec College — Est. 1981
+      </div>
+      <h1 class="hero-title">
+        Educating Zimbabwe's
+        <span>Future Teachers</span>
+      </h1>
+      <p class="hero-desc">
+        A reputable college of education producing innovative and transformative educators for sustainable industrialization through the 3-3-3 model.
+      </p>
+      <div class="hero-btns">
+        <a href="about.html" class="btn btn-white btn-round btn-lg">
+          <i class="fas fa-info-circle btn-inner--icon"></i> Discover More
+        </a>
+        <a href="academics.html" class="btn btn-outline-white btn-round btn-lg">
+          <i class="fas fa-graduation-cap btn-inner--icon"></i> Our Programmes
+        </a>
+      </div>
+      <div class="hero-stats-row">
+        <div class="hero-stat-item">
+          <div class="stat-number">1981</div>
+          <div class="stat-label">Established</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="stat-number">840<sup>+</sup></div>
+          <div class="stat-label">In-Service Grads</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="stat-number">660<sup>+</sup></div>
+          <div class="stat-label">ECD Grads</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: floating glass cards -->
+    <div class="hero-cards">
+      <!-- Campus photo card — main -->
+      <div class="hero-float-card card-main" style="padding:0;overflow:hidden;border-radius:1.25rem;width:340px">
+        <div style="position:relative">
+          <img src="campus.jpg" alt="Morgan Zintec College — Aerial View"
+               style="width:100%;height:210px;object-fit:cover;display:block;border-radius:1.25rem 1.25rem 0 0">
+          <div style="position:absolute;top:.75rem;left:.75rem;background:rgba(12,113,195,.85);backdrop-filter:blur(8px);color:#fff;font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.25rem .75rem;border-radius:30px">
+            📍 Harare Campus
+          </div>
+        </div>
+        <div style="padding:1.25rem">
+          <div class="hcard-label" style="margin-bottom:.375rem">Morgan Zintec College</div>
+          <div class="hcard-value" style="font-size:1rem;line-height:1.3">Administration Block</div>
+          <div class="hcard-list" style="margin-top:.75rem">
+            <div class="hcard-list-item"><i class="fas fa-check-circle"></i> 1 Alamein Rd, Arcadia, Harare</div>
+            <div class="hcard-list-item"><i class="fas fa-check-circle"></i> Est. 1981 — Over 40 years</div>
+            <div class="hcard-list-item"><i class="fas fa-check-circle"></i> Accredited by ZIMCHE</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats card top-right -->
+      <div class="hero-float-card card-sm2">
+        <div class="hcard-label">Students</div>
+        <div class="hcard-value" style="font-size:2rem">55K<sup style="font-size:.875rem">+</sup></div>
+        <div style="font-size:.6875rem;color:rgba(255,255,255,.5);margin-top:.25rem">Enrolled historically</div>
+        <div style="display:flex;gap:.375rem;margin-top:.75rem">
+          <span style="width:10px;height:4px;border-radius:2px;background:var(--mzc-teal);display:block"></span>
+          <span style="width:16px;height:4px;border-radius:2px;background:rgba(255,255,255,.3);display:block"></span>
+          <span style="width:8px;height:4px;border-radius:2px;background:rgba(255,255,255,.2);display:block"></span>
+        </div>
+      </div>
+
+      <!-- Koha card bottom-right -->
+      <div class="hero-float-card card-sm1">
+        <div class="hcard-label" style="display:flex;align-items:center;gap:.375rem"><i class="fas fa-book" style="color:var(--mzc-teal)"></i> Library</div>
+        <div class="hcard-value" style="font-size:1.125rem;margin:.5rem 0">Koha System</div>
+        <a href="library.html" style="display:inline-block;background:var(--mzc-teal);color:var(--mzc-navy);padding:.25rem .75rem;border-radius:.375rem;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-top:.375rem">Campus Network →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave separator -->
+  <div style="position:absolute;bottom:0;left:0;right:0;z-index:3">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="width:100%;height:70px;display:block">
+      <path d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ PORTALS ═══════════════════════════════════ -->
+<section style="background:#fff;padding:60px 0">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Quick Access</div>
+      <h2 class="section-title">College Portals &amp; Systems</h2>
+      <p class="section-sub">Everything you need, one click away.</p>
+    </div>
+    <div class="portal-cards-row">
+
+      <div class="portal-argon-card">
+        <div class="pac-header pac-header-grad-1">
+          <div class="pac-header-blob"></div>
+          <i class="fas fa-user-graduate pac-header-icon"></i>
+          <div class="pac-header-title">Student Portal</div>
+        </div>
+        <div class="pac-body">
+          <p>Access your academic records, timetables, results and registration through the Student Management System.</p>
+          <a href="https://morgan.easylearn.co.zw" target="_blank" class="btn btn-primary btn-round btn-sm">
+            <i class="fas fa-external-link-alt btn-inner--icon"></i> Login to Portal
+          </a>
+        </div>
+      </div>
+
+      <div class="portal-argon-card">
+        <div class="pac-header pac-header-grad-2">
+          <div class="pac-header-blob"></div>
+          <i class="fas fa-chalkboard-teacher pac-header-icon"></i>
+          <div class="pac-header-title">eLearning Portal</div>
+        </div>
+        <div class="pac-body">
+          <p>Join virtual classrooms, access course materials, submit assignments and interact with lecturers online.</p>
+          <a href="https://online.morganzintec.ac.zw" target="_blank" class="btn btn-success btn-round btn-sm">
+            <i class="fas fa-play btn-inner--icon"></i> Access eLearning
+          </a>
+        </div>
+      </div>
+
+      <div class="portal-argon-card">
+        <div class="pac-header pac-header-grad-3">
+          <div class="pac-header-blob"></div>
+          <i class="fas fa-book pac-header-icon"></i>
+          <div class="pac-header-title">Library — Koha</div>
+        </div>
+        <div class="pac-body">
+          <p>Browse the college library catalogue, search holdings, reserve books and access digital resources via Koha.</p>
+          <a href="library.html" class="btn btn-default btn-round btn-sm">
+            <i class="fas fa-search btn-inner--icon"></i> Open Catalogue
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ ABOUT STRIP ═══════════════════════════════════ -->
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-card">
+        <div class="about-img-placeholder">🏛️</div>
+        <div class="about-badge">
+          <h5>Dr. T.J. Zendah</h5>
+          <p>Principal, Morgan Zintec College</p>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-title">About Morgan Zintec College</h2>
+        <p style="font-size:.9375rem;color:var(--muted);line-height:1.8;margin-bottom:1rem">
+          Established in 1981 as a rapid response to Zimbabwe's teacher shortage, Morgan Zintec College has evolved through several training models — 1:10:1, 2-8-2, 2-5-2 — and now operates the current <strong style="color:var(--mzc-blue)">3-3-3 Model</strong> adopted in September 2019.
+        </p>
+        <p style="font-size:.8125rem;color:var(--muted);line-height:1.8;margin-bottom:1.25rem">
+          Aligned with Zimbabwe's Vision 2030 and Education 5.0, the college integrates heritage, innovation and industrialization to produce 21st century educators equipped with both hard and soft skills.
+        </p>
+        <div class="vm-cards">
+          <div class="vm-argon-card" style="background:linear-gradient(150deg,var(--mzc-navy),var(--mzc-blue))">
+            <h5>Vision</h5>
+            <p>A reputable college of education in the production of innovative and transformative educators for sustainable industrialization.</p>
+          </div>
+          <div class="vm-argon-card" style="background:linear-gradient(150deg,var(--mzc-teal),#2dce89)">
+            <h5>Mission</h5>
+            <p>To produce skilled 21st century educators using heritage-based philosophy for inclusive and equitable quality education.</p>
+          </div>
+        </div>
+        <div class="values-row">
+          <div class="val-pill"><h6>Collaboration</h6><p>Team action for goods &amp; services</p></div>
+          <div class="val-pill"><h6>Innovation</h6><p>Ideas into competitive outputs</p></div>
+          <div class="val-pill"><h6>Ubuntu/Unhu</h6><p>Honest, just &amp; trustworthy</p></div>
+          <div class="val-pill"><h6>Teamwork</h6><p>Cooperation &amp; solidarity</p></div>
+          <div class="val-pill"><h6>Equity</h6><p>Just, fair and impartial</p></div>
+          <div class="val-pill"><h6>Patriotism</h6><p>Belonging &amp; responsibility</p></div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:1.5rem">
+          <a href="about.html" class="btn btn-primary btn-round"><i class="fas fa-info-circle btn-inner--icon"></i> Read More</a>
+          <a href="about.html#principal" class="btn btn-neutral btn-round"><i class="fas fa-user-tie btn-inner--icon"></i> Principal's Desk</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ ACADEMICS ═══════════════════════════════════ -->
+<section class="academics-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Academic Offering</div>
+      <h2 class="section-title">Programmes &amp; Courses</h2>
+      <p class="section-sub">Nationally accredited qualifications and specialist short courses preparing the next generation of Zimbabwean educators.</p>
+    </div>
+
+    <div class="prog-tab-nav">
+      <button class="prog-tab-btn active" onclick="switchTab('educ',this)">
+        <i class="fas fa-graduation-cap" style="margin-right:.375rem"></i> Diploma in Education
+      </button>
+      <button class="prog-tab-btn" onclick="switchTab('ict',this)">
+        <i class="fas fa-laptop-code" style="margin-right:.375rem"></i> Diploma in Applied ICT
+      </button>
+      <button class="prog-tab-btn" onclick="switchTab('short',this)">
+        <i class="fas fa-certificate" style="margin-right:.375rem"></i> Short Courses
+      </button>
+    </div>
+
+    <!-- Education Tab -->
+    <div id="educ" class="prog-tab-content active">
+      <div class="prog-grid">
+        <div class="prog-argon-card border-primary">
+          <span class="prog-tag tag-primary">Junior Course</span>
+          <h4>Diploma in Education (Primary) — Junior</h4>
+          <p>Prepares student teachers for Junior level primary education (Grades 4–7) covering core subject areas, methodology and extended teaching practice.</p>
+          <ul>
+            <li>Theory of Education &amp; Professional Foundations</li>
+            <li>Subject Specialisation (one main subject)</li>
+            <li>Professional Studies A, B, C &amp; D</li>
+            <li>3 Terms Teaching Practice in primary schools</li>
+          </ul>
+          <div style="margin-top:1rem"><a href="academics.html" class="btn btn-primary btn-sm btn-round">Learn More <i class="fas fa-arrow-right" style="margin-left:.25rem"></i></a></div>
+        </div>
+        <div class="prog-argon-card border-info">
+          <span class="prog-tag tag-info">Infant Course</span>
+          <h4>Diploma in Education (Primary) — Infant</h4>
+          <p>Prepares student teachers for Infant level (ECD–Grade 3) focusing on early literacy, numeracy and developmentally appropriate pedagogy.</p>
+          <ul>
+            <li>Early Childhood Development Foundations</li>
+            <li>Infant Methodology &amp; Subject Specialisation</li>
+            <li>Professional Studies A, B, C &amp; D</li>
+            <li>3 Terms Teaching Practice in infant schools</li>
+          </ul>
+          <div style="margin-top:1rem"><a href="academics.html" class="btn btn-info btn-sm btn-round">Learn More <i class="fas fa-arrow-right" style="margin-left:.25rem"></i></a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ICT Tab -->
+    <div id="ict" class="prog-tab-content">
+      <div class="prog-grid">
+        <div class="prog-argon-card border-primary">
+          <span class="prog-tag tag-primary">Specialisation</span>
+          <h4>Cyber Security</h4>
+          <p>Network security, ethical hacking, data protection and cybersecurity frameworks relevant to Zimbabwe's digital landscape.</p>
+          <div style="margin-top:1rem"><a href="academics.html" class="btn btn-primary btn-sm btn-round">Learn More <i class="fas fa-arrow-right" style="margin-left:.25rem"></i></a></div>
+        </div>
+        <div class="prog-argon-card border-info">
+          <span class="prog-tag tag-info">Specialisation</span>
+          <h4>Telecommunications</h4>
+          <p>Telecommunications systems, networking infrastructure, signal processing and modern communication technologies.</p>
+          <div style="margin-top:1rem"><a href="academics.html" class="btn btn-info btn-sm btn-round">Learn More <i class="fas fa-arrow-right" style="margin-left:.25rem"></i></a></div>
+        </div>
+        <div class="prog-argon-card border-success">
+          <span class="prog-tag tag-success">Specialisation</span>
+          <h4>Software Engineering</h4>
+          <p>Software development lifecycle, programming languages, application design, systems analysis and project management.</p>
+          <div style="margin-top:1rem"><a href="academics.html" class="btn btn-success btn-sm btn-round">Learn More <i class="fas fa-arrow-right" style="margin-left:.25rem"></i></a></div>
+        </div>
+        <div class="prog-argon-card border-warning">
+          <span class="prog-tag tag-warning">Specialisation</span>
+          <h4>Hardware Engineering</h4>
+          <p>Computer hardware assembly, maintenance, diagnostics, embedded systems and digital electronics.</p>
+          <div style="margin-top:1rem"><a href="academics.html" class="btn btn-warning btn-sm btn-round">Learn More <i class="fas fa-arrow-right" style="margin-left:.25rem"></i></a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Short Courses Tab -->
+    <div id="short" class="prog-tab-content">
+      <div class="prog-grid">
+        <div class="prog-argon-card border-primary">
+          <span class="prog-tag tag-primary">6 Months</span>
+          <h4>ECD Short Course</h4>
+          <p>Certificate programme equipping ECD centre facilitators with knowledge and skills in early childhood development. <strong>660+ graduates</strong> to date.</p>
+          <div style="margin-top:1rem"><a href="academics.html" class="btn btn-primary btn-sm btn-round">Learn More</a></div>
+        </div>
+        <div class="prog-argon-card border-info">
+          <span class="prog-tag tag-info">4 Terms</span>
+          <h4>Diploma in Supervision &amp; ICT</h4>
+          <p>In-service programme for school mentors. Covers supervision, ICT, counselling and mentoring. <strong>840+ graduates</strong> since 2014.</p>
+          <div style="margin-top:1rem"><a href="academics.html" class="btn btn-info btn-sm btn-round">Learn More</a></div>
+        </div>
+        <div class="prog-argon-card border-success">
+          <span class="prog-tag tag-success">Certificate</span>
+          <h4>Diploma in Chinese Language</h4>
+          <p>Introductory to intermediate Chinese language programme, part of the college's international education and cultural exchange offering.</p>
+          <div style="margin-top:1rem"><a href="academics.html" class="btn btn-success btn-sm btn-round">Learn More</a></div>
+        </div>
+        <div class="prog-argon-card border-warning">
+          <span class="prog-tag tag-warning">Flexible</span>
+          <h4>Professional Development</h4>
+          <p>Tailor-made short courses for educators, administrators and community members. Contact the college for the current schedule.</p>
+          <div style="margin-top:1rem"><a href="contact.html" class="btn btn-warning btn-sm btn-round">Enquire Now</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="academics.html" class="btn btn-primary btn-round btn-lg">
+        <i class="fas fa-th-list btn-inner--icon"></i> View All Academic Programmes
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ STATS ═══════════════════════════════════ -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-argon">
+        <div class="stat-argon-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="stat-argon-number">1981</div>
+        <div class="stat-argon-label">Year Established</div>
+      </div>
+      <div class="stat-argon">
+        <div class="stat-argon-icon"><i class="fas fa-user-check"></i></div>
+        <div class="stat-argon-number">840<sup>+</sup></div>
+        <div class="stat-argon-label">In-Service Graduates</div>
+      </div>
+      <div class="stat-argon">
+        <div class="stat-argon-icon"><i class="fas fa-child"></i></div>
+        <div class="stat-argon-number">660<sup>+</sup></div>
+        <div class="stat-argon-label">ECD Graduates</div>
+      </div>
+      <div class="stat-argon">
+        <div class="stat-argon-icon"><i class="fas fa-sync-alt"></i></div>
+        <div class="stat-argon-number">3-3-3</div>
+        <div class="stat-argon-label">Current Training Model</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ HODs ═══════════════════════════════════ -->
+<section class="hod-section">
+  <div class="hod-section-blob1"></div>
+  <div class="hod-section-blob2"></div>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label" style="color:var(--mzc-teal)">Academic Structure</div>
+      <h2 class="section-title" style="color:#fff">Heads of Department</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.6);margin:0 auto">Each department is led by a Head of Department. Click a department to explore its sections and staff members.</p>
+    </div>
+    <div class="hod-grid">
+
+      <div class="hod-argon-card">
+        <div class="hod-avatar" style="background:linear-gradient(135deg,var(--mzc-blue),#1c90d8)">
+          <div class="hod-avatar-placeholder"><i class="fas fa-book-open"></i></div>
+        </div>
+        <h4>Humanities</h4>
+        <div class="hod-title">Department</div>
+        <div class="hod-dept">HOD: Mr B. Ziso</div>
+        <div class="hod-btn-group">
+          <a href="dept-humanities.html" class="hod-btn hod-btn-solid">View Department</a>
+          <a href="dept-humanities.html#sections" class="hod-btn hod-btn-ghost">Sections</a>
+          <a href="dept-humanities.html#staff" class="hod-btn hod-btn-ghost">Staff Members</a>
+        </div>
+      </div>
+
+      <div class="hod-argon-card">
+        <div class="hod-avatar" style="background:linear-gradient(135deg,#2dce89,#2dcecc)">
+          <div class="hod-avatar-placeholder"><i class="fas fa-calculator"></i></div>
+        </div>
+        <h4>Maths &amp; Sciences</h4>
+        <div class="hod-title">Department</div>
+        <div class="hod-dept">HOD: [To be updated]</div>
+        <div class="hod-btn-group">
+          <a href="dept-maths-science.html" class="hod-btn hod-btn-solid">View Department</a>
+          <a href="dept-maths-science.html" class="hod-btn hod-btn-ghost">Sections</a>
+          <a href="dept-maths-science.html" class="hod-btn hod-btn-ghost">Staff Members</a>
+        </div>
+      </div>
+
+      <div class="hod-argon-card">
+        <div class="hod-avatar" style="background:linear-gradient(135deg,#11cdef,#1171ef)">
+          <div class="hod-avatar-placeholder"><i class="fas fa-flask"></i></div>
+        </div>
+        <h4>Research &amp; Innovation</h4>
+        <div class="hod-title">Department</div>
+        <div class="hod-dept">HOD: [To be updated]</div>
+        <div class="hod-btn-group">
+          <a href="dept-research.html" class="hod-btn hod-btn-solid">View Department</a>
+          <a href="dept-research.html" class="hod-btn hod-btn-ghost">Sections</a>
+          <a href="dept-research.html" class="hod-btn hod-btn-ghost">Staff Members</a>
+        </div>
+      </div>
+
+      <div class="hod-argon-card">
+        <div class="hod-avatar" style="background:linear-gradient(135deg,#fb6340,#fbb140)">
+          <div class="hod-avatar-placeholder"><i class="fas fa-child"></i></div>
+        </div>
+        <h4>ECD</h4>
+        <div class="hod-title">Department</div>
+        <div class="hod-dept">HOD: [To be updated]</div>
+        <div class="hod-btn-group">
+          <a href="dept-ecd.html" class="hod-btn hod-btn-solid">View Department</a>
+          <a href="dept-ecd.html" class="hod-btn hod-btn-ghost">Sections</a>
+          <a href="dept-ecd.html" class="hod-btn hod-btn-ghost">Staff Members</a>
+        </div>
+      </div>
+
+      <div class="hod-argon-card" style="border-color:rgba(255,255,255,.25)">
+        <div class="hod-avatar" style="background:rgba(255,255,255,.12)">
+          <div class="hod-avatar-placeholder"><i class="fas fa-building" style="color:rgba(255,255,255,.4)"></i></div>
+        </div>
+        <h4>Non-Academic</h4>
+        <div class="hod-title">Administration</div>
+        <div class="hod-dept">Support Services</div>
+        <div class="hod-btn-group">
+          <a href="dept-nonacademic.html" class="hod-btn hod-btn-solid">View Section</a>
+          <a href="dept-nonacademic.html" class="hod-btn hod-btn-ghost">Staff Members</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ VP DESK ═══════════════════════════════════ -->
+<section style="background:#fff">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.8fr;gap:60px;align-items:center">
+      <div style="text-align:center">
+        <div style="width:160px;height:160px;border-radius:50%;margin:0 auto 1.25rem;background:linear-gradient(150deg,var(--mzc-teal),#2dce89);display:flex;align-items:center;justify-content:center;font-size:4rem;color:rgba(255,255,255,.25);box-shadow:0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);border:4px solid rgba(255,255,255,.8)">
+          <i class="fas fa-user"></i>
+        </div>
+        <h5 style="font-family:'Nunito Sans',sans-serif;font-size:1.125rem;font-weight:800;color:#32325d;margin-bottom:.25rem">Vice Principal</h5>
+        <p style="font-size:.875rem;color:var(--muted)">Morgan Zintec College</p>
+        <a href="about.html#vp" class="btn btn-success btn-round btn-sm" style="margin-top:1rem">Read Full Message</a>
+      </div>
+      <div>
+        <div class="section-label">From the Vice Principal</div>
+        <h2 class="section-title">A College of Excellence</h2>
+        <div style="font-size:.875rem;font-style:italic;color:#32325d;line-height:1.8;border-left:4px solid var(--mzc-teal);padding:1rem 1.25rem;background:#f8f9fe;border-radius:0 .5rem .5rem 0;margin:1.25rem 0">
+          "Morgan Zintec College strives to be a leading college of education in producing innovative and transformative educators for sustainable industrialization. Our core values of patriotism — a strong sense of belonging, identity, responsibility and accountability — guide everything we do."
+        </div>
+        <p style="font-size:.9375rem;color:var(--muted);line-height:1.8;margin-bottom:1.25rem">
+          The College welcomes, nurtures and trains all qualifying people into effective primary school teachers regardless of gender, physical, intellectual, social, emotional or linguistic background. As the Morgan family we encourage cooperation, joint effort, solidarity and fellowship — guided by equity.
+        </p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="about.html#vp" class="btn btn-success btn-round"><i class="fas fa-arrow-right btn-inner--icon"></i> Full Message</a>
+          <a href="about.html" class="btn btn-neutral btn-round"><i class="fas fa-university btn-inner--icon"></i> About the College</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ RESEARCH CTA ═══════════════════════════════════ -->
+<div class="research-cta">
+  <div class="research-cta-blob1"></div>
+  <div class="research-cta-blob2"></div>
+  <div class="container research-cta-inner">
+    <div class="section-label" style="color:var(--mzc-teal);margin-bottom:.75rem">Knowledge &amp; Innovation</div>
+    <h2>Research &amp; Innovation Portal</h2>
+    <p>Explore Morgan Zintec College's research publications, innovation projects and academic resources. Access the Library Catalogue through our Koha Integrated Library System.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="research.html" class="btn btn-white btn-round btn-lg">
+        <i class="fas fa-flask btn-inner--icon"></i> Visit Research Portal
+      </a>
+      <a href="library.html" class="btn btn-outline-white btn-round btn-lg">
+        <i class="fas fa-book btn-inner--icon"></i> Library Catalogue (Koha)
+      </a>
+    </div>
+    <div class="koha-url-badge" style="justify-content:center;margin:0 auto">
+      <i class="fas fa-network-wired" style="color:var(--mzc-teal)"></i>
+      Koha Library Catalogue is available on the campus network.
+      <span style="font-size:.75rem;color:rgba(255,255,255,.4)">Off-campus? See the Library page for access details.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ FOOTER ═══════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:.5rem">
+            <div style="width:44px;height:44px;background:var(--mzc-blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Nunito Sans',sans-serif;font-weight:900;font-size:12px;color:#fff;flex-shrink:0">MZC</div>
+            <div>
+              <div style="font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:14px;color:#fff;line-height:1.1">Morgan Zintec College</div>
+              <div style="font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:1.5px">Education · Progress · Self Reliance</div>
+            </div>
+          </div>
+          <p class="footer-brand-desc">A leading teacher education institution in Zimbabwe committed to producing innovative and transformative educators since 1981.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/morgan.zintec.56" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="soc-btn"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="soc-btn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-col-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Programmes</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="library.html">Library</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Portals</div>
+          <ul class="footer-col-links">
+            <li><a href="https://morgan.easylearn.co.zw" target="_blank">Student Portal</a></li>
+            <li><a href="https://online.morganzintec.ac.zw" target="_blank">eLearning Portal</a></li>
+            <li><a href="library.html">Library (Koha)</a></li>
+            <li><a href="contact.html">Help Desk</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>1 Alamein Rd, PO Box 1700, Arcadia, Harare, Zimbabwe</span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:secretary@morganzintec.ac.zw">secretary@morganzintec.ac.zw</a></span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+2638688007100</span></div>
+          <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><span>0714 572 766</span></div>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Fri: 9:00–16:30</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2026 Morgan Zintec College. All Rights Reserved. | <a href="http://www.morganzintec.ac.zw/" target="_blank" style="color:var(--mzc-teal)">Developed by ICT Services Section</a></p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('mainNav');
+  if(window.scrollY>60){nav.classList.add('scrolled')}
+  else{nav.classList.remove('scrolled')}
+});
+
+// Mobile nav toggle
+document.querySelector('.mobile-toggle').addEventListener('click',()=>{
+  document.querySelector('.nav-links-list').classList.toggle('mobile-open');
+  document.getElementById('mainNav').classList.add('scrolled');
+});
+// Close mobile menu after tapping a link
+document.querySelectorAll('.nav-links-list a').forEach(a=>{
+  a.addEventListener('click',()=>document.querySelector('.nav-links-list').classList.remove('mobile-open'));
+});
+
+// Programme tabs
+function switchTab(id,btn){
+  document.querySelectorAll('.prog-tab-content').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.prog-tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Smooth scroll for anchors
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href');
+    if(id.length>1){
+      const target=document.querySelector(id);
+      if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'});}
+    }
+  });
+});
+</script>
+</body>
+</html>

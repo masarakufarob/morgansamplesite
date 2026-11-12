@@ -1,0 +1,169 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import Hero from '@/components/Hero.astro';
+---
+
+<BaseLayout 
+  title="Academic Programmes" 
+  description="Explore Morgan Zintec College's academic programmes including Diploma in Education (Junior & Infant), Diploma in Applied ICT specialisations, and Short Courses."
+  image="/images/og-academics.jpg"
+>
+  <Navbar currentPage="academics" slot="header" />
+  
+  <Hero
+    title="Academic Programmes"
+    variant="page"
+    description="Nationally accredited qualifications and specialist short courses preparing the next generation of Zimbabwean educators."
+    primaryCTA={{ label: "View Departments", href: "/departments/", icon: "fa-building" }}
+    secondaryCTA={{ label: "Contact Us", href: "/contact/", icon: "fa-envelope" }}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <div class="prog-tab-nav flex flex-wrap bg-white rounded-lg p-1 gap-1 shadow-[0_0_2rem_0_rgba(136,152,170,.15)] mb-10" id="progTabs" role="tablist">
+          <button role="tab" aria-selected="true" class="prog-tab-btn flex-1 min-w-[180px] flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold uppercase tracking-wider text-[#8898aa] bg-transparent rounded-md transition-all font-heading" data-tab="educ">
+            <i class="fas fa-graduation-cap"></i> Diploma in Education
+          </button>
+          <button role="tab" aria-selected="false" class="prog-tab-btn flex-1 min-w-[180px] flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold uppercase tracking-wider text-[#8898aa] bg-transparent rounded-md transition-all font-heading" data-tab="ict">
+            <i class="fas fa-laptop-code"></i> Diploma in Applied ICT
+          </button>
+          <button role="tab" aria-selected="false" class="prog-tab-btn flex-1 min-w-[180px] flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold uppercase tracking-wider text-[#8898aa] bg-transparent rounded-md transition-all font-heading" data-tab="short">
+            <i class="fas fa-certificate"></i> Short Courses
+          </button>
+        </div>
+        
+        <!-- Education Tab -->
+        <div id="educ" class="prog-tab-content" role="tabpanel">
+          <h3 class="font-display text-2xl font-bold text-mzc-navy mb-6 text-center">Diploma in Education (Primary)</h3>
+          <p class="text-center text-[#8898aa] mb-10 max-w-2xl mx-auto">Two distinct pathways preparing student teachers for primary education across all grades.</p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-10">
+            <div class="prog-argon-card bg-white rounded-xl p-6 border-l-4 border-mzc-blue shadow-[0_0_2rem_0_rgba(136,152,170,.12)] relative overflow-hidden transition-all hover:translate-x-1 hover:shadow-[0_15px_35px_rgba(50,50,93,.1)]">
+              <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-mzc-blue/8 to-transparent rounded-tr-xl rounded-bl-[80px]" />
+              <span class="prog-tag inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 bg-mzc-blue/10 text-mzc-blue">Junior Course</span>
+              <h4 class="font-heading font-bold text-[#32325d] mb-3">Diploma in Education (Primary) — Junior</h4>
+              <p class="text-sm text-[#8898aa] leading-relaxed mb-4">Prepares student teachers for Junior level primary education (Grades 4–7) covering core subject areas, methodology and extended teaching practice.</p>
+              <ul class="text-sm text-[#8898aa] leading-loose list-disc list-inside space-y-2 mb-5">
+                <li>Theory of Education & Professional Foundations</li>
+                <li>Subject Specialisation (one main subject)</li>
+                <li>Professional Studies A, B, C & D</li>
+                <li>3 Terms Teaching Practice in primary schools</li>
+              </ul>
+              <a href="/departments/" class="btn btn-primary btn-sm btn-round">View Departments <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+            <div class="prog-argon-card bg-white rounded-xl p-6 border-l-4 border-mzc-teal shadow-[0_0_2rem_0_rgba(136,152,170,.12)] relative overflow-hidden transition-all hover:translate-x-1 hover:shadow-[0_15px_35px_rgba(50,50,93,.1)]">
+              <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-mzc-teal/10 to-transparent rounded-tr-xl rounded-bl-[80px]" />
+              <span class="prog-tag inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 bg-mzc-teal/15 text-mzc-teal">Infant Course</span>
+              <h4 class="font-heading font-bold text-[#32325d] mb-3">Diploma in Education (Primary) — Infant</h4>
+              <p class="text-sm text-[#8898aa] leading-relaxed mb-4">Prepares student teachers for Infant level (ECD–Grade 3) focusing on early literacy, numeracy and developmentally appropriate pedagogy.</p>
+              <ul class="text-sm text-[#8898aa] leading-loose list-disc list-inside space-y-2 mb-5">
+                <li>Early Childhood Development Foundations</li>
+                <li>Infant Methodology & Subject Specialisation</li>
+                <li>Professional Studies A, B, C & D</li>
+                <li>3 Terms Teaching Practice in infant schools</li>
+              </ul>
+              <a href="/departments/ecd/" class="btn btn-secondary btn-sm btn-round">View ECD Department <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+          </div>
+          
+          <div class="bg-[#F8F9FE] rounded-xl p-6 mb-10">
+            <h4 class="font-heading font-bold text-mzc-navy mb-3 flex items-center gap-2"><i class="fas fa-info-circle text-mzc-blue"></i> 3-3-3 Training Model</h4>
+            <p class="text-sm text-[#8898aa] leading-relaxed">All Diploma in Education programmes follow the 3-3-3 model adopted in September 2019: <strong>3 terms at college</strong> → <strong>3 terms teaching practice</strong> → <strong>3 final terms at college</strong>. This ensures balanced theoretical grounding and extensive practical experience.</p>
+          </div>
+        </div>
+        
+        <!-- ICT Tab -->
+        <div id="ict" class="prog-tab-content hidden" role="tabpanel">
+          <h3 class="font-display text-2xl font-bold text-mzc-navy mb-6 text-center">Diploma in Applied ICT</h3>
+          <p class="text-center text-[#8898aa] mb-10 max-w-2xl mx-auto">Four specialisations equipping students with cutting-edge technology skills for the digital economy.</p>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {[
+              { title: "Cyber Security", desc: "Network security, ethical hacking, data protection and cybersecurity frameworks relevant to Zimbabwe's digital landscape.", icon: "fa-shield-alt", color: "border-mzc-blue", tagColor: "bg-mzc-blue/10 text-mzc-blue", btn: "btn-primary" },
+              { title: "Telecommunications", desc: "Telecommunications systems, networking infrastructure, signal processing and modern communication technologies.", icon: "fa-satellite-dish", color: "border-mzc-teal", tagColor: "bg-mzc-teal/15 text-mzc-teal", btn: "btn-secondary" },
+              { title: "Software Engineering", desc: "Software development lifecycle, programming languages, application design, systems analysis and project management.", icon: "fa-code", color: "border-[#2DCE89]", tagColor: "bg-[#2DCE89]/10 text-[#2DCE89]", btn: "btn btn-success" },
+              { title: "Hardware Engineering", desc: "Computer hardware assembly, maintenance, diagnostics, embedded systems and digital electronics.", icon: "fa-microchip", color: "border-[#FB6340]", tagColor: "bg-[#FB6340]/10 text-[#FB6340]", btn: "btn btn-warning" }
+            ].map((item, i) => (
+              <div key={i} class={`prog-argon-card bg-white rounded-xl p-6 border-l-4 ${item.color} shadow-[0_0_2rem_0_rgba(136,152,170,.12)] relative overflow-hidden transition-all hover:translate-x-1 hover:shadow-[0_15px_35px_rgba(50,50,93,.1)]`}>
+                <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-mzc-blue/8 to-transparent rounded-tr-xl rounded-bl-[80px]" />
+                <div class="icon-box-lg mx-auto mb-4 icon-box-primary"><i class={`fas ${item.icon}`}></i></div>
+                <span class={`prog-tag inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 ${item.tagColor}`}>Specialisation</span>
+                <h4 class="font-heading font-bold text-[#32325d] mb-2 text-center">{item.title}</h4>
+                <p class="text-sm text-[#8898aa] leading-relaxed mb-4 text-center">{item.desc}</p>
+                <div class="text-center"><a href="/departments/" class={`btn ${item.btn} btn-sm btn-round`}>Learn More <i class="fas fa-arrow-right ml-1"></i></a></div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Short Courses Tab -->
+        <div id="short" class="prog-tab-content hidden" role="tabpanel">
+          <h3 class="font-display text-2xl font-bold text-mzc-navy mb-6 text-center">Short Courses & Professional Development</h3>
+          <p class="text-center text-[#8898aa] mb-10 max-w-2xl mx-auto">Flexible programmes for educators, administrators and community members.</p>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {[
+              { title: "ECD Short Course", desc: "Certificate programme equipping ECD centre facilitators with knowledge and skills in early childhood development. <strong>660+ graduates</strong> to date.", icon: "fa-child", tag: "6 Months", tagColor: "bg-mzc-blue/10 text-mzc-blue", btn: "btn-primary" },
+              { title: "Diploma in Supervision & ICT", desc: "In-service programme for school mentors. Covers supervision, ICT, counselling and mentoring. <strong>840+ graduates</strong> since 2014.", icon: "fa-chalkboard-teacher", tag: "4 Terms", tagColor: "bg-mzc-teal/15 text-mzc-teal", btn: "btn-secondary" },
+              { title: "Diploma in Chinese Language", desc: "Introductory to intermediate Chinese language programme, part of the college's international education and cultural exchange offering.", icon: "fa-language", tag: "Certificate", tagColor: "bg-[#2DCE89]/10 text-[#2DCE89]", btn: "btn btn-success" },
+              { title: "Professional Development", desc: "Tailor-made short courses for educators, administrators and community members. Contact the college for the current schedule.", icon: "fa-briefcase", tag: "Flexible", tagColor: "bg-[#FB6340]/10 text-[#FB6340]", btn: "btn btn-warning" }
+            ].map((item, i) => (
+              <div key={i} class={`prog-argon-card bg-white rounded-xl p-6 border-l-4 ${item.tagColor.replace('bg-', 'border-').replace('/10', '').replace('text-', '')} shadow-[0_0_2rem_0_rgba(136,152,170,.12)] relative overflow-hidden transition-all hover:translate-x-1 hover:shadow-[0_15px_35px_rgba(50,50,93,.1)]`}>
+                <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-mzc-blue/8 to-transparent rounded-tr-xl rounded-bl-[80px]" />
+                <div class="icon-box-lg mx-auto mb-4 icon-box-primary"><i class={`fas ${item.icon}`}></i></div>
+                <span class={`prog-tag inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 ${item.tagColor}`}>{item.tag}</span>
+                <h4 class="font-heading font-bold text-[#32325d] mb-2 text-center">{item.title}</h4>
+                <p class="text-sm text-[#8898aa] leading-relaxed mb-4 text-center">{item.desc}</p>
+                <div class="text-center"><a href={item.title === 'Professional Development' ? '/contact/' : '/academics/'} class={`btn ${item.btn} btn-sm btn-round`}>{item.title === 'Professional Development' ? 'Enquire Now' : 'Learn More'}</a></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="/departments/" class="btn btn-primary btn-round btn-lg">
+          <i class="fas fa-building mr-2"></i> Explore Academic Departments
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.prog-tab-btn');
+    const contents = document.querySelectorAll('.prog-tab-content');
+    
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        tabs.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        contents.forEach(c => c.classList.add('hidden'));
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        document.getElementById(tab)?.classList.remove('hidden');
+      });
+    });
+  });
+</script>
+
+<style>
+  .prog-tab-btn.active {
+    @apply bg-gradient-to-r from-mzc-blue to-[#1C90D8] text-white shadow-[0_4px_6px_rgba(50,50,93,.11),0_1px_3px_rgba(0,0,0,.08)];
+  }
+  .prog-tab-content {
+    @apply hidden;
+  }
+  .prog-tab-content:not(.hidden) {
+    @apply block;
+  }
+</style>

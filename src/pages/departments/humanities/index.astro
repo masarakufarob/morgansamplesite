@@ -1,0 +1,235 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import Hero from '@/components/Hero.astro';
+---
+
+<BaseLayout 
+  title="Department of Humanities" 
+  description="Department of Humanities at Morgan Zintec College - Overview, sections, staff, and student clubs. One of the largest departments covering Languages, Social Sciences, and Contemporary subjects."
+  image="/images/og-humanities.jpg"
+>
+  <Navbar currentPage="departments" slot="header" />
+  
+  <Hero
+    title="Department of Humanities"
+    variant="page"
+    badge="Department"
+    badgeIcon="fa-book-open"
+    description="One of the largest departments at the college, comprising Languages, Social Sciences, and Contemporary subjects. Responsible for developing student teachers' soft skills, cultural competence and 21st century competencies."
+    primaryCTA={{ label: "View All Departments", href: "/departments/", icon: "fa-building" }}
+    secondaryCTA={{ label: "Contact Department", href: "/contact/", icon: "fa-envelope" }}
+  />
+
+  <!-- Dept Nav Tabs -->
+  <div class="dept-nav sticky top-16 bg-white border-b-2 border-gray-200 z-40 hidden md:block">
+    <div class="dept-nav-inner max-w-7xl mx-auto px-6 flex gap-0 overflow-x-auto">
+      <button class="dnav-item active px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-[#8898aa] cursor-pointer border-b-3 border-transparent transition-all hover:text-mzc-blue hover:border-mzc-blue whitespace-nowrap" data-tab="overview">Overview</button>
+      <button class="dnav-item px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-[#8898aa] cursor-pointer border-b-3 border-transparent transition-all hover:text-mzc-blue hover:border-mzc-blue whitespace-nowrap" data-tab="sections">Sections</button>
+      <button class="dnav-item px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-[#8898aa] cursor-pointer border-b-3 border-transparent transition-all hover:text-mzc-blue hover:border-mzc-blue whitespace-nowrap" data-tab="staff">Staff</button>
+      <button class="dnav-item px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-[#8898aa] cursor-pointer border-b-3 border-transparent transition-all hover:text-mzc-blue hover:border-mzc-blue whitespace-nowrap" data-tab="clubs">Clubs</button>
+    </div>
+  </div>
+
+  <section class="py-12 bg-white">
+    <div class="container">
+      <!-- OVERVIEW TAB -->
+      <div id="overview" class="tab-section">
+        <div class="section-label">Department of Humanities</div>
+        <h2 class="section-title font-display">Department Overview</h2>
+        <div class="divider divider-center mb-8"></div>
+        
+        <div class="hod-header flex items-center gap-5 bg-[#F5F7FA] rounded-xl p-6 mb-8 border-l-5 border-mzc-blue">
+          <div class="hod-avatar w-16 h-16 rounded-full bg-gradient-to-br from-mzc-navy to-mzc-blue flex items-center justify-center text-3xl text-white/30 flex-shrink-0 border-3 border-mzc-teal">👤</div>
+          <div class="hod-info">
+            <h4 class="font-heading font-extrabold text-lg text-mzc-navy mb-1">Mr B. Ziso</h4>
+            <p class="text-xs font-bold text-mzc-blue uppercase tracking-wider">Head of Department — Humanities</p>
+          </div>
+        </div>
+        
+        <div class="prose text-sm text-[#666] leading-relaxed space-y-4 mb-8 max-w-4xl">
+          <p>The Department of Humanities is one of the largest departments at the college. It comprises a range of subjects taught by competent lecturers through the blended approach where face-to-face teaching is combined with virtual learning. Among other teaching and learning approaches, team teaching, collaborative learning, tutorials, lectures and heritage tours are used by the sections in this department.</p>
+          <p>Each subject area is known as a section and is headed by a Lecturer-in-Charge. The sections can be grouped into three categories:</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-4 mb-8">
+          <div class="p-6 rounded-xl bg-gradient-to-br from-mzc-navy to-mzc-blue text-white text-center">
+            <div class="text-5xl mb-3">🗣️</div>
+            <h4 class="font-heading font-extrabold text-base mb-2">Languages</h4>
+            <p class="text-sm text-white/75">ChiShona, IsiNdebele & English</p>
+          </div>
+          <div class="p-6 rounded-xl bg-gradient-to-br from-mzc-teal to-[#5AB8C4] text-white text-center">
+            <div class="text-5xl mb-3">🌍</div>
+            <h4 class="font-heading font-extrabold text-base mb-2">Social Sciences</h4>
+            <p class="text-sm text-white/85">Family, Religion & Moral Education</p>
+          </div>
+          <div class="p-6 rounded-xl bg-gradient-to-br from-[#2A3A5A] to-[#4A5A7A] text-white text-center">
+            <div class="text-5xl mb-3">🏫</div>
+            <h4 class="font-heading font-extrabold text-base mb-2">Contemporaries</h4>
+            <p class="text-sm text-white/75">Health & Life Skills, NASS</p>
+          </div>
+        </div>
+        
+        <div class="prose text-sm text-[#666] leading-relaxed space-y-4 max-w-4xl">
+          <p>The department prepares pre-service teachers for critical citizenship, understanding of cultures and indigenous knowledge systems of the people of Zimbabwe and offers character education. It holds the greatest responsibility in developing students' soft skills such as communication abilities, language skills, emotional habits, empathy, time management, collaboration, teamwork and leadership traits.</p>
+          <p>Student teachers are empowered with requisite 21st century competencies for effective facilitation of learning at primary school level. The department has given birth to a number of clubs including Chinese, Debate and Public Speaking, Peer Education, Scripture Union, First Aid and the Environmental Education Club.</p>
+        </div>
+      </div>
+
+      <!-- SECTIONS TAB -->
+      <div id="sections" class="tab-section hidden">
+        <div class="section-label">Academic Sections</div>
+        <h2 class="section-title font-display">Department Sections</h2>
+        <div class="divider divider-center mb-8"></div>
+        <p class="text-sm text-[#8898aa] leading-relaxed mb-10 max-w-3xl">Each section within the Department of Humanities is headed by a Lecturer-in-Charge and offers specific areas of study within the teacher education curriculum.</p>
+        
+        <div class="sections-grid grid md:grid-cols-2 gap-6">
+          {[
+            { tag: "Indigenous Languages", title: "Bazi ReChiShona", lic: "Mrs Sibanda", color: "border-mzc-blue", tagColor: "bg-mzc-blue", desc: "Bazi iri rinodzidzisa ChiShona — mutauro waamai. Vadzidzi vanodzidza tsika namagariro. Rinodzidzisa zvidzidzwa zviviri: ChiShona Chamadzidzisiro neChiShona Choudzamu.", details: ["ChiShona Chamadzidzisiro — Chinodzidzisa mudzidzi kuti ave neruzivo rwekudzidzisa ChiShona muzvikoro.", "ChiShona Choudzamu — Chinobata zvidzidzwa zvetsika nemagariro, mutauro, nhetembo, nganonyorwa nemitambo."] },
+            { tag: "Indigenous Languages", title: "Ugatsha LweSiNdebele", lic: "Dr T. Ndlovu", color: "border-mzc-teal", tagColor: "bg-mzc-teal", desc: "Established in response to students from Ndebele-speaking regions, this section provides instruction in IsiNdebele for teaching and communication. Currently all students are offered the opportunity to learn IsiNdebele to widen their linguistic competence.", details: ["For students pursuing IsiNdebele as a teaching subject, the programme prepares them to effectively teach at the primary school level."] },
+            { tag: "Languages", title: "English", lic: "Mrs J. Hungwe", color: "border-mzc-blue", tagColor: "bg-mzc-blue", desc: "Comprises three areas: English Professional Studies Syllabus B (PSB), English Main Subject and Communication Skills. PSB and Communication Skills are compulsory to all students; English Main Subject is for those who choose to specialise.", details: ["PSB exposes student teachers to methods of teaching listening, speaking, reading and writing.", "The Main Subject covers Literature in English, Language and Linguistics.", "Communication Skills develops effective communication habits for the global village."] },
+            { tag: "Social Sciences", title: "Family, Religion & Moral Education (FAREME)", lic: "Dr Tatira", color: "border-mzc-teal", tagColor: "bg-mzc-teal", desc: "A Social Science section comprising PSB and Main Subject areas. PSB develops student teachers who can effectively teach family dynamics, religion and moral issues to primary school learners, fostering appreciation of diverse beliefs.", details: ["The Main Subject explores World Religions, beliefs, practices and contemporary religious issues, equipping teachers for multi-faith communities."] },
+            { tag: "Social Sciences", title: "Heritage-Social Studies (H-SS)", lic: "Mr T. Dzumbunu", color: "border-mzc-blue", tagColor: "bg-mzc-blue", desc: "PSB area prepares all student teachers to effectively teach Heritage-Social Studies at primary level — moulding human character through identity, norms, values, patriotism and heritage resources. Empowers teachers to create spaces where learners engage with climate change, local cultures and children's rights.", details: ["The Main Subject provides a platform to explore civil, social, economic, political and developmental concerns at local and international levels."] },
+            { tag: "Contemporaries", title: "Health and Life Skills (HLS)", lic: "Pastor Maviko", color: "border-[#E67E22]", tagColor: "bg-[#E67E22]", desc: "A compulsory subject focusing on development of knowledge, attitudes, values and skills to positively influence students' ability to adopt safer behaviours. Uses participatory methods: Focus Group Discussions, Workshops, Role Plays, Drama, Lectures.", details: ["Activities include life skills workshops for new intakes, peer educator workshops, TP deployment preparation, outreach programmes and guidance and counselling services."] },
+            { tag: "Contemporaries", title: "National & Strategic Studies (NASS)", lic: "Mr Masungo", color: "border-[#27AE60]", tagColor: "bg-[#27AE60]", desc: "A compulsory subject for all students. Develops awareness of the historical context informing national and international discourse on Zimbabwe. Instills loyalty, patriotism and positive national values.", details: ["Topics: History of Zimbabwe, National and International Relations, Civic Education, Contemporary Issues."] }
+          ].map((section, i) => (
+            <div key={i} class={`section-card bg-white rounded-xl p-6 shadow-[0_2px_14px_rgba(0,0,0,.07)] ${section.color} transition-all hover:shadow-[0_8px_28px_rgba(0,0,0,.1)] hover:-translate-y-1`} style="border-top: 4px solid;">
+              <span class={`section-tag-pill inline-block text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded mb-3 ${section.tagColor} text-white`}>{section.tag}</span>
+              <h4 class="font-heading font-extrabold text-base text-mzc-navy mb-1">{section.title}</h4>
+              <span class="lic-badge text-xs font-bold text-mzc-blue uppercase tracking-wider mb-3 block">Lecturer-in-Charge: {section.lic}</span>
+              <p class="text-sm text-[#666] leading-relaxed mb-3">{section.desc}</p>
+              <ul class="text-sm text-[#666] leading-loose list-disc list-inside space-y-1">
+                {section.details.map(d => <li key={d}>{d}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- STAFF TAB -->
+      <div id="staff" class="tab-section hidden">
+        <div class="section-label">Our People</div>
+        <h2 class="section-title font-display">Department Staff</h2>
+        <div class="divider divider-center mb-8"></div>
+        
+        <div class="hod-header flex items-center gap-5 bg-[#F5F7FA] rounded-xl p-6 mb-8 border-l-5 border-mzc-blue">
+          <div class="hod-avatar w-16 h-16 rounded-full bg-gradient-to-br from-mzc-navy to-mzc-blue flex items-center justify-center text-3xl text-white/30 flex-shrink-0 border-3 border-mzc-teal">👤</div>
+          <div class="hod-info">
+            <h4 class="font-heading font-extrabold text-lg text-mzc-navy mb-1">Mr B. Ziso</h4>
+            <p class="text-xs font-bold text-mzc-blue uppercase tracking-wider">Head of Department — Humanities</p>
+          </div>
+        </div>
+        
+        <div class="staff-table-wrap overflow-x-auto">
+          <table class="staff-table w-full border-collapse text-sm">
+            <thead>
+              <tr style="background: #0C71C3;">
+                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-white">Staff Member</th>
+                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-white">Section / Area</th>
+                <th class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-white">Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { name: "Mr B. Ziso", section: "Humanities", role: "Head of Department" },
+                { name: "Mrs Sibanda", section: "Bazi ReChiShona", role: "Lecturer-in-Charge" },
+                { name: "Dr T. Ndlovu", section: "Ugatsha LweSiNdebele", role: "Coordinator" },
+                { name: "Mrs J. Hungwe", section: "English", role: "Lecturer-in-Charge" },
+                { name: "Dr Tatira", section: "FAREME", role: "Lecturer-in-Charge" },
+                { name: "Mr T. Dzumbunu", section: "Heritage-Social Studies", role: "Lecturer-in-Charge" },
+                { name: "Pastor Maviko", section: "Health and Life Skills", role: "Lecturer-in-Charge" },
+                { name: "Mr Masungo", section: "National & Strategic Studies", role: "Lecturer-in-Charge" }
+              ].map((staff, i) => (
+                <tr key={i} class="hover:bg-[#F5F7FA] border-b border-gray-100">
+                  <td class="px-4 py-3"><div class="staff-td flex items-center gap-3"><div class="staff-avatar-sm w-9 h-9 rounded-full bg-gradient-to-br from-mzc-navy to-mzc-blue flex items-center justify-center text-sm text-white/40 flex-shrink-0">👤</div><span>{staff.name}</span></div></td>
+                  <td class="px-4 py-3 text-[#666]">{staff.section}</td>
+                  <td class="px-4 py-3 text-[#666]">{staff.role}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-[#8898aa] mt-4 italic">* Staff profile photos and additional details to be added by the department.</p>
+      </div>
+
+      <!-- CLUBS TAB -->
+      <div id="clubs" class="tab-section hidden">
+        <div class="section-label">Student Activities</div>
+        <h2 class="section-title font-display">Department Clubs</h2>
+        <div class="divider divider-center mb-8"></div>
+        <p class="text-sm text-[#8898aa] leading-relaxed mb-10 max-w-3xl">Student teachers have opportunities to explore further what they learn in formal spaces into independent areas of interest through clubs. The Department of Humanities has given birth to several vibrant clubs. Club content and student representatives are to be developed further by students in their respective clubs.</p>
+        
+        <div class="clubs-grid grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          {[
+            { icon: "fa-flag", title: "Chinese Club", desc: "Promotes Chinese language and cultural exchange. Connected to the college's Diploma in Chinese Language offering." },
+            { icon: "fa-microphone", title: "Debate & Public Speaking", desc: "Develops critical thinking, argumentation and public speaking skills essential for future educators." },
+            { icon: "fa-users", title: "Peer Educators' Club", desc: "Student peer educators trained to support fellow students on health, life skills and wellness topics." },
+            { icon: "fa-cross", title: "Scripture Union", desc: "A faith-based club fostering spiritual growth and moral values aligned with the college's ethos." },
+            { icon: "fa-first-aid", title: "First Aid Club", desc: "Equips student teachers with first aid knowledge and practical emergency response skills." },
+            { icon: "fa-seedling", title: "Environmental Education Club", desc: "Promotes environmental awareness, sustainability and heritage-based ecological responsibility." }
+          ].map((club, i) => (
+            <div key={i} class="club-card bg-[#F5F7FA] rounded-xl p-5 text-center border-b-3 border-mzc-teal hover:bg-white hover:shadow-[0_4px_16px_rgba(0,0,0,.07)] transition-all">
+              <div class="club-icon text-4xl mb-3">{club.icon}</div>
+              <h4 class="font-heading font-extrabold text-sm text-mzc-navy mb-2">{club.title}</h4>
+              <p class="text-xs text-[#666] leading-relaxed">{club.desc}</p>
+            </div>
+          ))}
+        </div>
+        
+        <div class="bg-[#F5F7FA] rounded-xl p-6 border-l-4 border-mzc-teal">
+          <p class="text-sm text-[#666] italic"><strong class="text-mzc-navy">Note to students:</strong> Club pages are to be developed by students in their respective clubs. Please submit your club information, student representatives, activities and photos to the Department of Humanities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer variant="dark" slot="footer" />
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.dnav-item');
+    const sections = document.querySelectorAll('.tab-section');
+    
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        tabs.forEach(b => b.classList.remove('active'));
+        sections.forEach(s => s.classList.add('hidden'));
+        btn.classList.add('active');
+        document.getElementById(tab)?.classList.remove('hidden');
+      });
+    });
+    
+    // Mobile tabs - convert to select
+    if (window.innerWidth < 768) {
+      const nav = document.querySelector('.dept-nav-inner');
+      if (nav) {
+        const select = document.createElement('select');
+        select.className = 'w-full px-4 py-2 text-sm border border-gray-200 rounded-lg bg-white';
+        tabs.forEach(btn => {
+          const option = document.createElement('option');
+          option.value = btn.dataset.tab;
+          option.textContent = btn.textContent;
+          option.selected = btn.classList.contains('active');
+          select.appendChild(option);
+        });
+        select.addEventListener('change', (e) => {
+          const tab = e.target.value;
+          tabs.forEach(b => b.classList.remove('active'));
+          sections.forEach(s => s.classList.add('hidden'));
+          tabs.forEach(b => { if (b.dataset.tab === tab) b.classList.add('active'); });
+          document.getElementById(tab)?.classList.remove('hidden');
+        });
+        nav.innerHTML = '';
+        nav.appendChild(select);
+      }
+    }
+  });
+</script>
+
+<style>
+  .dept-nav { @apply hidden lg:flex; }
+  @media (max-width: 1023px) { .dept-nav { @apply block; } }
+</style>

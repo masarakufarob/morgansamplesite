@@ -1,0 +1,132 @@
+---
+interface Props {
+  currentPage?: string;
+}
+const { currentPage = '' } = Astro.props;
+
+const navItems = [
+  { href: '/', label: 'Home', pages: [''] },
+  { href: '/about/', label: 'About', pages: ['about'], children: [
+    { href: '/about/#principal', label: "Principal's Desk", icon: 'fa-user-tie' },
+    { href: '/about/#vp', label: "Vice Principal's Desk", icon: 'fa-user' },
+    { href: '/about/#history', label: 'History', icon: 'fa-history' },
+    { href: '/about/#advisory', label: 'Advisory Council', icon: 'fa-users' },
+    { href: '/about/#vision', label: 'Vision & Mission', icon: 'fa-bullseye' }
+  ]},
+  { href: '/academics/', label: 'Academics', pages: ['academics'], children: [
+    { href: '/academics/#education', label: 'Diploma in Education', icon: 'fa-graduation-cap' },
+    { href: '/academics/#ict', label: 'Diploma in Applied ICT', icon: 'fa-laptop-code' },
+    { href: '/academics/#short', label: 'Short Courses', icon: 'fa-certificate' }
+  ]},
+  { href: '/departments/', label: 'Departments', pages: ['departments'], children: [
+    { href: '/departments/humanities/', label: 'Humanities', icon: 'fa-book-open' },
+    { href: '/departments/maths-science/', label: 'Maths & Sciences', icon: 'fa-calculator' },
+    { href: '/departments/research-innovation/', label: 'Research & Innovation', icon: 'fa-flask' },
+    { href: '/departments/ecd/', label: 'ECD', icon: 'fa-child' },
+    { href: '/departments/non-academic/', label: 'Non-Academic', icon: 'fa-building' }
+  ]},
+  { href: '/research/', label: 'Research', pages: ['research'] },
+  { href: '/library/', label: 'Library', pages: ['library'] },
+  { href: '/contact/', label: 'Contact', pages: ['contact'] }
+];
+
+const isActive = (item: typeof navItems[0]) => {
+  return item.pages.some(p => currentPage === p || currentPage.startsWith(p + '/'));
+};
+
+const hasActiveChild = (item: typeof navItems[0]) => {
+  return item.children?.some(child => currentPage === child.href.replace('/', '').replace('/', '')) ?? false;
+};
+---
+
+<nav class="navbar fixed top-0 w-full z-50 transition-all duration-300" id="mainNav">
+  <div class="navbar-inner max-w-7xl mx-auto px-6">
+    <a href="/" class="navbar-brand flex items-center gap-3">
+      <img src="/images/logo.png" alt="Morgan Zintec College Logo" class="w-12 h-12 object-contain flex-shrink-0 drop-shadow-lg" />
+      <div class="navbar-brand-text">
+        <span class="name block font-heading font-extrabold text-lg text-white leading-tight">Morgan Zintec College</span>
+        <span class="sub text-xs text-white/60 uppercase tracking-widest">Education · Progress · Self Reliance</span>
+      </div>
+    </a>
+
+    <ul class="nav-links-list flex items-center list-none gap-0 hidden md:flex">
+      {navItems.map(item => (
+        <li class="relative">
+          {item.children ? (
+            <>
+              <a href={item.href} class={`
+                flex items-center h-16 px-4 text-sm font-semibold
+                text-white/90 uppercase tracking-wider transition-colors
+                ${isActive(item) ? 'text-white bg-white/15' : 'hover:text-white'}
+              `}>
+                {item.label}
+                <i class="fas fa-angle-down text-xs ml-1"></i>
+              </a>
+              <ul class="nav-dd absolute top-full left-0 min-w-[220px] bg-white rounded-lg shadow-2xl list-none z-50 p-2 mt-1 overflow-hidden invisible opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100" style="display: none;">
+                {item.children.map(child => (
+                  <li>
+                    <a href={child.href} class="flex items-center gap-3 px-4 py-2.5 text-sm text-[#525f7f] transition-all rounded-md">
+                      <div class="icon-box w-8 h-8 rounded-full text-sm dd-icon">
+                        <i class={`fas ${child.icon}`}></i>
+                      </div>
+                      <span>{child.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <a href={item.href} class={`
+              flex items-center h-16 px-4 text-sm font-semibold
+              text-white/90 uppercase tracking-wider transition-colors
+              ${isActive(item) ? 'text-white bg-white/15' : 'hover:text-white'}
+            `}>
+              {item.label}
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    <div class="nav-btn-area flex items-center gap-2">
+      <a href="https://morgan.easylearn.co.zw" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-sm btn-round hidden sm:inline-flex">
+        <i class="fas fa-sign-in-alt mr-2"></i> Student Login
+      </a>
+      <button class="mobile-toggle md:hidden p-2 text-white text-2xl" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-links-list fixed top-16 left-0 right-0 bg-mzc-navy flex-col items-stretch max-h-[calc(100vh-4rem)] overflow-y-auto shadow-2xl z-40 md:hidden" style="display: none;">
+    {navItems.map(item => (
+      <li class="relative border-b border-white/10">
+        {item.children ? (
+          <>
+            <a href={item.href} class="flex items-center py-4 px-5 text-sm font-semibold text-white/90 uppercase tracking-wider">
+              {item.label}
+              <i class="fas fa-angle-down text-xs ml-auto"></i>
+            </a>
+            <ul class="nav-dd bg-black/20 list-none p-0 m-0 rounded-none shadow-none" style="display: block;">
+              {item.children.map(child => (
+                <li>
+                  <a href={child.href} class="flex items-center gap-3 px-6 py-2.5 text-sm text-white/75 transition-colors">
+                    <div class="icon-box w-8 h-8 rounded-full text-sm dd-icon bg-white/10">
+                      <i class={`fas ${child.icon}`}></i>
+                    </div>
+                    <span>{child.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <a href={item.href} class="flex items-center py-4 px-5 text-sm font-semibold text-white/90 uppercase tracking-wider hover:text-white hover:bg-white/10">
+            {item.label}
+          </a>
+        )}
+      </li>
+    ))}
+  </div>
+</nav>

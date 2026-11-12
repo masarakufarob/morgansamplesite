@@ -1,0 +1,66 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import Hero from '@/components/Hero.astro';
+---
+
+<BaseLayout 
+  title="Non-Academic Administration" 
+  description="Non-Academic Departments at Morgan Zintec College - Principal's Office, Vice Principal's Office, Human Resources, Finance & Accounts, Registry & Records, Library, ICT Department, Estates & Facilities."
+  image="/images/og-non-academic.jpg"
+>
+  <Navbar currentPage="departments" slot="header" />
+  
+  <Hero
+    title="Non-Academic Administration"
+    variant="page"
+    badge="Support Services"
+    badgeIcon="fa-building"
+    description="The college's non-academic departments provide the institutional support, administrative infrastructure and student services that underpin academic excellence."
+    primaryCTA={{ label: "Contact Administration", href: "/contact/", icon: "fa-envelope" }}
+    secondaryCTA={{ label: "View All Departments", href: "/departments/", icon: "fa-building" }}
+  />
+
+  <section class="py-12 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <div class="section-label">Non-Academic Administration</div>
+        <h2 class="section-title font-display">Support Services & Administration</h2>
+        <div class="divider divider-center mb-6"></div>
+        <p class="text-lg text-[#8898aa] leading-relaxed">Our administrative and support departments ensure the smooth operation of the college, providing essential services to students, staff, and the wider college community.</p>
+      </div>
+      
+      <div class="nonac-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+        {[
+          { icon: "fa-user-tie", title: "Principal's Office", desc: "Dr T.J. Zendah — College leadership, governance, strategic planning, and external relations.", color: "bg-gradient-to-br from-mzc-navy to-mzc-blue", href: "/about/#principal" },
+          { icon: "fa-user", title: "Vice Principal's Office", desc: "Academic oversight, student affairs, curriculum coordination, and quality assurance.", color: "bg-gradient-to-br from-mzc-teal to-[#5AB8C4]", href: "/about/#vp" },
+          { icon: "fa-users", title: "Human Resources", desc: "Staff management, welfare, professional development, recruitment, and labour relations.", color: "bg-gradient-to-br from-[#2A3A5A] to-[#3A4A6A]", href: "/contact/" },
+          { icon: "fa-money-bill-wave", title: "Finance & Accounts", desc: "Bursar, accounts payable/receivable, student fees, budgeting, and financial reporting.", color: "bg-gradient-to-br from-[#1A3A2A] to-[#2D6A4A]", href: "/contact/" },
+          { icon: "fa-clipboard-list", title: "Registry & Records", desc: "Student records, admissions, certifications, transcripts, and academic administration.", color: "bg-gradient-to-br from-[#2A1A4A] to-[#4A2D7A]", href: "/contact/" },
+          { icon: "fa-book", title: "Library", desc: "Librarian Shuvisai — Resources, cataloguing, Koha ILS management, and information literacy.", color: "bg-gradient-to-br from-mzc-teal to-[#5AB8C4]", href: "/library/" },
+          { icon: "fa-laptop", title: "ICT Department", desc: "Systems administration, eLearning platforms, network infrastructure, and digital services.", color: "bg-gradient-to-br from-[#3A2A1A] to-[#6A4A2A]", href: "/contact/" },
+          { icon: "fa-house", title: "Estates & Facilities", desc: "Campus maintenance, accommodation, grounds, security, and transport services.", color: "bg-gradient-to-br from-[#2A3A1A] to-[#4A5A2A]", href: "/contact/" }
+        ].map((item, i) => (
+          <a key={i} href={item.href} class="nonac-item p-6 text-center transition-colors hover:bg-[#F5F7FA] relative" style="border-right: 1px solid #E0E0E0; border-bottom: 1px solid #E0E0E0;">
+            <div class="ni-icon w-14 h-14 mx-auto mb-3 rounded-full flex items-center justify-center text-2xl text-white" style="background: {item.color};">
+              <i class={`fas ${item.icon}`}></i>
+            </div>
+            <h5 class="font-heading font-extrabold text-sm text-mzc-navy mb-1">{item.title}</h5>
+            <p class="text-xs text-[#666] leading-relaxed">{item.desc}</p>
+          </a>
+        ))}
+      </div>
+      
+      <div class="mt-8 p-6 bg-[#F5F7FA] rounded-xl">
+        <p class="text-sm text-[#666] mb-4 text-center">For detailed staff directory and contact details of non-academic departments:</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/contact/" class="btn btn-primary btn-round"><i class="fas fa-envelope mr-2"></i> Contact Us</a>
+          <a href="/departments/" class="btn btn-outline btn-round"><i class="fas fa-building mr-2"></i> All Departments</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer variant="dark" slot="footer" />
+</BaseLayout>

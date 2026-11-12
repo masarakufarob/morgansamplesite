@@ -1,0 +1,219 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import Hero from '@/components/Hero.astro';
+---
+
+<BaseLayout 
+  title="Departments" 
+  description="Explore Morgan Zintec College's academic departments: Humanities, Maths & Sciences, Research & Innovation, ECD, and Non-Academic Administration."
+  image="/images/og-departments.jpg"
+>
+  <Navbar currentPage="departments" slot="header" />
+  
+  <Hero
+    title="Academic Departments"
+    variant="page"
+    description="Morgan Zintec College is organised into four academic departments, each headed by a Head of Department and comprising multiple sections led by Lecturers-in-Charge."
+    primaryCTA={{ label: "View Research Portal", href: "/research/", icon: "fa-flask" }}
+    secondaryCTA={{ label: "Contact Us", href: "/contact/", icon: "fa-envelope" }}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container">
+      <div class="section-header mb-12">
+        <div class="section-label">Our Academic Structure</div>
+        <h2 class="section-title">Academic Departments</h2>
+        <div class="divider divider-center mb-4"></div>
+        <p class="section-sub mx-auto">Each department is headed by a Head of Department and comprises multiple sections led by Lecturers-in-Charge.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-7 mb-16">
+        <!-- HUMANITIES -->
+        <a href="/departments/humanities/" class="dept-card group bg-white rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,.08)] hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,0,0,.12)] transition-all duration-300 border border-gray-100">
+          <div class="dept-card-header p-7 bg-gradient-to-br from-mzc-navy to-mzc-blue flex items-start gap-5">
+            <div class="dept-icon w-15 h-15 rounded-full bg-white/15 flex items-center justify-center text-3xl flex-shrink-0 border-2 border-mzc-teal">
+              📖
+            </div>
+            <div class="dept-header-info">
+              <h3 class="font-display text-xl font-bold text-white mb-1">Department of Humanities</h3>
+              <div class="text-xs font-bold text-mzc-teal uppercase tracking-wider">HOD: Mr B. Ziso</div>
+            </div>
+          </div>
+          <div class="dept-card-body p-7">
+            <p class="text-sm text-[#8898aa] leading-relaxed mb-4">One of the largest departments at the college, comprising Languages, Social Sciences, and Contemporary subjects. Responsible for developing student teachers' soft skills, cultural competence and 21st century competencies.</p>
+            <p class="text-xs font-bold text-mzc-navy uppercase tracking-wider mb-2">Sections:</p>
+            <div class="section-pills flex flex-wrap gap-2 mb-5">
+              {["ChiShona", "IsiNdebele", "English", "FAREME", "Heritage-Social Studies", "Health & Life Skills", "NASS"].map(s => <span key={s} class="s-pill bg-[#F5F7FA] text-mzc-navy text-xs font-bold px-2.5 py-1 rounded-full border border-gray-200">{s}</span>)}
+            </div>
+            <div class="dept-btns flex gap-2 flex-wrap">
+              <span class="btn btn-primary btn-sm">View Department</span>
+              <span class="btn btn-secondary btn-sm">Sections</span>
+              <span class="btn btn-outline btn-sm">Staff Members</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- MATHS & SCIENCES -->
+        <a href="/departments/maths-science/" class="dept-card group bg-white rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,.08)] hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,0,0,.12)] transition-all duration-300 border border-gray-100">
+          <div class="dept-card-header p-7 bg-gradient-to-br from-[#1A3A2A] to-[#2D6A4A] flex items-start gap-5">
+            <div class="dept-icon w-15 h-15 rounded-full bg-white/15 flex items-center justify-center text-3xl flex-shrink-0 border-2 border-mzc-teal">
+              🔢
+            </div>
+            <div class="dept-header-info">
+              <h3 class="font-display text-xl font-bold text-white mb-1">Maths & Sciences</h3>
+              <div class="text-xs font-bold text-mzc-teal uppercase tracking-wider">HOD: [To be updated]</div>
+            </div>
+          </div>
+          <div class="dept-card-body p-7">
+            <p class="text-sm text-[#8898aa] leading-relaxed mb-4">Covers Mathematics, Science and related STEM areas preparing student teachers to effectively teach at the primary school level. Focuses on inquiry-based learning, practical skills and problem-solving pedagogy.</p>
+            <p class="text-xs font-bold text-mzc-navy uppercase tracking-wider mb-2">Sections:</p>
+            <div class="section-pills flex flex-wrap gap-2 mb-5">
+              {["Mathematics PSB", "Mathematics Main Subject", "Science PSB", "Science Main Subject", "Environmental Science"].map(s => <span key={s} class="s-pill bg-[#F5F7FA] text-mzc-navy text-xs font-bold px-2.5 py-1 rounded-full border border-gray-200">{s}</span>)}
+            </div>
+            <div class="dept-btns flex gap-2 flex-wrap">
+              <span class="btn btn-primary btn-sm">View Department</span>
+              <span class="btn btn-secondary btn-sm">Sections</span>
+              <span class="btn btn-outline btn-sm">Staff Members</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- RESEARCH & INNOVATION -->
+        <a href="/departments/research-innovation/" class="dept-card group bg-white rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,.08)] hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,0,0,.12)] transition-all duration-300 border border-gray-100">
+          <div class="dept-card-header p-7 bg-gradient-to-br from-[#2A1A4A] to-[#4A2D7A] flex items-start gap-5">
+            <div class="dept-icon w-15 h-15 rounded-full bg-white/15 flex items-center justify-center text-3xl flex-shrink-0 border-2 border-mzc-gold">
+              🔬
+            </div>
+            <div class="dept-header-info">
+              <h3 class="font-display text-xl font-bold text-white mb-1">Research & Innovation</h3>
+              <div class="text-xs font-bold text-mzc-gold uppercase tracking-wider">HOD: [To be updated]</div>
+            </div>
+          </div>
+          <div class="dept-card-body p-7">
+            <p class="text-sm text-[#8898aa] leading-relaxed mb-4">Drives the college's research agenda in alignment with Education 5.0. Oversees Theory of Education, Professional Foundations, Teaching Practice, Distance Education and the In-Service Programme.</p>
+            <p class="text-xs font-bold text-mzc-navy uppercase tracking-wider mb-2">Sections:</p>
+            <div class="section-pills flex flex-wrap gap-2 mb-5">
+              {["Theory of Education", "Professional Studies", "Teaching Practice", "Distance Education", "In-Service Programme"].map(s => <span key={s} class="s-pill bg-[#F5F7FA] text-mzc-navy text-xs font-bold px-2.5 py-1 rounded-full border border-gray-200">{s}</span>)}
+            </div>
+            <div class="dept-btns flex gap-2 flex-wrap">
+              <span class="btn btn-primary btn-sm">View Department</span>
+              <span class="btn btn-secondary btn-sm">Sections</span>
+              <span class="btn btn-outline btn-sm">Staff Members</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ECD -->
+        <a href="/departments/ecd/" class="dept-card group bg-white rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,.08)] hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,0,0,.12)] transition-all duration-300 border border-gray-100">
+          <div class="dept-card-header p-7 bg-gradient-to-br from-[#3A2A1A] to-[#6A4A2A] flex items-start gap-5">
+            <div class="dept-icon w-15 h-15 rounded-full bg-white/15 flex items-center justify-center text-3xl flex-shrink-0 border-2 border-[#E67E22]">
+              🧒
+            </div>
+            <div class="dept-header-info">
+              <h3 class="font-display text-xl font-bold text-white mb-1">Early Childhood Development (ECD)</h3>
+              <div class="text-xs font-bold text-[#E67E22] uppercase tracking-wider">HOD: [To be updated]</div>
+            </div>
+          </div>
+          <div class="dept-card-body p-7">
+            <p class="text-sm text-[#8898aa] leading-relaxed mb-4">Dedicated to the training of early childhood educators through the Infant Course of the Diploma in Education and the ECD Short Course. Covers developmental psychology, ECD methodology and community-based programming.</p>
+            <p class="text-xs font-bold text-mzc-navy uppercase tracking-wider mb-2">Sections:</p>
+            <div class="section-pills flex flex-wrap gap-2 mb-5">
+              {["ECD Methodology", "Developmental Psychology", "ECD Short Course", "Infant Teaching Practice", "Creative Arts in ECD"].map(s => <span key={s} class="s-pill bg-[#F5F7FA] text-mzc-navy text-xs font-bold px-2.5 py-1 rounded-full border border-gray-200">{s}</span>)}
+            </div>
+            <div class="dept-btns flex gap-2 flex-wrap">
+              <span class="btn btn-primary btn-sm">View Department</span>
+              <span class="btn btn-secondary btn-sm">Sections</span>
+              <span class="btn btn-outline btn-sm">Staff Members</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- NON-ACADEMIC -->
+      <div class="mb-16">
+        <div class="section-header mb-8">
+          <div class="section-label">Support Services</div>
+          <h2 class="section-title">Non-Academic Departments</h2>
+          <div class="divider divider-center mb-4"></div>
+          <p class="section-sub mx-auto">The college's non-academic departments provide the institutional support, administrative infrastructure and student services that underpin academic excellence.</p>
+        </div>
+
+        <a href="/departments/non-academic/" class="nonac-card group block bg-[#F5F7FA] rounded-xl overflow-hidden border border-gray-200 shadow-[0_4px_16px_rgba(0,0,0,.06)] hover:shadow-lg transition-all duration-300">
+          <div class="nonac-header p-7 bg-gradient-to-br from-[#2A3A5A] to-[#3A4A6A] flex items-center gap-5">
+            <div class="nonac-icon w-15 h-15 rounded-full bg-white/12 flex items-center justify-center text-3xl flex-shrink-0 border-2 border-white/30">
+              🏢
+            </div>
+            <div>
+              <h3 class="font-display text-xl font-bold text-white mb-1">Non-Academic Administration</h3>
+              <p class="text-xs text-white/60 uppercase tracking-wider">Support Services & Administration</p>
+            </div>
+          </div>
+          <div class="nonac-grid grid grid-cols-2 md:grid-cols-4 gap-0">
+            {[
+              { icon: "fa-user-tie", title: "Principal's Office", desc: "Dr T.J. Zendah — College leadership and governance" },
+              { icon: "fa-user", title: "Vice Principal's Office", desc: "Academic oversight and student affairs" },
+              { icon: "fa-users", title: "Human Resources", desc: "Staff management, welfare and development" },
+              { icon: "fa-money-bill-wave", title: "Finance & Accounts", desc: "Bursar, accounts payable/receivable, fees" },
+              { icon: "fa-clipboard-list", title: "Registry & Records", desc: "Student records, admissions, certifications" },
+              { icon: "fa-book", title: "Library", desc: "Librarian Shuvisai — Resources and cataloguing" },
+              { icon: "fa-laptop", title: "ICT Department", desc: "Systems, eLearning, networks and digital services" },
+              { icon: "fa-house", title: "Estates & Facilities", desc: "Campus maintenance, accommodation, grounds" }
+            ].map((item, i) => (
+              <div key={i} class={`nonac-item p-5 text-center transition-colors ${i % 4 === 3 ? 'border-r-0' : 'border-r border-gray-200'} ${i >= 4 ? 'border-b-0' : 'border-b border-gray-200'}`}>
+                <div class="ni-icon text-3xl mb-2">{item.icon}</div>
+                <h5 class="font-heading font-extrabold text-sm text-mzc-navy mb-1">{item.title}</h5>
+                <p class="text-xs text-[#8898aa] leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div class="nonac-footer p-6 flex flex-wrap gap-3 items-center justify-between border-t-2 border-gray-200">
+            <p class="text-sm text-[#8898aa]">For staff directory and contact details of non-academic departments:</p>
+            <div class="flex gap-2 flex-wrap">
+              <span class="btn btn-primary btn-sm">View Section</span>
+              <span class="btn btn-outline btn-sm">Staff Members</span>
+              <span class="btn btn-secondary btn-sm">Contact Us</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- QUICK HOD CONTACTS -->
+      <div class="quick-contacts bg-mzc-navy py-16">
+        <div class="container">
+          <div class="section-header mb-8">
+            <div class="section-label text-mzc-teal">Leadership</div>
+            <h2 class="section-title text-white">Heads of Department</h2>
+            <div class="divider divider-center" style="background: #7EBEC5; margin: 12px auto 16px;"></div>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              { name: "Mr B. Ziso", role: "HOD", dept: "Humanities", icon: "fa-book-open", gradient: "from-mzc-blue to-mzc-navy", href: "/departments/humanities/" },
+              { name: "[To be updated]", role: "HOD", dept: "Maths & Sciences", icon: "fa-calculator", gradient: "from-[#1A3A2A] to-[#2D6A4A]", href: "/departments/maths-science/" },
+              { name: "[To be updated]", role: "HOD", dept: "Research & Innovation", icon: "fa-flask", gradient: "from-[#2A1A4A] to-[#4A2D7A]", href: "/departments/research-innovation/" },
+              { name: "[To be updated]", role: "HOD", dept: "ECD", icon: "fa-child", gradient: "from-[#3A2A1A] to-[#6A4A2A]", href: "/departments/ecd/" },
+              { name: "Administration", role: "Support Services", dept: "Non-Academic", icon: "fa-building", gradient: "from-white/12 to-white/8", href: "/departments/non-academic/", border: "border-white/20" }
+            ].map((hod, i) => (
+              <div key={i} class={`qc-card bg-white/7 border transition-all duration-300 hover:bg-white/13 hover:-translate-y-1 text-center p-5 rounded-lg ${hod.border || ''}`}>
+                <div class={`qc-avatar w-13 h-13 rounded-full mx-auto mb-2.5 flex items-center justify-center text-xl ${hod.gradient}`}><i class={`fas ${hod.icon}`}></i></div>
+                <h5 class="font-heading font-extrabold text-sm text-white mb-1">{hod.name}</h5>
+                <p class="text-xs font-bold text-mzc-teal uppercase tracking-wider mb-1">{hod.role}</p>
+                <div class="text-xs text-white/45 mb-2">{hod.dept}</div>
+                <a href={hod.href} class="btn-sm inline-block px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded bg-mzc-teal text-mzc-navy hover:bg-white transition-all">View Dept</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer variant="dark" slot="footer" />
+</BaseLayout>
+
+<style>
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs rounded-md;
+  }
+</style>

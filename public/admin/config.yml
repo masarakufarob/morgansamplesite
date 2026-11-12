@@ -1,0 +1,128 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+site_url: https://morganzintec.ac.zw
+logo_url: /images/logo.png
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "src/pages/index.astro"
+        fields:
+          - {label: "Hero Title", name: "heroTitle", widget: "text", default: "Educating Zimbabwe's\nFuture Teachers"}
+          - {label: "Hero Badge", name: "heroBadge", widget: "text", default: "Morgan Zintec College — Est. 1981"}
+          - {label: "Hero Description", name: "heroDesc", widget: "text", default: "A reputable college of education producing innovative and transformative educators for sustainable industrialization through the 3-3-3 model."}
+          - {label: "Primary CTA Text", name: "primaryCTAText", widget: "string", default: "Discover More"}
+          - {label: "Primary CTA Link", name: "primaryCTALink", widget: "string", default: "/about/"}
+          - {label: "Secondary CTA Text", name: "secondaryCTAText", widget: "string", default: "Our Programmes"}
+          - {label: "Secondary CTA Link", name: "secondaryCTALink", widget: "string", default: "/academics/"}
+          - {label: "Stats", name: "stats", widget: "list", fields: [
+              {label: "Number", name: "number", widget: "string"},
+              {label: "Label", name: "label", widget: "string"}
+            ], default: [
+              {number: "1981", label: "Established"},
+              {number: "840+", label: "In-Service Grads"},
+              {number: "660+", label: "ECD Grads"}
+            ]}
+      
+      - name: "about"
+        label: "About Page"
+        file: "src/pages/about/index.astro"
+        fields:
+          - {label: "Principal Name", name: "principalName", widget: "string", default: "Dr. T.J. Zendah"}
+          - {label: "Principal Quote", name: "principalQuote", widget: "text", default: "The Morgan ZINTEC branded teacher should harness artificial intelligence as a pedagogic tool rather than be replaced by such."}
+          - {label: "Vision Statement", name: "vision", widget: "text", default: "A reputable college of education in the production of innovative and transformative educators for sustainable industrialization."}
+          - {label: "Mission Statement", name: "mission", widget: "text", default: "To produce skilled 21st century educators using heritage-based philosophy for inclusive and equitable quality education."}
+      
+      - name: "academics"
+        label: "Academics Page"
+        file: "src/pages/academics/index.astro"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Academic Programmes"}
+          - {label: "Page Description", name: "description", widget: "text", default: "Nationally accredited qualifications and specialist short courses preparing the next generation of Zimbabwean educators."}
+      
+      - name: "contact"
+        label: "Contact Page"
+        file: "src/pages/contact/index.astro"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Contact Us"}
+          - {label: "Page Description", name: "description", widget: "text", default: "We'd love to hear from you. Reach us at our campus in Arcadia, Harare or through any of the channels below."}
+          - {label: "Email", name: "email", widget: "string", default: "secretary@morganzintec.ac.zw"}
+          - {label: "Phone", name: "phone", widget: "string", default: "+263 242 771 190"}
+          - {label: "WhatsApp", name: "whatsapp", widget: "string", default: "0714 572 766"}
+          - {label: "Address", name: "address", widget: "text", default: "1 Alamein Rd, PO Box 1700, Arcadia, Harare, Zimbabwe"}
+      
+      - name: "departments"
+        label: "Departments Page"
+        file: "src/pages/departments/index.astro"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Departments"}
+          - {label: "Page Description", name: "description", widget: "text", default: "Morgan Zintec College is organised into four academic departments, each headed by a Head of Department and comprising multiple sections led by Lecturers-in-Charge."}
+
+  - name: "departments"
+    label: "Academic Departments"
+    folder: "src/pages/departments"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Department Name", name: "title", widget: "string"}
+      - {label: "Badge Text", name: "badge", widget: "string", default: "Department"}
+      - {label: "Badge Icon", name: "badgeIcon", widget: "select", options: ["fa-book-open", "fa-calculator", "fa-flask", "fa-child", "fa-building"], default: "fa-book-open"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "HOD Name", name: "hodName", widget: "string", default: "[To be updated]"}
+      - {label: "HOD Title", name: "hodTitle", widget: "string", default: "Head of Department"}
+      - {label: "Sections", name: "sections", widget: "list", fields: [
+          {label: "Title", name: "title", widget: "string"},
+          {label: "Description", name: "description", widget: "text"},
+          {label: "Lecturer-in-Charge", name: "lic", widget: "string"},
+          {label: "Details", name: "details", widget: "list", field: {label: "Detail", name: "detail", widget: "string"}}
+        ]}
+      - {label: "Staff", name: "staff", widget: "list", fields: [
+          {label: "Name", name: "name", widget: "string"},
+          {label: "Section", name: "section", widget: "string"},
+          {label: "Role", name: "role", widget: "string"}
+        ]}
+      - {label: "Clubs", name: "clubs", widget: "list", fields: [
+          {label: "Name", name: "title", widget: "string"},
+          {label: "Description", name: "description", widget: "text"},
+          {label: "Icon", name: "icon", widget: "string"}
+        ]}
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Publish Date", name: "date", widget: "datetime", default: ""}
+      - {label: "Author", name: "author", widget: "string", default: "Morgan Zintec College"}
+      - {label: "Tags", name: "tags", widget: "list", field: {label: "Tag", name: "tag", widget: "string"}}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "research"
+    label: "Research Publications"
+    folder: "src/content/research"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Type", name: "type", widget: "select", options: ["Journal Article", "Conference Paper", "Dissertation / Thesis", "Research Report", "Book Chapter", "Other"]}
+      - {label: "Authors", name: "authors", widget: "list", field: {label: "Author", name: "author", widget: "string"}}
+      - {label: "Department", name: "department", widget: "select", options: ["Humanities", "Maths & Sciences", "Research & Innovation", "ECD", "Theory & Practice", "ICT", "Other"]}
+      - {label: "Abstract", name: "abstract", widget: "text"}
+      - {label: "Keywords", name: "keywords", widget: "list", field: {label: "Keyword", name: "keyword", widget: "string"}}
+      - {label: "Publish Date", name: "date", widget: "datetime", default: ""}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Full Text URL", name: "url", widget: "string", required: false}

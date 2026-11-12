@@ -1,0 +1,36 @@
+---
+interface Props {
+  icon?: string;
+  iconBg?: 'primary' | 'teal' | 'success' | 'warning' | 'danger' | 'navy' | 'gold';
+  title: string;
+  description: string;
+  href?: string;
+  className?: string;
+}
+const { icon, iconBg = 'primary', title, description, href, className = '' } = Astro.props;
+
+const iconBgClasses = {
+  primary: 'icon-box-primary',
+  teal: 'icon-box-teal',
+  success: 'icon-box-success',
+  warning: 'icon-box-warning',
+  danger: 'bg-gradient-to-r from-[#F5365C] to-[#F56036] text-white',
+  navy: 'icon-box-navy',
+  gold: 'icon-box-gold'
+};
+---
+
+<div class={`feature-card text-center p-8 transition-all duration-300 hover:-translate-y-2 ${className}`}>
+  {icon && (
+    <div class={`icon-box-xl mx-auto mb-5 shadow-[0_15px_35px_rgba(50,50,93,.1),0_5px_15px_rgba(0,0,0,.07)] ${iconBgClasses[iconBg]}`}>
+      <i class={`fas ${icon}`}></i>
+    </div>
+  )}
+  <h4 class="font-heading text-lg font-bold text-[#32325d] mb-2">{title}</h4>
+  <p class="text-sm text-[#8898aa] leading-relaxed">{description}</p>
+  {href && (
+    <a href={href} class="mt-4 inline-block text-sm font-semibold text-mzc-blue hover:text-mzc-blue-dark transition-colors">
+      Learn More <i class="fas fa-arrow-right ml-1"></i>
+    </a>
+  )}
+</div>

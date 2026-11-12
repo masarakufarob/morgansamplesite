@@ -1,0 +1,10 @@
+# Morgan Zintec College - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://morganzintec.ac.zw/sitemap-index.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/

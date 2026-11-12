@@ -1,0 +1,70 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import Hero from '@/components/Hero.astro';
+---
+
+<BaseLayout 
+  title="Research & Innovation Department" 
+  description="Department of Research & Innovation at Morgan Zintec College - Driving the college's research agenda in alignment with Education 5.0, overseeing Theory of Education, Professional Foundations, Teaching Practice, Distance Education and In-Service programmes."
+  image="/images/og-research-innovation.jpg"
+>
+  <Navbar currentPage="departments" slot="header" />
+  
+  <Hero
+    title="Research & Innovation"
+    variant="page"
+    badge="Department"
+    badgeIcon="fa-flask"
+    description="Drives the college's research agenda in alignment with Education 5.0. Oversees Theory of Education, Professional Foundations, Teaching Practice, Distance Education and the In-Service Programme."
+    primaryCTA={{ label: "Visit Research Portal", href: "/research/", icon: "fa-external-link-alt" }}
+    secondaryCTA={{ label: "View All Departments", href: "/departments/", icon: "fa-building" }}
+  />
+
+  <section class="py-12 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <div class="section-label">Department of Research & Innovation</div>
+        <h2 class="section-title font-display">Department Overview</h2>
+        <div class="divider divider-center mb-6"></div>
+        <p class="text-lg text-[#8898aa] leading-relaxed">The Department of Research & Innovation is the engine of knowledge creation and dissemination at Morgan Zintec College. It coordinates all research activities, manages the In-Service programme, oversees Teaching Practice, and ensures the college's academic programmes are informed by current research and innovation.</p>
+      </div>
+      
+      <div class="hod-header flex items-center gap-5 bg-[#F5F7FA] rounded-xl p-6 mb-12 border-l-5 border-mzc-gold max-w-2xl mx-auto">
+        <div class="hod-avatar w-16 h-16 rounded-full bg-gradient-to-br from-[#2A1A4A] to-[#4A2D7A] flex items-center justify-center text-3xl text-white/30 flex-shrink-0 border-3 border-mzc-gold">👤</div>
+        <div class="hod-info">
+          <h4 class="font-heading font-extrabold text-lg text-mzc-navy mb-1">[To be updated]</h4>
+          <p class="text-xs font-bold text-mzc-gold uppercase tracking-wider">Head of Department — Research & Innovation</p>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        {[
+          { title: "Theory of Education", desc: "Foundational educational theories, philosophy of education, sociology of education, and psychology of learning applied to Zimbabwean contexts.", icon: "fa-book-open", color: "icon-box-primary" },
+          { title: "Professional Studies", desc: "Professional Foundations A, B, C, D covering teacher professionalism, ethics, classroom management, assessment, and reflective practice.", icon: "fa-chalkboard-teacher", color: "icon-box-teal" },
+          { title: "Teaching Practice", desc: "Coordination of school placements, mentor supervision, assessment of practical teaching, and TP portfolio management across all programmes.", icon: "fa-user-graduate", color: "icon-box-success" },
+          { title: "Distance Education", desc: "Flexible learning pathways for in-service teachers, online course delivery, and blended learning programme management.", icon: "fa-laptop", color: "icon-box-warning" },
+          { title: "In-Service Programme", desc: "Diploma in Supervision & ICT for school-based mentors. 840+ graduates since 2014. Partnership with UNESCO in early years.", icon: "fa-certificate", color: "icon-box-gold" }
+        ].map((section, i) => (
+          <div key={i} class="bg-white rounded-xl p-6 shadow-[0_2px_14px_rgba(0,0,0,.07)] hover:shadow-[0_8px_28px_rgba(0,0,0,.1)] transition-all border-t-4 border-mzc-gold">
+            <div class="icon-box-lg mb-4 {section.color}"><i class={`fas ${section.icon}`}></i></div>
+            <h4 class="font-heading font-extrabold text-base text-mzc-navy mb-2">{section.title}</h4>
+            <p class="text-sm text-[#666] leading-relaxed">{section.desc}</p>
+          </div>
+        ))}
+      </div>
+      
+      <div class="bg-gradient-to-br from-[#2A1A4A] to-[#4A2D7A] rounded-2xl p-8 text-white text-center">
+        <h3 class="font-display text-2xl font-bold mb-4">Advancing Education Through Research</h3>
+        <p class="text-white/80 leading-relaxed mb-6 max-w-2xl mx-auto">Committed to Education 5.0 — Heritage, Innovation, Industrialization. Generating evidence-based knowledge for Zimbabwe's teacher education sector.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/research/" class="btn btn-white btn-round"><i class="fas fa-flask mr-2"></i> Research Portal</a>
+          <a href="/research/#submit" class="btn btn-outline-white btn-round"><i class="fas fa-upload mr-2"></i> Submit Research</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer variant="dark" slot="footer" />
+</BaseLayout>

@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-[#525f7f] antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-[#32325d] font-bold;
+  }
+  a {
+    @apply transition-colors duration-150;
+  }
+  img {
+    @apply max-w-full h-auto;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center font-heading font-semibold text-sm leading-normal text-center whitespace-nowrap transition-all duration-150 rounded-lg cursor-pointer;
+    @apply shadow-[0_4px_6px_rgba(50,50,93,.11),0_1px_3px_rgba(0,0,0,.08)];
+  }
+  .btn:hover {
+    @apply -translate-y-0.5 shadow-[0_7px_14px_rgba(50,50,93,.1),0_3px_6px_rgba(0,0,0,.08)];
+  }
+  .btn:focus-visible {
+    @apply outline-none ring-2 ring-offset-2 ring-mzc-blue;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-mzc-blue to-[#1C90D8] text-white border-transparent;
+  }
+  .btn-primary:hover {
+    @apply bg-gradient-to-r from-[#0A5FA3] to-mzc-blue;
+  }
+  .btn-secondary {
+    @apply bg-gradient-to-r from-mzc-teal to-[#5AB8C4] text-mzc-navy border-transparent;
+  }
+  .btn-secondary:hover {
+    @apply bg-white text-mzc-navy;
+  }
+  .btn-outline {
+    @apply border-2 border-mzc-blue text-mzc-blue bg-transparent;
+  }
+  .btn-outline:hover {
+    @apply bg-mzc-blue text-white;
+  }
+  .btn-ghost {
+    @apply bg-white/10 text-white/80 border border-white/20;
+  }
+  .btn-ghost:hover {
+    @apply bg-white/20 text-white;
+  }
+  .btn-white {
+    @apply bg-white text-mzc-blue border-transparent shadow-[0_4px_6px_rgba(50,50,93,.11)];
+  }
+  .btn-white:hover {
+    @apply bg-gray-50;
+  }
+  .btn-outline-white {
+    @apply bg-transparent text-white border border-white/50;
+  }
+  .btn-outline-white:hover {
+    @apply bg-white/10 border-white;
+  }
+  .btn-lg {
+    @apply px-6 py-3.5 text-base rounded-xl;
+  }
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs rounded-md;
+  }
+  .btn-round {
+    @apply rounded-full;
+  }
+
+  .icon-box {
+    @apply flex items-center justify-center rounded-xl;
+  }
+  .icon-box-lg {
+    @apply w-16 h-16 rounded-xl text-2xl;
+  }
+  .icon-box-xl {
+    @apply w-20 h-20 rounded-xl text-3xl;
+  }
+  .icon-box-primary {
+    @apply bg-gradient-to-r from-mzc-blue to-[#1C90D8] text-white;
+  }
+  .icon-box-teal {
+    @apply bg-gradient-to-r from-mzc-teal to-[#5AB8C4] text-white;
+  }
+  .icon-box-success {
+    @apply bg-gradient-to-r from-[#2DCE89] to-[#2DCECC] text-white;
+  }
+  .icon-box-warning {
+    @apply bg-gradient-to-r from-[#FB6340] to-[#FBB140] text-white;
+  }
+  .icon-box-navy {
+    @apply bg-gradient-to-r from-mzc-navy to-[#2A3F6A] text-white;
+  }
+  .icon-box-gold {
+    @apply bg-gradient-to-r from-mzc-gold to-[#D4A82C] text-white;
+  }
+
+  .card {
+    @apply bg-white rounded-xl border-0 shadow-[0_0_2rem_0_rgba(136,152,170,.15)];
+  }
+  .card-body {
+    @apply p-6;
+  }
+
+  .section-label {
+    @apply text-xs font-bold uppercase tracking-widest text-mzc-blue mb-3;
+  }
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-bold text-[#32325d] mb-3 leading-tight;
+  }
+  .section-sub {
+    @apply text-base text-[#8898aa] max-w-2xl leading-relaxed;
+  }
+  .section-header {
+    @apply text-center mb-14;
+  }
+  .divider {
+    @apply w-12 h-1 bg-mzc-teal;
+  }
+  .divider-center {
+    @apply mx-auto;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-6;
+  }
+  section {
+    @apply py-20;
+  }
+
+  .shape-ball {
+    @apply absolute rounded-full opacity-60 blur-[60px];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-mzc-blue to-[#1C90D8];
+  }
+  .bg-gradient-teal {
+    @apply bg-gradient-to-r from-mzc-teal to-[#5AB8C4];
+  }
+  .bg-gradient-success {
+    @apply bg-gradient-to-r from-[#2DCE89] to-[#2DCECC];
+  }
+  .bg-gradient-warning {
+    @apply bg-gradient-to-r from-[#FB6340] to-[#FBB140];
+  }
+  .bg-gradient-navy {
+    @apply bg-gradient-to-r from-mzc-navy to-[#2A3F6A];
+  }
+  .bg-gradient-gold {
+    @apply bg-gradient-to-r from-mzc-gold to-[#D4A82C];
+  }
+  .bg-gradient-dark {
+    @apply bg-gradient-to-r from-mzc-navy to-mzc-blue;
+  }
+}

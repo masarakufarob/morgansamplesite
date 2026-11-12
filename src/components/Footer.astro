@@ -1,0 +1,190 @@
+---
+interface Props {
+  variant?: 'main' | 'dark' | 'research';
+}
+const { variant = 'main' } = Astro.props;
+
+const footerData = {
+  brand: {
+    name: "Morgan Zintec College",
+    tagline: "Education · Progress · Self Reliance",
+    description: "Leading teacher education in Zimbabwe since 1981."
+  },
+  links: {
+    quick: [
+      { label: "About Us", href: "/about/" },
+      { label: "Programmes", href: "/academics/" },
+      { label: "Departments", href: "/departments/" },
+      { label: "Research", href: "/research/" },
+      { label: "Library", href: "/library/" }
+    ],
+    portals: [
+      { label: "Student Portal", href: "https://morgan.easylearn.co.zw", external: true },
+      { label: "eLearning Portal", href: "https://online.morganzintec.ac.zw", external: true },
+      { label: "Library (Koha)", href: "/library/" },
+      { label: "Help Desk", href: "/contact/" }
+    ],
+    departments: [
+      { label: "Humanities", href: "/departments/humanities/" },
+      { label: "Maths & Sciences", href: "/departments/maths-science/" },
+      { label: "Research & Innovation", href: "/departments/research-innovation/" },
+      { label: "ECD", href: "/departments/ecd/" },
+      { label: "Non-Academic", href: "/departments/non-academic/" }
+    ]
+  },
+  contact: {
+    address: "1 Alamein Rd, PO Box 1700, Arcadia, Harare, Zimbabwe",
+    email: "secretary@morganzintec.ac.zw",
+    phone: "+263 868 800 7100",
+    whatsapp: "0714 572 766",
+    hours: "Mon–Fri: 9:00–16:30"
+  },
+  social: [
+    { label: "Facebook", href: "https://www.facebook.com/morgan.zintec.56", icon: "fa-facebook-f" },
+    { label: "Twitter", href: "#", icon: "fa-twitter" },
+    { label: "LinkedIn", href: "#", icon: "fa-linkedin-in" }
+  ],
+  bottomLinks: [
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms & Conditions", href: "#" },
+    { label: "Sitemap", href: "#" }
+  ]
+};
+---
+
+<footer class={variant === 'research' ? 'res-footer' : 'footer'}>
+  {variant === 'main' && (
+    <div class="footer-top py-16 pb-8">
+      <div class="container">
+        <div class="footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-11 h-11 bg-mzc-blue rounded-full flex items-center justify-center font-heading font-black text-sm text-white flex-shrink-0">MZC</div>
+              <div>
+                <div class="font-heading font-extrabold text-lg text-white leading-tight">{footerData.brand.name}</div>
+                <div class="text-xs text-white/45 uppercase tracking-widest">{footerData.brand.tagline}</div>
+              </div>
+            </div>
+            <p class="footer-brand-desc text-sm text-white/45 leading-relaxed max-w-xs mt-2">{footerData.brand.description}</p>
+            <div class="footer-socials flex gap-2.5 mt-5">
+              {footerData.social.map(social => (
+                <a href={social.href} target="_blank" rel="noopener noreferrer" class="soc-btn w-10 h-10 rounded-full bg-white/8 text-white/55 flex items-center justify-center text-sm transition-all border border-white/10" aria-label={social.label}>
+                  <i class={`fab ${social.icon}`}></i>
+                </a>
+              ))}
+            </div>
+          </div>
+          
+          <div>
+            <div class="footer-col-title font-heading font-bold text-xs uppercase tracking-widest text-white/5 mb-4 pb-2 border-b border-white/8">Quick Links</div>
+            <ul class="footer-col-links list-none flex flex-col gap-2.5">
+              {footerData.links.quick.map(link => (
+                <li>
+                  <a href={link.href} class="text-sm text-white/40 transition-colors flex items-center gap-1.5 hover:text-white/90">
+                    <span class="text-mzc-teal">›</span>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div>
+            <div class="footer-col-title font-heading font-bold text-xs uppercase tracking-widest text-white/5 mb-4 pb-2 border-b border-white/8">Portals</div>
+            <ul class="footer-col-links list-none flex flex-col gap-2.5">
+              {footerData.links.portals.map(link => (
+                <li>
+                  <a href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noopener noreferrer' : undefined} class="text-sm text-white/40 transition-colors flex items-center gap-1.5 hover:text-white/90">
+                    <span class="text-mzc-teal">›</span>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div>
+            <div class="footer-col-title font-heading font-bold text-xs uppercase tracking-widest text-white/5 mb-4 pb-2 border-b border-white/8">Contact</div>
+            <div class="space-y-2.5">
+              <div class="footer-contact-item flex gap-2.5 text-sm text-white/40 items-start leading-relaxed">
+                <i class="fas fa-map-marker-alt text-mzc-teal flex-shrink-0 mt-0.5 w-4"></i>
+                <span>{footerData.contact.address}</span>
+              </div>
+              <div class="footer-contact-item flex gap-2.5 text-sm text-white/40 items-start leading-relaxed">
+                <i class="fas fa-envelope text-mzc-teal flex-shrink-0 mt-0.5 w-4"></i>
+                <a href={`mailto:${footerData.contact.email}`} class="hover:text-white/90">{footerData.contact.email}</a>
+              </div>
+              <div class="footer-contact-item flex gap-2.5 text-sm text-white/40 items-start leading-relaxed">
+                <i class="fas fa-phone text-mzc-teal flex-shrink-0 mt-0.5 w-4"></i>
+                <span>{footerData.contact.phone}</span>
+              </div>
+              <div class="footer-contact-item flex gap-2.5 text-sm text-white/40 items-start leading-relaxed">
+                <i class="fab fa-whatsapp text-mzc-teal flex-shrink-0 mt-0.5 w-4"></i>
+                <span>{footerData.contact.whatsapp}</span>
+              </div>
+              <div class="footer-contact-item flex gap-2.5 text-sm text-white/40 items-start leading-relaxed">
+                <i class="fas fa-clock text-mzc-teal flex-shrink-0 mt-0.5 w-4"></i>
+                <span>{footerData.contact.hours}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+  
+  {variant === 'dark' && (
+    <div class="footer-main-content max-w-7xl mx-auto px-6 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-2">
+            <img src="/images/logo.png" alt="Morgan Zintec College" class="w-11 h-11 object-contain flex-shrink-0" />
+            <div class="logo-text">
+              <span class="n block font-heading font-extrabold text-lg text-white leading-tight">{footerData.brand.name}</span>
+              <span class="s text-xs text-white/45 uppercase tracking-widest">{footerData.brand.tagline}</span>
+            </div>
+          </div>
+          <p class="footer-brand-p text-sm text-white/40 leading-relaxed mt-2">{footerData.brand.description}</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="text-mzc-teal font-heading font-bold text-xs uppercase tracking-widest mb-3 pb-2 border-b border-white/8">Departments</h4>
+          <ul class="list-none flex flex-col gap-2">
+            {footerData.links.departments.map(link => (
+              <li><a href={link.href} class="text-sm text-white/50 transition-colors flex items-center gap-1.5 hover:text-mzc-teal"><span class="text-mzc-teal">›</span>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="text-mzc-teal font-heading font-bold text-xs uppercase tracking-widest mb-3 pb-2 border-b border-white/8">College</h4>
+          <ul class="list-none flex flex-col gap-2">
+            {footerData.links.quick.map(link => (
+              <li><a href={link.href} class="text-sm text-white/50 transition-colors flex items-center gap-1.5 hover:text-mzc-teal"><span class="text-mzc-teal">›</span>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+  
+  {variant === 'research' && (
+    <div class="text-center py-7">
+      <p class="text-sm text-white/25">
+        © 2026 Morgan Zintec College — Research & Innovation Portal &nbsp;|&nbsp;
+        <a href="/" class="text-mzc-teal/70 hover:text-mzc-teal">Main Website</a> &nbsp;|&nbsp;
+        <a href="/library/" class="text-mzc-teal/70 hover:text-mzc-teal">Koha Library Catalogue</a> &nbsp;|&nbsp;
+        <a href="mailto:info@morganzintec.ac.zw" class="text-mzc-teal/70 hover:text-mzc-teal">info@morganzintec.ac.zw</a>
+      </p>
+    </div>
+  )}
+
+  <hr class="footer-divider border-none border-t border-white/8 mx-auto max-w-7xl px-6" />
+  
+  <div class="footer-bottom max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-2">
+    <p class="text-xs text-white/30">© 2026 Morgan Zintec College. All Rights Reserved.</p>
+    <div class="footer-bottom-links flex gap-5">
+      {footerData.bottomLinks.map(link => (
+        <a href={link.href} class="text-xs text-white/30 hover:text-white/70 transition-colors">{link.label}</a>
+      ))}
+    </div>
+  </div>
+</footer>
